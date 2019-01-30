@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
                "ass",
                "butt",
                "assinthong"
-               "
+               
                        
                        
                        
