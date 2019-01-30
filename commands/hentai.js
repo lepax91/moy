@@ -2,7 +2,7 @@ const randomPuppy = require('random-puppy');
 
 module.exports.run = async (bot, message, args) => {
  
- if(!message.channel.nsfw) return message.reply("Please use this command in channels that are marked as NSFW!");
+ if(!message.channel.nsfw) return message.reply("Jseš si jistý, že si ve správném kanálu? 🤔");
  let reddit = [
                "HentaiRequests",
                "hentai",
