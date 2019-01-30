@@ -4,9 +4,9 @@ module.exports.run = async (bot, message, args) => {
  
  if(!message.channel.nsfw) return message.reply("Jseš si jistý, že si ve správném kanálu? 🤔");
  let reddit = [
-               "HentaiRequests",
                "hentai",
-               "Thick Hentai"
+               "thick_hentai"
+               "ecchi"
                        
                        
                        
