@@ -1,10 +1,10 @@
 {
-  "prefix": "!",
+  "prefix": "p,",
   "logsChannel": "logs",
   "reportsChannel": "reports",
 
   "activity": {
-    "streaming": false,
+    "streaming": true,
     "game": "vaří pro pepeho"
   }
 }
