@@ -4,7 +4,8 @@ module.exports.run = async (bot, message, args) => {
  
  if(!message.channel.nsfw) return message.reply("Jseš si jistý, že si ve správném kanálu? 🤔");
  let reddit = [
-               "gayporn"
+               "MenGW",
+               "MassiveCock"
            
                        
                        
@@ -23,7 +24,7 @@ randomPuppy(subreddit).then(async url => {
                     await message.channel.send({
                             files: [{ 
                                   attachment: url, 
-                                  name: 'gay.png' 
+                                  name: 'dick.png' 
                           }]           
                    }).then(() => message.channel.stopTyping()); 
     }).catch(err => console.error(err)); 
@@ -31,6 +32,6 @@ randomPuppy(subreddit).then(async url => {
 };
 
  module.exports.help = {
-           name: 'gay',
-           aliases: ['gayp']
+           name: 'penis',
+           aliases: ['dick']
 }          
