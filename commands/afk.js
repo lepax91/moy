@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
         };
 
         bot.afk.set(message.author.id, construct);
-        return message.reply(`Jsi afk! Důvod: ${reason}`).then(msg => msg.delete(5000));
+        return message.reply(`Jseš AFK, **Důvod: ${reason}**`).then(msg => msg.delete(5000));
     }
 
 };
