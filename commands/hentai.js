@@ -1,26 +1,37 @@
-const superagent = require("superagent");
-const Discord = require("discord.js");
-//const ms = require("ms")
+const randomPuppy = require('random-puppy'); 
 
 module.exports.run = async (bot, message, args) => {
+ 
+ if(!message.channel.nsfw) return message.reply("Please use this command in channels that are marked as NSFW!");
+ let reddit = [
+               "HentaiRequests",
+               "hentai",
+               "Thick Hentai"
+                       
+                       
+                       
+                       
+                       
+                      
+                       
+  ]
 
+let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
 
-    if (!message.channel.nsfw) return message.channel.send("Šerife, Jseš si opravdu jistý že jsi v jistém kanále? 🤔");
-         // return 
-        superagent.get('https://nekos.life/api/v2/img/hentai')
-            .end((err, response) => {
-                var lewdembed = new Discord.RichEmbed()
-                    .setTitle(`Pěkný anime holky`)
-                    .setImage(response.body.url)
-                    .setColor("RANDOM")
-                    .setFooter("kuchař pepe vaří speciální semeno 👌", bot.user.displayAvatarURL)
-                    .setTimestamp();
-                message.channel.send(lewdembed);
-            });
-    
-}
+ message.channel.startTyping(); 
 
-module.exports.help = {
-    name: "hentai",
-    aliases: []
-}
+randomPuppy(subreddit).then(async url => {
+                    await message.channel.send({
+                            files: [{ 
+                                  attachment: url, 
+                                  name: 'lesbian!.png' 
+                          }]           
+                   }).then(() => message.channel.stopTyping()); 
+    }).catch(err => console.error(err)); 
+
+};
+
+ module.exports.help = {
+           name: 'hentai', 
+           aliases: ['tiddes']
+} 
