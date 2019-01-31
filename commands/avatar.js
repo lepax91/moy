@@ -12,7 +12,8 @@ if(!user) return message.channel.send("You haven't selected/mentioned a user who
     .setColor("#b70000");
     return message.channel.send(avatarEmbed);
      }
-});
+
+
 module.exports.help = {
     name: "avatar",
     aliases: ['']
