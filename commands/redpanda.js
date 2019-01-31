@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     let api = "redpandas"
       randompuppy(api).then(api => {
            const theirembed = new Discord.RichEmbed()
-	    .setAuthor("🐼 Panda | Vždy se zobrazí random obrázek.")
+	    .setAuthor("🐼 Červená Panda | Vždy se zobrazí random obrázek.")
             .setColor(0x2aff00)
             .setImage(api)
             .setFooter("Kuchař Pepe 👌")
@@ -19,6 +19,6 @@ module.exports.run = async (bot, message, args) => {
    
 
  module.exports.help = {
-           name: 'dog',
-           aliases: ['dogs']
+           name: 'redpanda',
+           aliases: ['red']
 }    
