@@ -1,5 +1,4 @@
 const discord = require('discord.js');
-const superagent = require('superagent')
 
 exports.run = (client, msg, args) => {
   if (msg.channel.nsfw === true) {
