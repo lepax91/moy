@@ -7,7 +7,8 @@ module.exports.run = async (bot, message, args) => {
    .setColor("GREEN")
    .setTimestamp()
    .addField("všechny main příkazy 💬", "help")
-   .addField("všechny funny příkazy 😂👌", "meme, cat, dog")
+   .addField("všechny funny příkazy 😂👌", "meme, animememes")
+   .addField("všechny animals příkazy 🐈", "dog, cat")
    .addField("všechny příkazy nsfw 😏", "ass, thigh, bbw, dick, pussy, hentai")
    .setFooter(message.author.username + "");
    
