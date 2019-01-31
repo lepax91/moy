@@ -4,16 +4,13 @@ module.exports.run = async (bot, message, args) => {
  
    let player = message.mentions.members.first() || message.member
 	   let user = player.user
-if(!user) return message.channel.send("You haven't selected/mentioned a user whose avatar you want to see."); 
+if(!user) return message.channel.send("Nikdo není označen, prosím označ někoho. 🤔")	      
     let avatarEmbed = new Discord.RichEmbed()
-    .setAuthor(`${user.tag}`, `${user.displayAvatarURL}`)
-    .setTitle("Avatar")
-    .setImage(user.displayAvatarURL)
-    .setColor("#b70000");
+    .setAuthor(`${user.tag}`, ``)
+    .setColor("RANDOM")
     return message.channel.send(avatarEmbed);
      }
-
-
+!
 module.exports.help = {
     name: "avatar",
     aliases: ['']
