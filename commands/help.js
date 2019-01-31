@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
    .addField("všechny main příkazy 💬", "help")
    .addField("všechny funny příkazy 😂👌", "meme, animememes")
    .addField("všechny animals příkazy 🐈", "dog, cat")
-   .addField("všechny příkazy nsfw 😏", "ass, thigh, bbw, dick, pussy, hentai")
+   .addField("všechny příkazy nsfw 😏", "ass, thigh, bbw, dick, pussy, hentai, hentaigif")
    .setFooter(message.author.username + "");
    
    message.channel.send(embed)
@@ -19,3 +19,4 @@ module.exports.help = {
     name: "help",
     aliases: ['halp']
 }
+,
