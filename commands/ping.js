@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 module.exports.run = async (bot, message, args) => {
 
-    let start = Date.now(); message.channel.send(message.channel.id, 'Pong! ').then(message => {
+    let start = Date.now(); {
     let diff = (Date.now() - start);
     let API = (bot.ping).toFixed(2)
 
