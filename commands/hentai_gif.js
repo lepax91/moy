@@ -1,23 +1,36 @@
-const Discord = require('discord.js');
-const superagent = require("snekfetch");
-
+const randomPuppy = require('random-puppy'); 
 
 module.exports.run = async (bot, message, args) => {
+ 
+ if(!message.channel.nsfw) return message.reply("Jseš si jistý, že si ve správném kanálu? 🤔");
+ let reddit = [
+               "HENTAI_GIF"
+               "
+                       
+                       
+                       
+                       
+                       
+                      
+                       
+  ]
 
-      if (!message.channel.nsfw) 
-      return message.reply("Jseš si jistý, že si ve správném kanálu? 🤔");
-    superagent.get('https://nekos.life/api/v2/img/Random_hentai_gif')
-        .end((err, response) => {
-            const lewdembed = new Discord.RichEmbed()
-                .setImage(response.body.url)
-                .setColor("#FFFFFF")
-                .setFooter("Kuchař Pepe 👌", bot.user.displayAvatarURL)
-                .setTimestamp();
-            message.channel.send(lewdembed);
-        })
-}
+let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
 
-module.exports.help = {
+ message.channel.startTyping(); 
+
+randomPuppy(subreddit).then(async url => {
+                    await message.channel.send({
+                            files: [{ 
+                                  attachment: url, 
+                                  name: 'thighs.png' 
+                          }]           
+                   }).then(() => message.channel.stopTyping()); 
+    }).catch(err => console.error(err)); 
+
+};
+
+ module.exports.help = {
            name: 'hentaigif',
-           aliases: ['hg']
-}    
+           aliases ['hg']
+}          
