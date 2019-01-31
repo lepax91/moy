@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
  if(!message.channel.nsfw) return message.reply("Jseš si jistý, že si ve správném kanálu? 🤔");
  let reddit = [
                "HENTAI_GIF"
-               "
+ 
                        
                        
                        
@@ -23,7 +23,7 @@ randomPuppy(subreddit).then(async url => {
                     await message.channel.send({
                             files: [{ 
                                   attachment: url, 
-                                  name: 'thighs.png' 
+                                  name: 'hentai.gif' 
                           }]           
                    }).then(() => message.channel.stopTyping()); 
     }).catch(err => console.error(err)); 
