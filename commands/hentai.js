@@ -6,10 +6,10 @@ exports.run = (client, msg, args) => {
     superagent.get('https://nekobot.xyz/api/image')
     .query({ type: 'hentai'})
     .end((err, response) => {
-      return message.reply("Jseš si jistý, že si ve správném kanálu? 🤔");
+      msg.channel.send({ file: response.body.message });
     });
   } else {
-    msg.channel.send("This isn't NSFW channel!")
+    return message.reply("Jseš si jistý, že si ve správném kanálu? 🤔");
   }
 };
 module.exports.help = {
