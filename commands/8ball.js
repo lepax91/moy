@@ -5,8 +5,8 @@ module.exports.run = async (bot, message, args, tools) => {
     // Array of responses
     let responses = [
         'cože ne',
-        'samozřejmě že ano,
-        'nevim, nejsem aladin,
+        'samozřejmě že ano',
+        'nevim, nejsem aladin',
         'nemel mrdky'
     ]
     
