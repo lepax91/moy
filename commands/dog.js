@@ -5,7 +5,7 @@ const randompuppy = require('random-puppy');
 module.exports.run = async (bot, message, args) => {
  
 
-    let api = "cat"
+    let api = "dogs"
       randompuppy(api).then(api => {
            const theirembed = new Discord.RichEmbed()
 	    .setAuthor("🐶 Pes | Vždy se zobrazí random obrázek.")
