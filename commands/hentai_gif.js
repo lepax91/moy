@@ -32,5 +32,5 @@ randomPuppy(subreddit).then(async url => {
 
  module.exports.help = {
            name: 'hentaigif',
-           aliases ['hg']
+           aliases: ['hg']
 }          
