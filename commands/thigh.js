@@ -1,20 +1,38 @@
-const discord = require('discord.js');
-const superagent = require('superagent')
+const randomPuppy = require('random-puppy'); 
 
-exports.run = (client, msg, args) => {
-  if (msg.channel.nsfw === true) {
-    superagent.get('https://nekobot.xyz/api/image')
-    .query({ type: 'thigh'})
-    .end((err, response) => {
-      msg.channel.send({ file: response.body.message });
-    });
-  } else {
-    msg.channel.send("Jseš si jistý, že toto je správný kanál? 🤔")
-  }
+module.exports.run = async (bot, message, args) => {
+ 
+ if(!message.channel.nsfw) return message.reply("Jseš si jistý, že si ve správném kanálu? 🤔");
+ let reddit = [
+               "thighhighs",
+               "ThickThighs",
+               "hipcleavage"
+           
+                       
+                       
+                       
+                       
+                       
+                      
+                       
+  ]
+
+let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
+
+ message.channel.startTyping(); 
+
+randomPuppy(subreddit).then(async url => {
+                    await message.channel.send({
+                            files: [{ 
+                                  attachment: url, 
+                                  name: 'thighs.png' 
+                          }]           
+                   }).then(() => message.channel.stopTyping()); 
+    }).catch(err => console.error(err)); 
+
 };
 
-
  module.exports.help = {
-           name: 'thigh', 
+           name: 'thigh',
            aliases: ['thighs']
-} 
+}          
