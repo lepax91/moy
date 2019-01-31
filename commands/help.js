@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
    .addField("všechny main příkazy 💬", "help, ping")
    .addField("všechny funny příkazy 😂👌", "meme, animemes")
    .addField("všechny animals příkazy 🐈", "dog, cat, redpanda, panda")
-   .addField("všechny příkazy nsfw 😏", "ass, thigh, bbw, dick, pussy, hentai")
+   .addField("všechny příkazy nsfw 😏", "hentaigif, ass, thigh, bbw, dick, pussy, hentai")
    .setFooter(message.author.username + "");
    
    message.channel.send(embed)
