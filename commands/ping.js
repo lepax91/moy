@@ -1,16 +1,23 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js')
 
-module.exports.run = async (bot, message, args) => {
+exports.run = async (client, message, args, color) => {
 
-    let embed = new Discord.RichEmbed()
-    .setTitle("pepe a jeho mozek")
-    .setColor("#00c4eb")
-    .setDescription(`Můj mozek má ${Math.round(bot.ping)} IQ!`)
-    .setFooter(message.author.username + "");
-    message.channel.send(embed);
+    let start = Date.now(); message.channel.send(message.channel.id, 'Pong! ').then(message => {
+    let diff = (Date.now() - start);
+    let API = (client.ping).toFixed(2)
+
+        let embed = new Discord.RichEmbed()
+        .setTitle(`🔔 Pong!`)
+        .setColor(0xff2f2f)
+        .addField("📶 Latency", `${diff}ms`, true)
+        .addField("💻 API", `${API}ms`, true)
+        message.edit(embed);
+
+    });
+
 }
 
-module.exports.help = {
-    name: "ping",
-    aliases: ['p']
+exports.help = {
+    name: 'ping',
+    aliases: ''
 }
