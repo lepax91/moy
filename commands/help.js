@@ -19,4 +19,3 @@ module.exports.help = {
     name: "help",
     aliases: ['halp']
 }
-,
