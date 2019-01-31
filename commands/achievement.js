@@ -25,7 +25,5 @@ exports.conf = {
 
 exports.help = {
   name: 'achievement',
-  aliases: ["mca"],
-  description: 'Send a Minecraft Achievement image to the channel',
-  usage: 'achievement Title|Text (/achievement Achievement Get|Used a Command!)'
+  aliases: ["mc"]
 };
