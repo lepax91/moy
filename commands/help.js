@@ -7,9 +7,9 @@ module.exports.run = async (bot, message, args) => {
    .setColor("GREEN")
    .setTimestamp()
    .addField("všechny main příkazy 💬", "help, ping")
-   .addField("všechny funny příkazy 😂👌", "meme, animemes")
+   .addField("všechny funny příkazy 😂👌", "meme, animemes, achievement")
    .addField("všechny animals příkazy 🐈", "dog, cat, redpanda, panda")
-   .addField("všechny nsfw příkazy 😏", "ass, thigh, bbw, hgif, owerwatch, dick, pussy")
+   .addField("všechny nsfw příkazy 😏", "ass, thigh, bbw, hgif, dick, pussy")
    .setFooter(message.author.username + "");
    
    message.channel.send(embed)
