@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
    var embed = new Discord.RichEmbed()
-   .setAuthor("Help commands!", message.author.avatarURL)
+   .setAuthor("pepe a jeho recept", message.author.avatarURL)
    .setColor("GREEN")
    .setTimestamp()
    .addField("všechny příkazy nsfw 😏", "ass, thigh, bbw, dick, pussy, hentai")
