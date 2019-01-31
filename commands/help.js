@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
    .setAuthor("pepe a jeho kuchařka", bot.user.displayAvatarURL)
    .setColor("GREEN")
    .setTimestamp()
-   .addField("všechny main příkazy 💬", "help, ping")
+   .addField("všechny main příkazy 💬", "help, ping, avatar")
    .addField("všechny funny příkazy 😂👌", "meme, animemes")
    .addField("všechny animals příkazy 🐈", "dog, cat, redpanda")
    .addField("všechny příkazy nsfw 😏", "ass, thigh, bbw, dick, pussy, hentai")
