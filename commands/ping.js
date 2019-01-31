@@ -3,10 +3,10 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
 
     let embed = new Discord.RichEmbed()
-    .setTitle("Můj ping!")
+    .setTitle("pepe a jeho mozek")
     .setColor("#00c4eb")
-    .setDescription(`Můj ping je ${Math.round(bot.ping)}milisekund!`)
-    .setFooter(`Comando de ping`, bot.user.displayAvatarURL);
+    .setDescription(`Moje IQ má {Math.round(bot.ping)!`)
+    .setFooter(message.author.username +, bot.user.displayAvatarURL);
 
     message.channel.send(embed);
 }
