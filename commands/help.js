@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
    var embed = new Discord.RichEmbed()
-   .setAuthor("pepe a jeho kuchařka", message.author.avatarURL)
+   .setAuthor("pepe a jeho kuchařka", bot.user.displayAvatarURL)
    .setColor("GREEN")
    .setTimestamp()
    .addField("všechny main příkazy 💬", "help, ping")
