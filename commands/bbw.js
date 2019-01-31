@@ -32,6 +32,6 @@ randomPuppy(subreddit).then(async url => {
 };
 
  module.exports.help = {
-           name: 'bww', 
+           name: 'bbw', 
            aliases: ['big_women']
 } 
