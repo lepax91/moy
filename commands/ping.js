@@ -6,8 +6,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("pepe a jeho mozek")
     .setColor("#00c4eb")
     .setDescription(`Moje IQ má {Math.round(bot.ping)!`)
-    .setFooter(message.author.username +, bot.user.displayAvatarURL);
-
+    .setFooter(message.author.username + "");
     message.channel.send(embed);
 }
 
