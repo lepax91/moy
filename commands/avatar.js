@@ -10,7 +10,7 @@ if(!user) return message.channel.send("Nikdo není označen, prosím označ něk
     .setColor("RANDOM")
     return message.channel.send(avatarEmbed);
      }
-!
+
 module.exports.help = {
     name: "avatar",
     aliases: ['']
