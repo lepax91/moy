@@ -137,7 +137,7 @@ module.exports.run= async (bot, message, args) => {
     } catch(err) {console.log(`Error with work \n${err}`)}
 }
 
-module.exports.help = { // This is the config for a command. Able to add things like proper usage & etc.
-    name: "eco.work"
-    aliases: []    
+module.exports.help = {
+    name: "work",
+    aliases: []
 }
