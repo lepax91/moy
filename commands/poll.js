@@ -3,12 +3,12 @@ const Discord = require('discord.js');
 exports.run = async (bot, message, args, ops) => {
 
 	if (!message.member.roles.find("name", "@everyone")) { 
-		message.channel.send('Nemáš permisse.f');
+		message.channel.send('Nemáš permisse.');
 		return
 	}
     
     // Check for input
-    if (!args[0]) return message.channel.send('p,poll <otázka>);
+    if (!args[0]) return message.channel.send('p,poll <otázka>');
     
     // Create Embed
     const embed = new Discord.RichEmbed()
