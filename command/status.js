@@ -7,7 +7,7 @@ let os = require('os')
 let cpuStat = require("cpu-stat")
 const ms = require("ms")
 
-exports.run = (bot, message, args) => {
+module.exports.run = (bot, message, args) => {
     let cpuLol;
     cpuStat.usagePercent(function(err, percent, seconds) {
         if (err) {
@@ -34,7 +34,7 @@ exports.run = (bot, message, args) => {
 };
 
 
-exports.help = {
+module.exports.help = {
     name: "stats",
     aliases: []
 };
