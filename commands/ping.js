@@ -13,11 +13,11 @@ module.exports.run = async (bot, message, args) => {
 
     let pingembed = new Discord.RichEmbed()
         .setColor(0xff2f2f)
-        .addField('📶 Latency:', + 'ms')
+        .addField('📶 Latency:', Math.floor(botping) + 'ms')
         .addField('💻 API : ', Math.floor(bot.ping) + 'ms')
         .addField('📤 Message: ', '~' + Math.round(msgping2) + 'ms')
         .setTimestamp(new Date())
-        .setFooter(`requested by ${message.author.tag}`);
+        .setFooter('Požadováno od: ${message.author.tag}`);
 
         
     return message.channel.send(pingembed);
