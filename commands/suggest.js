@@ -27,7 +27,7 @@ module.exports.run = (bot, message, args) => {
     message.reply(`Your Suggestion is sended.`)
 return;
 
+}
 module.exports.help = {
     name: "suggest",
     aliases: ['sug']
-}
