@@ -36,6 +36,6 @@ exports.run = (bot, message, args) => {
 
 
 exports.help = {
-    name: "stats"
+    name: "stats",
     aliases: []
 };
