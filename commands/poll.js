@@ -2,8 +2,8 @@ const Discord = require('discord.js');
 
 module.exports.run = async (bot, message, args, ops) => {
 
-  if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("No no no.");	
-  if(!args[0] || args[0 == "help"]) return message.reply("Usage: !prefix <desired prefix here>"
+  if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("Ne, a ne.");	
+  if(!args[0] || args[0 == "help"]) return message.reply("Musíš jen takhle: p,poll <otázka>");
 	
     // Create Embed
     const embed = new Discord.RichEmbed()
