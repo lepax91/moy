@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 
     let gayembed = new Discord.RichEmbed()
         .setColor("#f442d4")
-        .setDescription(`Myslím si že ${message.author.username} je na ${gay}% gay.`);
+        .setTitle(`👨‍❤️‍👨 Myslím si že ${message.author.username} je na ${gay}% gay! 👨‍❤️‍👨`);
     message.delete(10);
     return message.channel.send(gayembed);
 };
