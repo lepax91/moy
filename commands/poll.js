@@ -26,3 +26,7 @@ exports.run = async (bot, message, args, ops) => {
             console.log(error);
         });
 };
+exports.help = {
+    name: 'poll',
+    aliases: ['pl']
+}
