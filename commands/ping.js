@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
         .addField('💻 API : ', Math.floor(bot.ping) + 'ms')
         .addField('📤 Message: ', '~' + Math.round(msgping2) + 'ms')
         .setTimestamp(new Date())
-        .setFooter('Požadováno od: ${message.author.tag}`);
+        .setFooter(`Požadováno od: ${message.author.tag}`);
 
         
     return message.channel.send(pingembed);
