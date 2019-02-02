@@ -24,4 +24,3 @@ exports.run = (client, message, args, tools) => {
 exports.help = {
            name: 'reverse',
            aliases: []
-}    
