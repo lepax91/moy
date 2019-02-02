@@ -1,26 +1,26 @@
-const randomPuppy = require('random-puppy'); 
+const Discord = require("discord.js");
+const client = new Discord.Client();
+const meme = require('memejs');
 
-module.exports.run = async (bot, message, args) => {
+exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
+  meme(function(data) {
+  const embed = new Discord.RichEmbed()
+  .setTitle(data.title[0])
+  .setColor("RANDOM")
+  .setImage(data.url[0])
+  message.channel.send({embed});
+  })};
 
- let reddit = ["meme"]
-                  
-
-let subreddit = reddit[Math.floor(Math.random() * reddit.length)];
-
- message.channel.startTyping(); 
-
-randomPuppy(subreddit).then(async url => {
-                    await message.channel.send({
-                            files: [{ 
-                                  attachment: url, 
-                                  name: 'meme.png' 
-                          }]           
-                   }).then(() => message.channel.stopTyping()); 
-    }).catch(err => console.error(err)); 
-
+exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  permLevel: "User"
 };
 
- module.exports.help = {
-           name: 'meme', 
-           aliases: ['memes']
-} 
+exports.help = {
+  name: "meme",
+  aliases: ["meme", "memezzzzz"],
+  category: "Miscelaneous",
+  description: "Memezzzz 4 life",
+  usage: "meme"
+};
