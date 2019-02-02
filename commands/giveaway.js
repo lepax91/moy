@@ -64,7 +64,7 @@ module.exports.run = async (bot, message, args) => {
                        .setTitle(title)
                        .setColor("RANDOM")
                        .setTimestamp()
-                       .addField('🎉 Giveaway je ukončen!' ,`Výherce je: ${gFilter}`)
+                       .addField('🎉 Giveaway je ukončeno!' ,`Výherce této soutěže je: ${gFilter}`)
                        .setFooter(message.guild.name, message.guild.iconURL);
                        m.edit(endEmbed);
                      },duration);
@@ -135,7 +135,7 @@ module.exports.run = async (bot, message, args) => {
                        .setTitle(title)
                        .setColor("RANDOM")
                        .setTimestamp()
-                       .addField('🎉 Giveaway právě teď skončil!', `Výherce této soutěže je: ${gFilter}!`)
+                       .addField('🎉 Giveaway právě teď skončilo!', `Výherce této soutěže je: ${gFilter}!`)
                        .setFooter(message.guild.name, message.guild.iconURL);
                        m.edit(endEmbed);
                      },duration);
