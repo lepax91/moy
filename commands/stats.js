@@ -16,11 +16,10 @@ const embedStats = new Discord.RichEmbed()
     .addField("• Servers",  `${client.guilds.size.toLocaleString()}`)
     .addField("• Channels", `${client.channels.size.toLocaleString()}`)
     .addField("• Discord.js" `${Discord.version}`)
-  };
   message.channel.send(embedStats)
+
     
 exports.help = {
   name: 'stats',
-  aliases: [],
-  description: 'Gives some useful bot statistics',
-  usage: 'sta'
+  aliases: []
+}
