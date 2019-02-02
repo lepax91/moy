@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-    let replies = ["Nevim, nejsem aladin 🤔 ", "Ne, zeptej se někoho jinýho.", "Myslím že ano.", "Vůbec ti nerozumím, ale asi ano"]
+    let replies = ["Ne","Ano","Nemyslím si","Zkus to znova později","Spíše ano","Raději ti to neřeknu","Můžeš se na to spolehnout"]
     let result = Math.floor((Math.random() * replies.length));
 
     let question = args.slice().join(" ");
