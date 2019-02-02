@@ -129,7 +129,8 @@ module.exports.run = async (bot, message, args) => {
                        let endEmbed = new Discord.RichEmbed()
                        .setAuthor(message.author.username, message.author.avatarURL)
                        .setTitle(title)
-                       .addField('🎉 Giveaway právě teď skončil!,`Výherce této soutěže je : ${gFilter}!')
+                       .setColor("RANDOM")
+                       .addField('🎉 Giveaway právě teď skončil!', `Výherce této soutěže je : ${gFilter}!`)
                        .setFooter(message.guild.name, message.guild.iconURL);
                        m.edit(endEmbed);
                      },duration);
