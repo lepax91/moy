@@ -47,8 +47,9 @@ module.exports.run = async (bot, message, args) => {
                 try {
                   let giveEmbed = new Discord.RichEmbed()
                   .setAuthor(`🎉 Giveaway 🎉`)
-                  .setTitle(title) 
-                  .setDescription(`Čas : ${duration / 60000} minut/a`)
+                  .setTitle(title)
+                  .setTimestamp()
+                  .setDescription(`Čas: ${duration / 60000} minut/a`)
                   .setColor("RANDOM")
                   .setFooter(message.author.username, message.author.avatarURL);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
@@ -116,7 +117,8 @@ module.exports.run = async (bot, message, args) => {
                   let giveEmbed = new Discord.RichEmbed()
                   .setAuthor(`🎉 Giveaway 🎉`)
                   .setTitle(title)
-                  .setDescription(`Čas : ${duration / 60000} minut/a`)
+                  .setTimestamp()
+                  .setDescription(`Čas: ${duration / 60000} minut/a`)
                   .setColor("RANDOM")
                   .setFooter(message.author.username, message.author.avatarURL);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
