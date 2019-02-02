@@ -10,6 +10,7 @@ module.exports.run = async (bot, message, args) => {
    .addField("všechny funny příkazy 😂👌", "meme, 8ball")
    .addField("všechny animals příkazy 🐈", "dog, cat, redpanda, panda")
    .addField("všechny nsfw příkazy 😏", "ass, thigh, bbw, hgif, feet, dick, pussy")
+   .addField("všechny moderační příkazy ⚒️", "poll, giveaway")
    .addField("všechny text příkazy 🖊️", "emojify, achievement")
    .setFooter(message.author.username + "");
    
