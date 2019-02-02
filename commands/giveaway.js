@@ -58,6 +58,7 @@ module.exports.run = async (bot, message, args) => {
                        let users = m.reactions.get("🎉").users;
                        let list = users.array().filter(u => u.id !== m.author.id);
                        let gFilter = list[Math.floor(Math.random() * list.length) + 0];
+                         if(users.size === 1) gFilter = '**Nikdo nebyl vylosován!**';    
                        let endEmbed = new Discord.RichEmbed()
                        .setAuthor(message.author.username, message.author.avatarURL)
                        .setTitle(title)
@@ -127,6 +128,7 @@ module.exports.run = async (bot, message, args) => {
                        let users = m.reactions.get("🎉").users;
                        let list = users.array().filter(u => u.id !== m.author.id);
                        let gFilter = list[Math.floor(Math.random() * list.length) + 0];
+                         if(users.size === 1) gFilter = '**Nikdo nebyl vylosován!**';
                        let endEmbed = new Discord.RichEmbed()
                        .setAuthor(message.author.username, message.author.avatarURL)
                        .setTitle(title)
