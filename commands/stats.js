@@ -3,22 +3,25 @@ const moment = require("moment");
 require("moment-duration-format");
 
 exports.run = (client, msg, args) => {
-    const duration = moment.duration(client.uptime).format(" D [days], H [hrs], m [mins], s [secs]");
     
-    
-const embedStats = new Discord.RichEmbed()
-    .setAuthor(bot.user.username)
-    .setTitle("***BOT Stats***")
-    .setColor("RANDOM")
-    .addField("• Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`)
-    .addField("• Uptime",   `${duration}`, true)
-    .addField("• Users",    `${client.users.size.toLocaleString()}`)
-    .addField("• Servers",  `${client.guilds.size.toLocaleString()}`)
-    .addField("• Channels", `${client.channels.size.toLocaleString()}`)
-    .addField("• Discord.js" `${Discord.version}`)
-  message.channel.send(embedStats)
+    let bicon = client.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+    .setTitle("Bot Information")
+    .setDescription(`Information on LewdTime:`)
+    .setColor("#b70000")
+    .setThumbnail(bicon)
+    .addField("Name", client.user.username, true)
+    .addField("Tag", client.user.tag, true)
+    .addField("ID", client.user.id, true)
+    .addField("Last Update", `${moment.duration(client.uptime).format('d[d ]h[h ]m[m ]s[s]')} ago`, true)
+    .addField("Date Of Creation", client.user.createdAt.toLocaleDateString(), true)
+    .addField("Mem Usage", ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB, true)
+    .addField("Guilds", client.guilds.size, true)
+    .addField("Users", client.users.size, true)
+    .setTimestamp();
+    return message.channel.send(botembed);
+  }
 
-    
 exports.help = {
   name: 'stats',
   aliases: []
