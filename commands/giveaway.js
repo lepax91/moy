@@ -47,8 +47,8 @@ module.exports.run = async (bot, message, args) => {
                 try {
                   let giveEmbed = new Discord.RichEmbed()
                   .setAuthor(`🎉 Giveaway 🎉`)
-                  .setTitle(title)
-                  .setDescription(`Čas : ${duration / 60000} minut`)
+                  .setTitle(title) 
+                  .setDescription(`Čas : ${duration / 60000} minut/a`)
                   .setColor("RANDOM")
                   .setFooter(message.author.username, message.author.avatarURL);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
@@ -60,7 +60,8 @@ module.exports.run = async (bot, message, args) => {
                        let endEmbed = new Discord.RichEmbed()
                        .setAuthor(message.author.username, message.author.avatarURL)
                        .setTitle(title)
-                       .addField('🎉 Giveaway je ukončen!' ,`Výherce je : ${gFilter}`)
+                       .setColor("RANDOM")
+                       .addField('🎉 Giveaway je ukončen!' ,`Výherce je: ${gFilter}`)
                        .setFooter(message.guild.name, message.guild.iconURL);
                        m.edit(endEmbed);
                      },duration);
@@ -115,7 +116,7 @@ module.exports.run = async (bot, message, args) => {
                   let giveEmbed = new Discord.RichEmbed()
                   .setAuthor(`🎉 Giveaway 🎉`)
                   .setTitle(title)
-                  .setDescription(`Čas : ${duration / 60000} minut`)
+                  .setDescription(`Čas : ${duration / 60000} minut/a`)
                   .setColor("RANDOM")
                   .setFooter(message.author.username, message.author.avatarURL);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
@@ -128,7 +129,7 @@ module.exports.run = async (bot, message, args) => {
                        .setAuthor(message.author.username, message.author.avatarURL)
                        .setTitle(title)
                        .setColor("RANDOM")
-                       .addField('🎉 Giveaway právě teď skončil!', `Výherce této soutěže je : ${gFilter}!`)
+                       .addField('🎉 Giveaway právě teď skončil!', `Výherce této soutěže je: ${gFilter}!`)
                        .setFooter(message.guild.name, message.guild.iconURL);
                        m.edit(endEmbed);
                      },duration);
