@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   var filter = m => m.author.id === message.author.id;
  // if(message.content.startsWith(prefix + "giveaway")) {
 
-    if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **you should have "MANAGE GUILD" permission**');
+    if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':x: | Zamítnuto, tuto akci nemohu udělat protože nemám pravomoc!');
     message.channel.send(`🤔 | V jakém kanálu chceš začít giveaway?`).then(msgg => {
       message.channel.awaitMessages(filter, {
         max: 1,
@@ -33,7 +33,7 @@ module.exports.run = async (bot, message, args) => {
             time: 20000,
             errors: ['time']
           }).then(collected => {
-            if(isNaN(collected.first().content)) return message.channel.send(':heavy_multiplication_x:| **you must rewrite the command``write a correct time``**');
+            if(isNaN(collected.first().content)) return message.channel.send(':x: | Tento čas není k dispozici!');
             duration = collected.first().content * 60000;
             collected.first().delete();
             msgg.edit('🤔 | Jaká bude cena?').then(msg => {
