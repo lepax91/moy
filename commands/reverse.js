@@ -21,6 +21,6 @@ exports.run = (client, message, args, tools) => {
   .addField('Output: ', '```' + `${sreverse}` + '```')
   message.channel.send({embed: reverseEmbed})
     
-exports.help = {
+exports.help =
            name: 'reverse',
            aliases: []
