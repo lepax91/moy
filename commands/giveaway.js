@@ -48,7 +48,8 @@ module.exports.run = async (bot, message, args) => {
                   let giveEmbed = new Discord.RichEmbed()
                   .setAuthor(`🎉 Giveaway 🎉`)
                   .setTitle(title)
-                  .setDescription(`Time : ${duration / 60000} Minute`)
+                  .setDescription(`Čas : ${duration / 60000} minut`)
+                  .setColor("RANDOM")
                   .setFooter(message.author.username, message.author.avatarURL);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
                      let re = m.react('🎉');
@@ -113,9 +114,10 @@ module.exports.run = async (bot, message, args) => {
                 collected.first().delete();
                 try {
                   let giveEmbed = new Discord.RichEmbed()
-                  .setAuthor(`Tanki Online`)
+                  .setAuthor(`🎉 Giveaway 🎉`)
                   .setTitle(title)
-                  .setDescription(`Time : ${duration / 60000} Minute`)
+                  .setDescription(`Čas : ${duration / 60000} minut`)
+                  .setColor("RANDOM")
                   .setFooter(message.author.username, message.author.avatarURL);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
                      let re = m.react('🎉');
