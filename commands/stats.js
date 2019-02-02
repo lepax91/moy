@@ -1,5 +1,4 @@
-
-const { version } = require("discord.js");
+const Discord = require("discord.js");
 const moment = require("moment");
 require("moment-duration-format");
 let os = require('os')
@@ -23,7 +22,7 @@ exports.run = (client, message, args) => { // eslint-disable-line no-unused-vars
     .addField("• Users", `${client.users.size.toLocaleString()}`, true)
     .addField("• Servers", `${client.guilds.size.toLocaleString()}`, true)
     .addField("• Channels ", `${client.channels.size.toLocaleString()}`, true)
-    .addField("• Discord.js", `v${version}`, true)
+    .addField("• Library", "discord.js", true)
     .addField("• Node", `${process.version}`, true)
     .addField("• CPU", `\`\`\`md\n${os.cpus().map(i => `${i.model}`)[0]}\`\`\``)
     .addField("• CPU usage", `\`${percent.toFixed(2)}%\``,true)
@@ -47,3 +46,4 @@ exports.help = {
   description: "Gives some useful bot statistics",
   usage: "stats"
 };
+
