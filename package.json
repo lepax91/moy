@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.4.2",
+    "superagent": "^3.8.3",
     "random-puppy": "^1.1.0",
     "simple-youtube-api": "^5.0.2",
     "snekfetch": "^4.0.4",
