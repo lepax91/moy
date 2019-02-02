@@ -18,14 +18,7 @@ const embedStats = new Discord.RichEmbed()
     .addField("• Discord.js" `${Discord.version}`)
   };
   message.channel.send(embedStats)
-});
     
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  permLevel: 0
-};
-
 exports.help = {
   name: 'stats',
   aliases: [],
