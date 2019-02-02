@@ -63,6 +63,7 @@ module.exports.run = async (bot, message, args) => {
                        .setAuthor(message.author.username, message.author.avatarURL)
                        .setTitle(title)
                        .setColor("RANDOM")
+                       .setTimestamp()
                        .addField('🎉 Giveaway je ukončen!' ,`Výherce je: ${gFilter}`)
                        .setFooter(message.guild.name, message.guild.iconURL);
                        m.edit(endEmbed);
@@ -133,6 +134,7 @@ module.exports.run = async (bot, message, args) => {
                        .setAuthor(message.author.username, message.author.avatarURL)
                        .setTitle(title)
                        .setColor("RANDOM")
+                       .setTimestamp()
                        .addField('🎉 Giveaway právě teď skončil!', `Výherce této soutěže je: ${gFilter}!`)
                        .setFooter(message.guild.name, message.guild.iconURL);
                        m.edit(endEmbed);
