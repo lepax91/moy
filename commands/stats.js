@@ -16,7 +16,6 @@ const embedStats = new Discord.RichEmbed()
     .addField("• Servers",  `${client.guilds.size.toLocaleString()}`)
     .addField("• Channels", `${client.channels.size.toLocaleString()}`)
     .addField("• Discord.js" `v${Discord.version}`)
-    .addField("• Node", `${process.version}`, {code: "asciidoc"});`)
   };
   message.channel.send(embedStats)
 });
