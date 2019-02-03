@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
    .setTimestamp()
    .addField("všechny main příkazy 💬", "help, ping")
    .addField("všechny funny příkazy 😂👌", "meme, 8ball")
-   .addField("všechny animals příkazy 🐈", "dog, cat")
+   .addField("všechny animals příkazy 🐈", "dog, cat, bunny")
    .addField("všechny nsfw příkazy 😏", "ass, pussy, hentai")
    .addField("všechny moderační příkazy ⚒️", "poll, giveaway")
    .addField("všechny text příkazy 🖊️", "emojify, achievement")
