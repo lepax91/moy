@@ -1,38 +1,22 @@
 const Discord = require('discord.js')
-const db = require('quick.db')
 exports.run = (client, message, args) => {
-    if(!message.member.permissions.has('ADMINISTRATOR')) {
-        message.reply(':x: | Nemáš žádnou pravomoc!')
-        return
-    }
-    var prefix = db.fetch(`guild_${message.guild.id}.prefix`)
-    var args1 = message.content.toLowerCase().split(' ')
-    if(!args1[1]) {
-        var prefix = db.fetch(`guild_${message.guild.id}.prefix`)
-        var embed = new Discord.RichEmbed()
-        .setDescription('✅ | Váš prefix na tomto botovy je:`' + prefix + '`')
-        .setColor('RANDOM')
-        message.channel.send(embed)
-    }
-    if(args1[1] === 'set') {
-        var setprefix = args1[2]
-        if(!setprefix) {
-            message.reply('🤔 | Zadejte jakýkoliv prefix!')
-            return
-        }
-        if(setprefix.lenght > 5) {
-            message.reply('❌ | Žádný prefix nikdy nesmí mít 5 znaků!')
-            return
-        }
-        db.set(`guild_${message.guild.id}.prefix`, setprefix)
-        var embed1 = new Discord.RichEmbed()
-        .setDescription(`✅ | Nastaven prefix na  \`${setprefix}\` pro tento server.`)
-        .setColor('RANDOM')
-        .setFooter('ID: ' + message.guild.id, client.user.avatarURL)
-        message.channel.send(embed1)
-    }
+    const db = require('quick.db')
+    var args1 = message.content.split(' ')
+    var user = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args1[1]) || message.guild.member(message.author)
+    var currentLevel = db.fetch(`level_${user.id}.level`)
+    var currentXp = db.fetch(`level_${user.id}.xp`)
+    var nextLevel = currentLevel * 100;
+    var xpToNextLevel = (currentLevel * 100) - currentXp
+    var embed = new Discord.RichEmbed()
+    .setAuthor(user.user.username, user.user.avatarURL)
+    .addField('Level', currentLevel, true)
+    .addField('XP', currentXp, true)
+    .addField('XP do dalšího levelu!, xpToNextLevel, true)
+    .setColor('RANDOM')
+    .setFooter('Kuchař Pepe 👌', client.user.avatarURL)
+    message.channel.send(embed)
 }
 exports.help = {
-    name: 'prefix',
+    name: 'rank',
     aliases: []
 }
