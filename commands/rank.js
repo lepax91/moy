@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
     .setAuthor(user.user.username, user.user.avatarURL)
     .addField('Level', currentLevel, true)
     .addField('XP', currentXp, true)
-    .addField('XP do dalšího levelu!, xpToNextLevel, true)
+    .addField('XP do dalšího levelu!', xpToNextLevel, true)
     .setColor('RANDOM')
     .setFooter('Kuchař Pepe 👌', client.user.avatarURL)
     message.channel.send(embed)
