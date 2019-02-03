@@ -24,6 +24,7 @@
     "filter": "^0.1.1",
     "mathjs": "^5.4.2",
     "quick.db": "^7.0.0-b16",
+    "quick.hook": "^1.5.1",
     "random-puppy": "^1.1.0",
     "weather-js": "^2.0.0",
     "memejs": "^1.0.7",
