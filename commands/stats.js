@@ -37,6 +37,6 @@ exports.run = (bot, message, args) => { // eslint-disable-line no-unused-vars
 
 
 exports.help = {
-    name: "stats"
+    name: "stats",
     aliases: []
 };
