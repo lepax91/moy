@@ -7,10 +7,11 @@ module.exports.run = async (bot, message, args) => {
    .setColor("GREEN")
    .setTimestamp()
    .addField("🤔 Main:", "help, ping")
+   .addField("💻 Matematika:", "calculator")
    .addField("😂 Funny:", "meme, 8ball")
    .addField("🐶 Animals:", "dog, cat, bunny")
    .addField("🔞 NSFW:", "ass, pussy, hentai")
-   .addField("⚒️ Moderation:", "poll, giveaway")
+   .addField("⚒️ Moderation:", "poll💻, giveaway")
    .addField("🖊️ Text:", "emojify, achievement")
    .setFooter(message.author.username + "");
    
