@@ -20,6 +20,7 @@ exports.run = (bot, message, args) => { // eslint-disable-line no-unused-vars
             .setColor("RANDOM")
             .addField("💻 Mem Usage", `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} / ${(os.totalmem() / 1024 / 1024).toFixed(2)} MB`, true)
             .addField("⏱️ Uptime ", `${duration}`, true)
+            .addField("📶 Latency", `${Math.round(bot.ping)}ms`)  
             .addField("👨 Users", `${bot.users.size.toLocaleString()}`, true)
             .addField("📊 Servers", `${bot.guilds.size.toLocaleString()}`, true)
             .addField("📝 Channels ", `${bot.channels.size.toLocaleString()}`, true)
@@ -29,7 +30,7 @@ exports.run = (bot, message, args) => { // eslint-disable-line no-unused-vars
             .addField("💡 CPU usage", `\`${percent.toFixed(2)}%\``, true)
             .addField("📖 Arch", `\`${os.arch()}\``, true)
             .addField("🔍 Platform", `\`\`${os.platform()}\`\``, true)
-            .setFooter("⚒️ Development: lepax_#1234")
+            .setFooter("⚒️ Kuchař pepe - Development")
         message.channel.send(embedStats)
     });
 };
