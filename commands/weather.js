@@ -24,3 +24,7 @@ module.exports.run = (client, message, args) => {
           message.channel.send({embed});
   })
 }
+module.exports.help = {
+    name: "weather",
+    aliases: []
+}
