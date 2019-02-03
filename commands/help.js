@@ -6,12 +6,12 @@ module.exports.run = async (bot, message, args) => {
    .setAuthor("pepe a jeho kuchařka", bot.user.displayAvatarURL)
    .setColor("GREEN")
    .setTimestamp()
-   .addField("všechny main příkazy 💬", "help, ping, stats")
-   .addField("všechny funny příkazy 😂👌", "meme, 8ball")
-   .addField("všechny animals příkazy 🐈", "dog, cat, bunny")
-   .addField("všechny nsfw příkazy 😏", "ass, pussy, hentai")
-   .addField("všechny moderační příkazy ⚒️", "poll, giveaway")
-   .addField("všechny text příkazy 🖊️", "emojify, achievement")
+   .addField("🤔 Main:", "help, ping")
+   .addField("😂 Funny:", "meme, 8ball")
+   .addField("🐶 Animals:", "dog, cat, bunny")
+   .addField("🔞 NSFW:", "ass, pussy, hentai")
+   .addField("⚒️ Moderation:", "poll, giveaway")
+   .addField("🖊️ Text:", "emojify, achievement")
    .setFooter(message.author.username + "");
    
    message.channel.send(embed)
