@@ -1,30 +1,103 @@
-const Discord = require('discord.js');
-const weather = require('weather-js');
+const Jimp = require('jimp');
+const GIFEncoder = require('gifencoder');
 
-module.exports.run = (client, message, args) => {
-  weather.find({search: args.join(" "), degreeType: 'C'}, function(err, result) {
-      if (err) message.channel.send(err);
-      if (result === undefined || result.length === 0) {
-          message.channel.send('**Please enter a location!**')
-          return;
-      }
-      var current = result[0].current;
-      var location = result[0].location;
-      const embed = new Discord.RichEmbed()
-          .setDescription(`**${current.skytext}**`)
-          .setAuthor(`Weather for ${current.observationpoint}`)
-          .setThumbnail(current.imageUrl)
-          .setColor(0x00AE86)
-          .addField('Timezone',`UTC${location.timezone}`, true)
-          .addField('Degree Type',location.degreetype, true)
-          .addField('Temperature',`${current.temperature} Degrees`, true)
-          .addField('Feels Like', `${current.feelslike} Degrees`, true)
-          .addField('Winds',current.winddisplay, true)
-          .addField('Humidity', `${current.humidity}%`, true)
-          message.channel.send({embed});
-  })
+const options = {
+    size: 256,
+    frames: 8
 }
-module.exports.help = {
-    name: "weather",
-    aliases: []
+
+module.exports = class TriggeredCommand extends Command {
+    constructor(client) {
+        super(client, {
+            name: 'triggered',
+            aliases: [],
+            group: 'memes',
+            memberName: 'triggered',
+            guildOnly: true,
+            description: 'T R I G G E R E D',
+            examples: ['~triggered <mention/url>'],
+            throttling: {
+                usages: 1,
+                duration: 10
+            }
+        });
+    }
+c
+    async run(message) {
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+
+        if (!message.channel.permissionsFor(this.client.user).has('ATTACH_FILES')) {
+            return message.channel.send('I can\'t attach messages!');
+        }
+
+        await message.channel.startTyping()
+
+        const args = message.content.split(" ").slice(1)
+
+        let avatarurl = (message.mentions.users.size > 0 ? message.mentions.users.first().displayAvatarURL({ format: 'png' }) : message.author.displayAvatarURL({ format: 'png' }));
+        if (['jpg', 'jpeg', 'gif', 'png', 'webp'].some(x => args.join(' ').includes(x))) {
+            avatarurl = args.join(' ').replace(/gif|webp/g, 'png')
+        }
+
+        const base = new Jimp(options.size, options.size);
+        const avatar = await Jimp.read(avatarurl);
+        const text = await Jimp.read('assets/images/triggered.jpg');
+        const tint = await Jimp.read('assets/images/red.png');
+
+        avatar.resize(320, 320);
+        tint.scaleToFit(base.bitmap.width, base.bitmap.height)
+        tint.opacity(0.2)
+        text.scaleToFit(280, 60)
+
+        const frames = [];
+        const buffers = [];
+        const encoder = new GIFEncoder(options.size, options.size);
+        const stream = encoder.createReadStream();
+        let temp
+
+        stream.on('data', async buffer => await buffers.push(buffer));
+        stream.on('end', async() => {
+            await message.channel.send({
+                files: [{
+                    name: 'triggered.gif',
+                    attachment: Buffer.concat(buffers)
+                }]
+            })
+            await message.channel.stopTyping();
+
+            return null;
+        })
+
+        for (let i = 0; i < options.frames; i++) {
+            temp = base.clone()
+
+            if (i === 0) {
+                temp.composite(avatar, -16, -16)
+            } else {
+                temp.composite(avatar, -32 + getRandomInt(-16, 16), -32 + getRandomInt(-16, 16))
+            }
+
+            temp.composite(tint, 0, 0)
+
+            if (i === 0) {
+                temp.composite(text, -10, 200)
+            } else {
+                temp.composite(text, -12 + getRandomInt(-8, 8), 200 + getRandomInt(-0, 12))
+            }
+
+            frames.push(temp.bitmap.data)
+        }
+
+        encoder.start()
+        encoder.setRepeat(0)
+        encoder.setDelay(20)
+        for (const frame of frames) {
+            encoder.addFrame(frame)
+        }
+        encoder.finish()
+
+    }
 }
