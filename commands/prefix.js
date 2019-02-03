@@ -33,5 +33,6 @@ exports.run = (client, message, args) => {
     }
 }
 exports.help = {
-    name: 'prefix', 
+    name: 'prefix',
+    aliases: []
 }
