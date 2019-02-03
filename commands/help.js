@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
    .addField("😂 Funny:", "meme, 8ball")
    .addField("🐶 Animals:", "dog, cat, bunny")
    .addField("🔞 NSFW:", "ass, pussy, hentai")
-   .addField("⚒️ Moderation:", "poll💻, giveaway")
+   .addField("⚒️ Moderation:", "poll, giveaway")
    .addField("🖊️ Text:", "emojify, achievement")
    .setFooter(message.author.username + "");
    
