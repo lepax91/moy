@@ -1,10 +1,10 @@
 var math = require('mathjs');
 
 exports.run = (bot, message, args, command) => {
-    console.log(`[${message.author.tag}] [${message.author.id}] did command [${command}.js]`)
+    console.log(`[${message.author.tag}] [${message.author.id}] napsal command [${command}.js]`)
     let input = args.join(" ");
     if (!input) {
-        message.reply('__You must provide a equation to be solved on the calculator!__');
+        message.reply('❌ | Musíš zadat nějaký příklad: **1+2**');
         return;
     }
 
@@ -14,15 +14,15 @@ exports.run = (bot, message, args, command) => {
     try {
         answer = math.eval(question);
     } catch (err) {
-        return message.reply(`**Invalid math equation:** ${err}`);
+        return message.reply(`❌ | Tento symbol nepodporuje kalkulačku!`);
     }
 
     const Discord = require('discord.js');
     const embed = new Discord.RichEmbed()
         .setThumbnail("https://images-na.ssl-images-amazon.com/images/I/31QYTepQomL.png")
         .setColor('RANDOM')
-        .addField("**Question:**", question, true)
-        .addField("**Answer:**", answer)
+        .addField("📝 Příklad:", question, true)
+        .addField("💻 Odpověď:", answer)
 
     message.channel.send({
         embed
