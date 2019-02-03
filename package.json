@@ -21,7 +21,7 @@
     "cpu-stat": "^2.0.1",
     "ms": "^2.1.1",
     "twitter": "^1.7.1",
-    "filter":  "^0.1.1,
+    "filter": "^0.1.1",
     "mathjs": "^5.4.2",
     "quick.db": "^7.0.0-b16",
     "random-puppy": "^1.1.0",
