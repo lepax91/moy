@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const quiz
   { q: "Ve větě jsou chyby oprav: bily sme toma, kde sme lustyli kryzovky.", a: ["Byly jsme doma, kde jsme luštili křížovky."] },
   { q: "Může byt ve slově, mýt tvrdé y?", a: ["Ano", "ano"] },
-  { q: "Tyto slova mají chybu oprav je: mněký, ztrom, sub, bit, víška", a: ["měkký, strom, zub, byt, výška", "měkký, strom, byt, víška] }                         
+  { q: "Tyto slova mají chybu oprav je: mněký, ztrom, sub, bit, víška", a: ["měkký, strom, zub, byt, výška", "měkký, strom, byt, víška"] }                         
 ];
 const options = {
   max: 1,
