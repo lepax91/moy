@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
   
   const item = quiz[Math.floor(Math.random() * quiz.length)];
   await message.channel.send(item.q)
-  try 
+  try {
     const collected = await message.channel.awaitMessages(answer => item.a.includes(answer.content.toLowerCase()), options);
     const winnerMessage = collected.first();
     return message.channel.send({embed: new Discord.RichEmbed()
