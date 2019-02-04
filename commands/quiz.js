@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
-const quiz = [
-  { q: "Jaký byl můj největší projekt na Discordu?", a: ["dot"] },
-  { q: "Dokonči větu aby se rýmovala: Otrok viděl velký _____.", a: ["potok", "kokot"] },
-  { q: "Vyjmenuj aspoň jeden meme, který znaš nazpaměť.", a: ["big chungus", "uganda knuckles", "sanic", "deja vu"] },
+const quiz
+  { q: "Ve větě jsou chyby oprav: bily sme toma, kde sme lustyli kryzovky.", a: ["Byly jsme doma, kde jsme luštili křížovky."] },
+  { q: "Může byt ve slově, mýt tvrdé y?", a: ["Ano", "ano"] },
+  { q: "Tyto slova mají chybu oprav je: mněký, ztrom, sub, bit, víška", a: ["měkký, strom, zub, byt, výška", "měkký, strom, byt, víška] }                         
 ];
 const options = {
   max: 1,
@@ -13,8 +13,8 @@ const options = {
 module.exports.run = async (bot, message, args) => {
   
   const item = quiz[Math.floor(Math.random() * quiz.length)];
-  await message.channel.send(item.q);
-  try {
+  await message.channel.send(item.q)
+  try 
     const collected = await message.channel.awaitMessages(answer => item.a.includes(answer.content.toLowerCase()), options);
     const winnerMessage = collected.first();
     return message.channel.send({embed: new Discord.RichEmbed()
