@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const quiz = [
   { q: "Jaký byl můj největší projekt na Discordu?", a: ["dot"] },
-  { q: "Dokonči větu aby se rýmovala: _Otrok viděl velký ..._ ", a: ["potok", "kokot"] },
+  { q: "Dokonči větu aby se rýmovala: Otrok viděl velký _____.", a: ["potok", "kokot"] },
   { q: "Vyjmenuj aspoň jeden meme, který znaš nazpaměť.", a: ["big chungus", "uganda knuckles", "sanic", "deja vu"] },
 ];
 const options = {
@@ -18,17 +18,17 @@ module.exports.run = async (bot, message, args) => {
     const collected = await message.channel.awaitMessages(answer => item.a.includes(answer.content.toLowerCase()), options);
     const winnerMessage = collected.first();
     return message.channel.send({embed: new Discord.RichEmbed()
-                                 .setAuthor(`Výherce tohoto kvízu je: ${winnerMessage.author.tag}`, winnerMessage.author.displayAvatarURL)
-                                 .setTitle(`Správná Odpověď: \${winnerMessage.content}\``)
+                                 .setAuthor(`✅ Správně! | Výherce tohoto kvízu je: ${winnerMessage.author.tag}`, winnerMessage.author.displayAvatarURL)
+                                 .setTitle(`Správná Odpověď: \`${winnerMessage.content}\``)
                                  .setFooter(`Otázka: ${item.q}`)
                                  .setColor(message.guild.me.displayHexColor)
                                 })
-  } catch (_) {
+    } catch (_) {
     return message.channel.send({embed: new Discord.RichEmbed()
-                                 .setAuthor('❌ | Nikdo neodpověděl!')
-                                 .setColor("RED")
-                                 .setDescription(`Správná odpověď(i): \`${item.a}\``)
-                                 .setFooter(`Otázka: ${item.q}`) })
+                                 .setAuthor('❌ Žádná odpověď!')
+                                 .setTitle(`Správná Odpověď (i): \`${item.a}\``)
+                                 .setFooter(`Otázka: ${item.q}`)
+                                })
   }
 }
 module.exports.help = {
