@@ -9,7 +9,7 @@ exports.run = (client, msg, args) => {
       msg.channel.send({ file: response.body.message });
     });
   } else {
-    msg.channel.send("Jseš si jistý, že toto je správný kanál? 🤔")
+    msg.channel.send("🔞 | On this channel is not allowed NSFW content!")
   }
 };
 module.exports.help = {
