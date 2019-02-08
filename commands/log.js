@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
    .setColor("RANDOM")
    .addField("Development:", aUser);
    //let Achannel = 
-   let Achannel = message.guild.channels.find(`name`, "update");
+   let Achannel = message.guild.channels.find(`name`, "updates");
    Achannel.send(embed)
 }
 
