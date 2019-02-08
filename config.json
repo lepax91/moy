@@ -1,6 +1,6 @@
 {
   "prefix": ".",
-  "logsChannel": "logs",
+  "logsChannel": "updates",
   "reportsChannel": "reports",
 
   "activity": {
