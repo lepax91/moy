@@ -8,6 +8,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
   .setTitle(data.title[0])
   .setColor("RANDOM")
   .setImage(data.url[0])
+  .setTimestamp()
   message.channel.send({embed});
   })};
 
