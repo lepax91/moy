@@ -4,7 +4,7 @@
   "reportsChannel": "reports",
 
   "activity": {
-    "streaming": false,
-    "game": "vaří pro pepeho"
+    "streaming": true,
+    "game": "Dot | Pre-Alpha 1.2"
   }
 }
