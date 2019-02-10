@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
 
   let hugEmbed = new Discord.RichEmbed()
   .setTitle(`**Tickle Tickle! 🤣**`)
-  .setDescription(`${message.author} kissed ${message.mentions.users.first()}!`)
+  .setDescription(`${message.author} tickled ${message.mentions.users.first()}!`)
   .setImage(body.url)
   .setColor("RANDOM")
   .setFooter("Version: 1.2", bot.user.displayAvatarURL)
