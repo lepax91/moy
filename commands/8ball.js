@@ -7,9 +7,9 @@ module.exports.run = async (bot, message, args) => {
     let question = args.slice().join(" ");
 
     let embedz = new Discord.RichEmbed()
-        .setAuthor(message.author.username + " Ptá se: " + question)
+        .setAuthor(message.author.username + " se ptá: " + question)
         .setColor("RANDOM")
-        .addField("Odpověď", "Zeptal se:" + message.author.tag + "\nOdpověď: " + replies[result] + "")
+        .addField("", " Zeptal se: " + message.author.tag + "\nOdpověď: " + replies[result] + "")
 
     message.channel.send(embedz)
 };
