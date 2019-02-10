@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     let embedz = new Discord.RichEmbed()
         .setAuthor(message.author.username + " se ptá: " + question)
         .setColor("RANDOM")
-        .addField("Odpovědi", " Zeptal se: " + message.author.tag + "\nOdpověď: " + replies[result] + "")
+        .addField("Odpověď", " Zeptal se: " + message.author.tag + "\nOdpověď: " + replies[result] + "")
 
     message.channel.send(embedz)
 };
