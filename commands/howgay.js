@@ -12,5 +12,6 @@ module.exports.run = async (bot, message, args, prefix) => {
 };
 
 module.exports.help = {
-    name: "howgay"
+    name: "howgay",
+    aliases: []
 };
