@@ -3,7 +3,7 @@ const superagent = require('superagent')
 
 module.exports.run = (client, msg, args) => {
 
-let slapUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+  let slapUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(!slapUser) return message.channel.send("😡 Ok, I'm angry once more, and I'm gonna give you a slap!")
   const { body } = await superagent
   .get(`https://nekos.life/api/v2/img/slap`);
