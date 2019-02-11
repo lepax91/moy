@@ -9,7 +9,7 @@ bot.on("ready", async () => {
         });
     } else {
         bot.user.setActivity(config.activity.game, {
-            type: 'STREAMING'
+            type: 'PLAYING'
         }); //PLAYING, LISTENING, WATCHI
     }
 });
