@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args, ops) => {
     // Create Embed
     const embed = new Discord.RichEmbed()
         .setColor("RANDOM") //To change color do .setcolor("#fffff")
-        .setFooter(`${message.author.username} create poll!)		
+        .setFooter(`${message.author.username} create poll!`)		
         .setDescription(args.join(' '))
         .setTitle('**Poll Message!**);
         
