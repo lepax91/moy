@@ -26,4 +26,3 @@ module.exports.help = {
     name: "kiss",
     aliases: []
 }
-    
