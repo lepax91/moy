@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const sm = require('string-similarity');
 
-exports.run = (client, message, args, tools) => {
+exports.run = (message, args, tools) => {
   
   let members = [];
   let indexes = [];
