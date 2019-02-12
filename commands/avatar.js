@@ -1,36 +1,37 @@
-const Discord = require('discord.js');
-const sm = require('string-similarity');
+const Discord = require("discord.js");
+const PREFIX = "."
 
-exports.run = (message, args, tools) => {
-  
-  let members = [];
-  let indexes = [];
-  
-  message.guild.members.forEach(function(member){
-    members.push(member.user.username);
-    indexes.push(member.id);
-  })
-  let match = sm.findBestMatch(args.join(' '), members);
-  let username = match.bestMatch.target;
-  let member = message.guild.members.get(indexes[members.indexOf(username)])
-  let usernameUser = '';
-  let UserMention = '';
-  
-  if(!args[0]) {
-    usernameUser = message.author
-    UserMention = message.member
-  } else {
-  let mention = message.mentions.users.first()
-    usernameUser = mention || member.user
-    UserMention = message.mentions.members.first() || message.guild.members.get(args[0]) || member
-  }
-  message.channel.send({embed: new Discord.MessageEmbed()
-                        .setAuthor(`${usernameUser.tag}'s avatar`)
-                        .setColor('RANDOM')
-                        .setImage(usernameUser.displayAvatarURL({size: 2048}))
-  })
-};
-exports.help = {
+// This is the brackets in which the command goes in
+module.exports.run = async (bot, message, args) => {
+    if(!message.content.startsWith(PREFIX)) return;
+
+    if(args[0] == "help"){
+        message.reply("Just like this:  `.avatar <@user/bot>`");
+        return;
+    };  
+    let target = message.mentions.users.first() || message.author;
+
+        message.channel.send({embed: {
+        color: 1339135,
+        image: {
+            url: (target.displayAvatarURL)
+          },
+        timestamp: new Date(),
+        footer: {
+          icon_url: bot.user.displayAvatarURL ,
+          text: "Version: 1.2",
+        },
+        author: {
+            icon_url: message.guild.iconURL,
+            name: `${usernameUser.tag}'s avatar`,
+          }
+        }});
+
+        msg.delete();
+}
+module.exports.help = {
     name: "avatar",
-    aliases: []
+    aliases: [], 
+    description: "Displays avatar."
+	
 }
