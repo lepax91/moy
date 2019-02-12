@@ -4,7 +4,7 @@ const superagent = require("snekfetch");
 module.exports.run = async (bot, message, args) => {
   
   if(args[0] == "help"){
-        message.reply("❓ Example: `.tickle <@user>");
+        message.reply("❓ Example: `.tickle <@user>`");
         return;
   };
   let hugUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
