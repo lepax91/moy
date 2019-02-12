@@ -30,3 +30,7 @@ exports.run = (client, message, args, tools) => {
                         .setImage(usernameUser.displayAvatarURL({size: 2048}))
   })
 };
+exports.help = {
+    name: "avatar",
+    aliases: []
+}
