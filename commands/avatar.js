@@ -6,11 +6,11 @@ module.exports.run = async (bot, message, args) => {
     if(!message.content.startsWith(PREFIX)) return;
 
     if(args[0] == "help"){
-        message.reply("Just like this:  `.avatar <@user/bot>`");
+        message.send("❓ | `.avatar <@user/bot>`");
         return;
     };  
-    let target = message.mentions.users.first() || message.author;
-
+    let user = message.mentions.users.first
+    
         message.channel.send({embed: {
         color: 1339135,
         image: {
