@@ -1,6 +1,11 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
+    
+   if(args[0] == "help"){
+        message.reply("❓ Example: `.8ball <question>");
+        return;
+    };
     let replies = ["Ne", "Ano", "Nemyslím si", "Zkus to znova později", "Spíše ano", "Raději ti to neřeknu", "Můžeš se na to spolehnout"]
     let result = Math.floor((Math.random() * replies.length));
 
