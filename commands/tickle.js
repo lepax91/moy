@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
         return;
   };
   let hugUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(!hugUser) return message.channel.send("**❕ | First u need type on any channel command: `.kiss help`!**")
+  if(!hugUser) return message.channel.send("**❕ |  First u need type on any channel command: `.tickle help`!**")
   const { body } = await superagent
   .get(`https://nekos.life/api/v2/img/tickle`);
 
