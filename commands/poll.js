@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args, ops) => {
         .setColor("RANDOM") //To change color do .setcolor("#fffff")
         .setFooter(`${message.author.username} create poll!`)		
         .setDescription(args.join(' '))
-        .setTitle('**Poll Message!**);
+        .setTitle('**Poll Message!**');
         
     let msg = await message.channel.send(embed)
         .then(function (msg) {            
