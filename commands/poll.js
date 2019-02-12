@@ -8,9 +8,9 @@ module.exports.run = async (bot, message, args, ops) => {
     // Create Embed
     const embed = new Discord.RichEmbed()
         .setColor("RANDOM") //To change color do .setcolor("#fffff")
-        .setFooter(`${message.author.username} create poll!`)		
+        .setFooter(`❓ Who created poll: ${message.author.username}`)		
         .setDescription(args.join(' '))
-        .setTitle('**Poll Message!**');
+        .setTitle('🗨️ Poll Message 🗨️');
         
     let msg = await message.channel.send(embed)
         .then(function (msg) {            
@@ -24,4 +24,4 @@ module.exports.run = async (bot, message, args, ops) => {
 module.exports.help = {
     name: 'poll',
     aliases: ['pl']
-}
+}w
