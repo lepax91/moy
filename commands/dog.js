@@ -12,3 +12,7 @@ module.exports.run = async (client, message, args) => {
     message.channel.send(dogembed);
 
 }
+module.exports.help = {
+    name: "dog",
+    aliases: []
+};
