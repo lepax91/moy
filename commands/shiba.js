@@ -4,7 +4,7 @@ module.exports.run = async (client, message, args) => {
     let {
         body
     } = await superagent
-        .get(`http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=false`);
+        .get(`http://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true`);
     const dogembed = new Discord.RichEmbed()
         .setTitle("Aww... Shiba! 😍")
         .setColor("RANDOM")
