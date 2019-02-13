@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
       .setColor("RANDOM")
       .setImage(result.body.url)            
       msg.channel.send({ embed });
-}                                           
+        
 module.exports.help = {
     name: "duck",
     aliases: []
