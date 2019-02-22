@@ -32,17 +32,9 @@ exports.run = (client, message, args) => {
 
   const embed = new RichEmbed()
       .setColor(0x36393E)
-      .setAuthor(`${message.author.username}`, `${message.author.avatarURL}`)
       .setImage(`https://discordapp.com/api/emojis/${mojiid}${extn}`);
   message.channel.send({embed}).catch(error => {return message.channel.send(`Please type a valid custom emoji, ${message.author.username}`).catch(error);});
-};
-
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ['bigemoji', 'bmoji', 'bmj'],
-  permLevel: 0
-};
+}:
 
 exports.help = {
   name: 'bigmoji',
