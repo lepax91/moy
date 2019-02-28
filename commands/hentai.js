@@ -1,18 +1,21 @@
-const discord = require('discord.js');
-const superagent = require('superagent')
+const Discord = require('discord.js');
+const { get } = require('snekfetch');
 
-exports.run = (client, msg, args) => {
-  if (msg.channel.nsfw === true) {
-    superagent.get('https://nekobot.xyz/api/image')
-    .query({ type: 'hentai'})
-    .end((err, response) => {
-      msg.channel.send({ file: response.body.message });
-    });
-  } else {
-    msg.channel.send("🔞 | On this channel is not allowed NSFW content!")
-  }
-};
-module.exports.help = {
+exports.run = async (client, message) => {
+
+    if (!message.channel.nsfw) return message.channel.send(":underage: | Hey, my dude! This is not NSFW channel.");
+    const { body } = await get("https://nekobot.xyz/api/image?type=hentai");
+
+    const embed = new Discord.RichEmbed()
+        .setTitle('Hentai')
+        .setURL(body.message)
+        .setColor("RANDOM")
+        .setImage(body.message)
+        .setFooter(`Dot Version: 1.2`)
+        .setTimestamp()
+    message.channel.send(embed);
+}
+exports.help = {
     name: "hentai",
     aliases: []
 }
