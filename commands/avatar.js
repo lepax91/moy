@@ -6,14 +6,14 @@ module.exports.run = async (bot, message, args) => {
     if(!message.content.startsWith(PREFIX)) return;
 
     if(args[0] == "help"){
-        message.reply("❓ Example: .avatar <@user/bot>");
+        message.reply("❓ Například: .avatar <@user/bot>");
         return;
     };
-    let msg = await message.channel.send("⏰ | Wait a second..");
+    let msg = await message.channel.send("⏰ | Počkej chvíli...");
     let target = message.mentions.users.first() || message.author;
 
         message.channel.send({embed: {
-        color: 1339135,
+        color: "RANDOM",
         image: {
             url: (target.displayAvatarURL)
           },
@@ -24,7 +24,7 @@ module.exports.run = async (bot, message, args) => {
         },
         author: { 
             icon_url: message.guild.iconURL,
-            name: "⚫ Here is your avatar, you wanted",
+            name: "Tady je nějaká ta profilovka",
           }
         }});
 
