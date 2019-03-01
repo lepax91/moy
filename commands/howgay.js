@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args, prefix) => {
     let gay = Math.round(Math.random() * 100);
     let gayembed = new Discord.RichEmbed()
         .setColor("#f442d4")
-        .setTitle(`👨‍❤️‍💋‍👨 ${message.author.username} is ${gay}% gay! 👨‍❤️‍💋‍👨`);
+        .setTitle(`👨‍❤️‍💋‍👨 ${message.author.username} je ${gay}% velký gay! 👨‍❤️‍💋‍👨`);
     message.delete(10);
     return message.channel.send(gayembed);
 };
