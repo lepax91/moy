@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
   .get(`https://nekos.life/api/v2/img/hug`);
 
   let hugEmbed = new Discord.RichEmbed()
-  .setTitle(`**Hugs?**`)
+  .setTitle(`**Obejmutí?**`)
   .setDescription(`${message.author} obejmul ${message.mentions.users.first()}!`)
   .setImage(body.url)
   .setColor("RANDOM")
