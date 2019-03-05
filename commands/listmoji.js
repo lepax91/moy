@@ -7,9 +7,7 @@ exports.run = (client, message) => {
     .setTitle('Emoji List')
     .setDescription(`${message.author.username}, Tyto emotes jsou na serveru:\n\n${emojiList}\n\n**${message.guild.emojis.array().length}** jsou celkem emotes.`);
   message.channel.send({embed});
-};
+
+}
 exports.help = {
-  name: 'emojis',
-  description: 'Sends a list of the server\'s emojis',
-  usage: 'listmoji',
-  type: 'server'
+  name: 'emojis'
