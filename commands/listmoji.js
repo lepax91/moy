@@ -9,5 +9,6 @@ exports.run = (client, message) => {
   message.channel.send({embed});
 }
 exports.help = {
-  name: 'emojis'
+  name: 'emojis',
+  aliases: []
 }
