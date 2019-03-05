@@ -9,7 +9,7 @@ exports.run = (client, message) => {
   message.channel.send({embed});
 };
 exports.help = {
-  name: 'listmoji',
+  name: 'emojis',
   description: 'Sends a list of the server\'s emojis',
   usage: 'listmoji',
   type: 'server'
