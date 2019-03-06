@@ -23,7 +23,7 @@ const mapping = {
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
   if (args.length < 1) {
-    message.channel.send('You must provide some text to emojify!');
+    message.channel(':x: **| Musíš přidat jakýkoliv text, který by se tam hodil!**');
 }
 
 message.channel.send(
