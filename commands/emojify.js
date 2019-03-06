@@ -34,16 +34,10 @@ message.channel.send(
 );
 };
 
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  permLevel: "User"
-};
-
 exports.help = {
   name: "emojify",
+  aliases: [],
   category: "Miscelaneous",
-  description: "Says your text in big LETTERS",
+  description: "Says yur text in big LETTERS",
   usage: "emojify [text]"
 };
