@@ -1,5 +1,5 @@
 const Discord = require("discord.js"),
-superagent = require("superagent");
+const request = require("superagent");
     
 module.exports.run = async (client, message, args) => {
       let { body } = await request.get('https://api-to.get-a.life/redpandaimg');
