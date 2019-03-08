@@ -22,13 +22,9 @@ module.exports.run = async (client, message, args) => {
 
           .addField('Odkaz:', `${link}`)
          
-          .setFooter("Verze: 1.2", message.author.avatarURL);
-          
-              message.channel.send(embed);
-              message.author.send(`Vyhledal si ${link} v ${ message.guild.name}`);
-
-        
-    
+          .setFooter("Verze: 1.2", message.author.avatarURL);          
+                
+  
 }
 
 
