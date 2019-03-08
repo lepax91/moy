@@ -24,7 +24,7 @@ module.exports.run = async (client, message, args) => {
          
           .setFooter("Verze: 1.2", message.author.avatarURL);          
                 
-  
+                         message.channel.send(embed);
 }
 
 
