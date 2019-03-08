@@ -1,35 +1,17 @@
 const Discord = require("discord.js");
-const PREFIX = "."
 
-// This is the brackets in which the command goes in
 module.exports.run = async (bot, message, args) => {
-    if(!message.content.startsWith(PREFIX)) return;
-
-    if(args[0] == "help"){
-        message.reply("❓ Například: .avatar <@user/bot>");
-        return;
-    };
-    let msg = await message.channel.send("⏰ | Počkej chvíli...");
-    let target = message.mentions.users.first() || message.author;
-
-        message.channel.send({embed: {
-        color: "RANDOM",
-        image: {
-            url: (target.displayAvatarURL)
-          },
-        timestamp: new Date(),
-        footer: {
-          icon_url: bot.user.displayAvatarURL ,
-          text: "Dot | Version: 1.2",
-        },
-        author: { 
-            icon_url: message.guild.iconURL,
-            name: "Tady je nějaká ta profilovka",
-          }
-        }});
-
-        msg.delete();
-}
+          let player = message.mentions.members.first() || message.member
+	   let user = player.user
+if(!user) return message.channel.send("You haven't selected/mentioned a user whose avatar you want to see."); 
+    let avatarEmbed = new Discord.RichEmbed()
+    .setAuthor(`${user.tag}`, `${user.displayAvatarURL}`)
+    .setTitle("**Klikni zde pokud se avatar nenačítá!**")
+    .setURL(user.displayAvatarURL)
+    .setImage(user.displayAvatarURL)
+    .setColor("#b70000");
+    return message.channel.send(avatarEmbed);
+     }
 module.exports.help = {
     name: "avatar",	
     aliases: []
