@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 if(!user) return message.channel.send("You haven't selected/mentioned a user whose avatar you want to see."); 
     let avatarEmbed = new Discord.RichEmbed()
     .setAuthor(`${user.tag}`, `${user.displayAvatarURL}`)
-    .setTitle("**Klikni zde pokud se avatar nenačítá!**")
+    .setTitle("*Klikni zde pokud se avatar nezobrazuje*")
     .setURL(user.displayAvatarURL)
     .setImage(user.displayAvatarURL)
     .setColor("#b70000");
