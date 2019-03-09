@@ -28,6 +28,7 @@ module.exports.run = async (bot, message, args) => {
             message.delete({timeout: 1000});
             }).catch(function(error) {
             console.log(error);
+	});			  
 }
 // ADD DESCRIPTION AND SUCH
 module.exports.help = {
