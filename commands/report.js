@@ -16,6 +16,7 @@ module.exports.run = async (bot, message, args) => {
         .addField('\n\n Důvod:', reason)
         .setFooter(`Požadováno: ${message.author.username}.`)
         .setTimestamp()
+        await message.channel.send("✅ | **" + message.user + " byl reportován**");
     canal.send(embed);
 }
 
