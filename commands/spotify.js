@@ -17,13 +17,13 @@ exports.run = (client, message, args) => { // We're going to have to require the
    
     // Create embed object
     const embed = new Discord.MessageEmbed() // This will create the start of the embed, we will now add to it.
-      .setAuthor('Spotify Track Info', 'https://cdn.discordapp.com/emojis/408668371039682560.png') // This url will be in the description, it is setting the author & icon field for the embed.
+      .setAuthor('Spotify | Něco o této hudbě', 'https://cdn.discordapp.com/emojis/408668371039682560.png') // This url will be in the description, it is setting the author & icon field for the embed.
       .setColor(0x1ED760) // This sets the color of the embed
       .setThumbnail(trackIMG) // This sets the thumbnail of the embed, using the variable from before.
-      .addField('Song Name', trackName, true) // These are fields, and can be added easily, the true signifies that they can be on the same line.
-      .addField('Album', trackAlbum, true)
-      .addField('Author', trackAuthor, false) // This signifies only two can be on the line above, the third will be on a new line
-      .addField('Listen to Track:', `[\`${trackURL}\`](trackURL)`, false); // This here sets a clickable link, to the trackURL, while still showing the URL in ``.
+      .addField('Hudba', trackName, true) // These are fields, and can be added easily, the true signifies that they can be on the same line.
+      .addField('Album, trackAlbum, true)
+      .addField('Autor', trackAuthor, false) // This signifies only two can be on the line above, the third will be on a new line
+      .addField('Poslá písničku:', `[\`${trackURL}\`](trackURL)`, false); // This here sets a clickable link, to the trackURL, while still showing the URL in ``.
    
     // Sending Embed
     message.channel.send(embed); // This sends the formed embed to the channel.
@@ -32,7 +32,7 @@ exports.run = (client, message, args) => { // We're going to have to require the
    
   } else { // Although, if one of those conditions is false it will run this.
    
-    message.channel.send('**This user isn\'t listening to Spotify!**'); // This will notify in chat that the specified user isn't listening to Spotify.
+    message.channel.send('**<:tickNo:454716382869716992> Uživatel neposlouchá ve Spotify žádnou hudbu.**'); // This will notify in chat that the specified user isn't listening to Spotify.
    
   }
  
