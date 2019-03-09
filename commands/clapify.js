@@ -3,7 +3,7 @@ const randomizeCase = word => word.split('').map(c => Math.random() > 0.5 ? c.to
 exports.run = (bot, message, args) => {
     message.delete();
   
-    if (args.length < 1) return message.channel.send("**I need some text to clapify.** `??clap <sentence>`")
+    if (args.length < 1) return message.channel.send(":x: **| Potřebuji nějaký text na to aby si udělal clapify: .clapify <text>")
     message.channel.send(args.map(randomizeCase).join(':clap:'));
 }
 exports.help = {
