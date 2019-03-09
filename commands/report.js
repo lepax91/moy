@@ -10,13 +10,13 @@ module.exports.run = async (bot, message, args) => {
     let embed = new Discord.RichEmbed()
         .setColor('RANDOM')
         .setThumbnail(message.author.avatarURL)
-        .setTitle(`<a:usargif:496053335422664726> | Reportes `)
+        .setTitle(`<:tickYes:454716382886494208> | Nahlášení `)
         .addField('Kdo nahlásil užívatele:', message.author)
         .addField('\n\n Kdo byl nahlášen:', member.user)
         .addField('\n\n Důvod:', reason)
-        .setFooter(`Požadováno: ${message.author.username}.`)
+        .setFooter(`Požadováno: ${message.author.username}`)
         .setTimestamp()
-        await message.channel.send("✅ | **" + message.user + " byl reportován**");
+        await message.channel.send("✅ | **" + member + " byl nahlášen**");
     canal.send(embed);
 }
 
