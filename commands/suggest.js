@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 // This is the brackets in which the command goes in
 module.exports.run = async (bot, message, args) => {
-    var suggestion = message.content.split(' ').slice(2).join(" ")
+    var suggestion = message.content.split(' ').slice(1).join(" ")
 		
     if(!suggestion) {
        return message.channel.send("**<:tickNo:454716382869716992> | Pošlete nějaký návrh, který by se hodil!**");
