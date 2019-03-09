@@ -21,7 +21,7 @@ module.exports.run = async (bot, message, args) => {
     .addField(" **Návrh:** ", `${suggestion}`)
     message.guild.channels.find("id", "553921599733235724").send({ embed: suggestionembed })
 
-    let msg = await message.channel.send(embed)
+    let msg = await message.channel.send(suggestionembed)
         .then(function (msg) {            
             msg.react("❌");
             msg.react("✅"); // You can only add two reacts
