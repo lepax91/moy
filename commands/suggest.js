@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
     const memberssg = message.author
     const memberzsszzsssz = message.mentions.members.first();
     if(!memberssg) {``
-         return message.channel.send("<:tickNo:454716382869716992> **| Tento uživatel je neplatný.**);
+         return message.channel.send("<:tickNo:454716382869716992> **| Tento uživatel je neplatný.**");
    }
     message.reply(`<:tickYes:454716382886494208> **| Váš návrh byl úspěšný.**`);
     message.delete()
