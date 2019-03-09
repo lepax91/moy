@@ -3,7 +3,7 @@ const { get } = require('snekfetch');
 
 exports.run = async (client, message) => {
 
-    if (!message.channel.nsfw) return message.channel.send(":underage: | Hey, my dude! This is not NSFW channel.");
+    if (!message.channel.nsfw) return message.channel.send(":underage: **Tento příkaz je povolen jen v NSFW kanálu, prosím přesun se na jiný kanál!**");
     const { body } = await get("https://nekobot.xyz/api/image?type=hentai");
 
     const embed = new Discord.RichEmbed()
