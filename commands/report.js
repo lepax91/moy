@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-    var canal = message.guild.channels.find('name', '553925401458769934');
+    var canal = message.guild.channels.find('553925401458769934');
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if (!member)
         return message.reply("Uživatel nebyl nalezen.");
