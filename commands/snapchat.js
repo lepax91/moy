@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
  
-	   if (!message.channel.nsfw) return message.channel.send(":underage: **Tento příkaz je povolen jen v NSFW kanálu, prosím přesun se na jiný kanál!")			  
+	   if (!message.channel.nsfw) return message.channel.send(":underage: **Tento příkaz je povolen jen v NSFW kanálu, prosím přesun se na jiný kanál!**")			  
 	         let nsfwreddits = [
         'NSFW_Snapchat',
                'snapchatgw'
