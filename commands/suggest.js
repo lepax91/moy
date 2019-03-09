@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("<:tickYes:454716382886494208> | Suggestion")
     .addField(" **Uživatel:**", `${message.author.username}`) 
     .addField(" **Návrh:** ", `${suggestion}`)
-    message.guild.channels.find("name""553921599733235724").send({ embed: suggestionembed })
+    message.guild.channels.find("553921599733235724").send({ embed: suggestionembed })
 }
 // ADD DESCRIPTION AND SUCH
 module.exports.help = {
