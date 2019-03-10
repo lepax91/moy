@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
   .setColor("RANDOM")
   .setTimestamp()
   .setDescription(':underage: | Příkaz je NSFW, prosím přesun se abys viděl Nudity!')
-  return msesage.channel.send(ozelmesajuyari)  
+  return message.channel.send(ozelmesajuyari)  
 	         let nsfwreddits = [
         'NSFW_Snapchat',
                'snapchatgw'
