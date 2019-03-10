@@ -1,27 +1,29 @@
 const Discord = require('discord.js');
 
-module.exports.run = async (bot, message, args, ops) => {
- 
-  if(!message.member.hasPermission("MANAGE_SERVER")) return message.reply("**:x: | Nemáš žádné permisse...**");									
-  if(!args[0] || args[0 == "help"]) return message.reply("❓ Například: .poll <otázku>")
-	
-    // Create Embed
-    const embed = new Discord.RichEmbed()
-        .setColor("RANDOM") //To change color do .setcolor("#fffff")
-        .setFooter(`Kdo vytvořil poll?: ${message.author.username}`)		
-        .setDescription(args.join(' '))
-        .setTitle('Poll');
-        
-    let msg = await message.channel.send(embed)
-        .then(function (msg) {            
-            msg.react("👍");
-            msg.react("👎"); // You can only add two reacts
-            message.delete({timeout: 1000});
-            }).catch(function(error) {
-            console.log(error);
-        });
+exports.run = async (client, message, args, tools) => {
+  
+  if (!message.member.hasPermission('MANAGE_GUILD') && message.author.id !== '417403958814965771') return message.channels.send(':x: | **_Tato akce nepůjde protože nemáš žádnou pravomoc._**').then(msg => msg.delete({timeout: 10000}));
+  if (!args.join(' ')) return message.channel.send('Použij: .poll <otázka>').then(msg => msg.delete({timeout: 10000}));
+  
+  const embed = new Discord.MessageEmbed()
+    .setTitle(args.join(' '))
+    .setFooter('Klikni na jednu reakci!')
+    .setColor('#7289DA')
+    const pollTitle = await message.channel.send({ embed });
+      await pollTitle.react(`ðŸ‘`);
+      await pollTitle.react(`ðŸ‘Ž`);
+  
+    const filter = (reaction) => reaction.emoji.name === 'ðŸ‘';
+    const collector = pollTitle.createReactionCollector(filter, { time: 15000 });
+      collector.on('collect', r => console.log(`Collected ${r.emoji.name}`));
+      collector.on('end', collected => console.log(`Collected ${collected.size} items`));
+  
+    const filter1 = (reaction) => reaction.emoji.name === 'ðŸ‘Ž';
+    const collector1 = pollTitle.createReactionCollector(filter1, { time: 15000 });
+      collector1.on('collect', r => console.log(`Collected ${r.emoji.name}`));
+      collector1.on('end', collected => console.log(`Collected ${collected.size} items`));
 };
-module.exports.help = {
-    name: 'poll',
-    aliases: ['pl']
-}
+exports.help = {
+    name: "poll",
+    aliases: []
+} 
