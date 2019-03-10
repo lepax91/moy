@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   var ozelmesajuyari = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTimestamp()
-  .setDescription(':underage: | Příkaz je NSFW, prosím přesun se abys viděl Nudity!')
+  .setDescription(':underage: **_Tento příkaz je povolen jen v NSFW kanálu, prosím přesun se na jiný kanál!_**')		
   return message.channel.send(ozelmesajuyari)  
 	         let nsfwreddits = [
         'NSFW_Snapchat',
