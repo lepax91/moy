@@ -10,7 +10,7 @@ if (!message.channel.nsfw)
   return message.channel.send(ozelmesajuyari)  	
     const { body } = await get("https://nekobot.xyz/api/image?type=hentai_anal");
 
-    const embed = new Discord.RichEmbed()
+    var embed = new Discord.RichEmbed()
         .setTitle('Hentai Anal')
         .setURL(body.message)
         .setColor("RANDOM")
