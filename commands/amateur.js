@@ -3,8 +3,12 @@ const Discord = require("discord.js");
 
 
 module.exports.run = async (bot, message, args) => {
- 
-	   if (!message.channel.nsfw) return message.channel.send(":underage: NSFW Command. Please switch to NSFW channel in order to use this command.")
+ if (!message.channel.nsfw)
+  var ozelmesajuyari = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setTitle(':underage: **_Tento příkaz je povolen jen kde je označen NSFW kanál!_**')
+  .setImage('https://cdn.discordapp.com/attachments/542778827051499564/554356353641086977/20190310_183407.png
+  return message.channel.send(ozelmesajuyari)  	
      let nsfwreddits = [
         'RealGirls',
         'amateur',
