@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
   var ozelmesajuyari = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTitle(':underage: **_Tento příkaz je povolen jen kde je označen NSFW kanál!_**')
-  .setImage('https://cdn.discordapp.com/attachments/542778827051499564/554356353641086977/20190310_183407.png
+  .setImage('https://cdn.discordapp.com/attachments/542778827051499564/554356353641086977/20190310_183407.png')
   return message.channel.send(ozelmesajuyari)  	
      let nsfwreddits = [
         'RealGirls',
