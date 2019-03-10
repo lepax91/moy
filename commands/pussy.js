@@ -2,8 +2,12 @@ const Discord = require('discord.js');
 const { get } = require('snekfetch');
 
 exports.run = async (client, message) => {
-
-    if (!message.channel.nsfw) return message.channel.send(":underage: **Tento příkaz je povolen jen v NSFW kanálu, prosím přesun se na jiný kanál!**");
+if (!message.channel.nsfw)
+  var ozelmesajuyari = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setTitle(':underage: **_Tento příkaz je povolen jen kde je označen NSFW kanál!_**')
+  .setImage('https://cdn.discordapp.com/attachments/542778827051499564/554356353641086977/20190310_183407.png')
+  return message.channel.send(ozelmesajuyari)  	    
     const { body } = await get("https://nekobot.xyz/api/image?type=pussy");
 
     const embed = new Discord.RichEmbed()
