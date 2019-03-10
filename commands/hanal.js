@@ -15,7 +15,7 @@ if (!message.channel.nsfw)
         .setURL(body.message)
         .setColor("RANDOM")
         .setImage(body.message)
-        .setFooter(`Version: 1.2`
+        .setFooter(`Version: 1.2`)
         .setTimestamp()
     message.channel.send(embed);
 }
