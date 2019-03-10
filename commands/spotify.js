@@ -21,9 +21,9 @@ exports.run = (client, message, args) => { // We're going to have to require the
       .setColor(0x1ED760) // This sets the color of the embed
       .setThumbnail(trackIMG) // This sets the thumbnail of the embed, using the variable from before.
       .addField('Hudba', trackName, true) // These are fields, and can be added easily, the true signifies that they can be on the same line.
-      .addField('Album, trackAlbum, true)
+      .addField('Album', trackAlbum, true)
       .addField('Autor', trackAuthor, false) // This signifies only two can be on the line above, the third will be on a new line
-      .addField('Poslá písničku:', `[\`${trackURL}\`](trackURL)`, false); // This here sets a clickable link, to the trackURL, while still showing the URL in ``.
+      .addField('Poslouchá písničku:', `[\`${trackURL}\`](trackURL)`, false); // This here sets a clickable link, to the trackURL, while still showing the URL in ``.
    
     // Sending Embed
     message.channel.send(embed); // This sends the formed embed to the channel.
