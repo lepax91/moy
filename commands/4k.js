@@ -2,8 +2,12 @@ const Discord = require('discord.js');
 const { get } = require('snekfetch');
 
 exports.run = async (client, message) => {
-
-    if (!message.channel.nsfw) return message.channel.send(":underage: NSFW Command. Please switch to NSFW channel in order to use this command.");
+  if (!message.channel.nsfw)
+  var ozelmesajuyari = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .setTimestamp()
+  .setDescription(':underage: **_Tento příkaz je povolen jen v NSFW kanálu, prosím přesun se na jiný kanál!_**')		
+  return message.channel.send(ozelmesajuyari)  
     const { body } = await get("https://nekobot.xyz/api/image?type=4k");
 
     const embed = new Discord.RichEmbed()
