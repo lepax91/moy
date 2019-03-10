@@ -5,9 +5,9 @@ exports.run = async (client, message) => {
   if (!message.channel.nsfw)
   var ozelmesajuyari = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setTimestamp()
-  .setDescription(':underage: **_Tento příkaz je povolen jen v NSFW kanálu, prosím přesun se na jiný kanál!_**')		
-  return message.channel.send(ozelmesajuyari)  
+  .setTitle(':underage: **_Tento příkaz je povolen jen kde je označen NSFW kanál!_**')
+  .setImage('https://cdn.discordapp.com/attachments/542778827051499564/554356353641086977/20190310_183407.png')
+  return message.channel.send(ozelmesajuyari)  	
     const { body } = await get("https://nekobot.xyz/api/image?type=4k");
 
     const embed = new Discord.RichEmbed()
