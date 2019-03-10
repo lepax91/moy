@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
  if (!message.channel.nsfw)
-  const ozelmesajuyari = new Discord.RichEmbed()
+  var ozelmesajuyari = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTimestamp()
   .setDescription(':underage: | Příkaz je NSFW, prosím přesun se abys viděl Nudity!')
