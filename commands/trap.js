@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
     ]
     let api = nsfwreddits[Math.round(Math.random() * (nsfwreddits.length - 1))];
       randomnsfw(api).then(api => {
-           const theirembed = new Discord.RichEmbed()
+           var theirembed = new Discord.RichEmbed()
             .setTitle("Traps")
             .setColor("RANDOM")
             .setImage(api)
