@@ -13,24 +13,24 @@ exports.run = (client, message, args) => {
             var trackAuthor = user.presence.game.state;
 
             const embed = new Discord.RichEmbed()
-                .setAuthor('Spotify | Informace o hudbě.')
+                .setTitle('*Spotify | Informace o hudbě*')
                 .setColor('FF0000')
                 .setThumbnail(trackImg)
                 .setDescription(`
-\`🎵\` **Písnička :**  \`${trackName}\`
-\`📀\` **Album :**  \`${trackAlbum}\`
-\`🎤\` **Autor :**  \`${trackAuthor}\`
+ 🎵 **Písnička :**  \`${trackName}\`
+ 📀 **Album :**  \`${trackAlbum}\`
+ 🎤 **Autor :**  \`${trackAuthor}\`
 `)
-                .addField('Poslechni si tuto hudbu.:', `[${trackUrl}](${trackUrl})`, false);
+                .addField('Poslechni si tuto hudbu:', `[${trackUrl}](${trackUrl})`, false);
 
             return message.channel.send(embed);
 
         } catch (error) {
-            return message.channel.send(`\`[ERROR ❌]\`, ${user.username} nezaregistroval žádnou hudbu.`);
+            return message.channel.send(`\`[ERROR ❌]\`, **${user.username} nezaregistroval žádnou hudbu.**`);
         }
 
     } else {
-        return message.channel.send(`${user.username} neposlouchá žádnou hudbu v Spotify.`);
+        return message.channel.send(`:x: | **${user.username} neposlouchá žádnou hudbu v Spotify.**`);
     }
 };
 exports.help = {
