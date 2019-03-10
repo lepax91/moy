@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 
 
 module.exports.run = async (bot, message, args) => {
- if (!message.channel.nsfw) {
+ if (!message.channel.nsfw)
   const ozelmesajuyari = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTimestamp()
