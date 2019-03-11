@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
     .setThumbnail("https://www.snapsuggest.com/images/app-icon-512x512.png")
     .addField("Návrh", suggestion)
     .addField("Uživatel", `${user.tag} (${user.id})`)
-    .addField("Kanál (Kde je poslán návrh)", `${guild.name} (${guild.id})`)
+    .addField("Kanál (Kde byl poslán návrh)", `${guild.name} (${guild.id})`)
     .setColor("#f49542")
 
   message.channel.send("✅ | **Váš návrh byl úspěšně poslán do Dot | Community & Support!**")
