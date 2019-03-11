@@ -27,9 +27,8 @@ exports.run = (OptiX, message, args) => {
             let top3 = solos.top_3;
             
             let statsEmbed = new Discord.RichEmbed()
-                .setTitle(`Fortnite Statistiky (Solos) - ${platform}`)
+                .setTitle(`data.username - Fortnite Statistiky (Solos)`)
                 .setURL(`https://fortnitetracker.com/profile/${platform}/${username}`)
-                .setAuthor(data.username)
                 .setColor('RANDOM')
                 .addField('Wins', wins, true)
                 .addField('Kills', kills, true)
@@ -51,7 +50,7 @@ exports.run = (OptiX, message, args) => {
             let top3 = duos.top_3;
             
             let statsEmbed = new Discord.RichEmbed()
-                .setTitle(`Fortnite Statistiky (Duos) - ${platform}`)
+                .setTitle(`data.username - Fortnite Statistiky (Duos)`)
                 .setURL(`https://fortnitetracker.com/profile/${platform}/${username}`)
                 .setAuthor(data.username)
                 .setColor('RANDOM')
@@ -75,9 +74,8 @@ exports.run = (OptiX, message, args) => {
             let top3 = squads.top_3;
             
             let statsEmbed = new Discord.RichEmbed()
-                .setTitle(`Fortnite Statistiky (Squads) - ${platform}`)
+                .setTitle(`data.username - Fortnite Statistiky (Squads)`)
                 .setURL(`https://fortnitetracker.com/profile/${platform}/${username}`)
-                .setAuthor(data.username)
                 .setColor('RANDOM')
                 .addField('Wins', wins, true)
                 .addField('Kills', kills, true)
@@ -87,7 +85,7 @@ exports.run = (OptiX, message, args) => {
                 .addField('Kill/Death Ratio', kd, true);
 
             message.channel.send(statsEmbed);
-        } else {
+        } else if (gamemode === 'lifetime') {
           
             let stats = data.stats;
             let lifetime = stats.lifetime;
@@ -100,7 +98,7 @@ exports.run = (OptiX, message, args) => {
             let kdr = lifetime[11]['K/d'];
           
             let statsEmbed = new Discord.RichEmbed()
-                .setTitle(`Fortnite Statistiky (Lifetime) - ${platform}`)
+                .setTitle(`data.username - Fortnite Statistiky (Lifetime)`)
                 .setURL(`https://fortnitetracker.com/profile/${platform}/${username}`)
                 .setAuthor(data.username)
                 .setColor('RANDOM')
