@@ -12,3 +12,10 @@ exports.run = async (client, message, args) => {
         dispatcher.on("end", end => { voiceChannel.leave(); });
     }).catch(err => console.log(err));
 }
+exports.help = {
+  name: "megalovania",
+  aliases: [],
+  category: "Miscelaneous",
+  description: "Says yur text in big LETTERS",
+  usage: "megalovania"
+};
