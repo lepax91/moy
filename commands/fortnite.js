@@ -114,7 +114,8 @@ exports.run = (OptiX, message, args) => {
             message.channel.send(statsEmbed);
         }
     });
+}
 exports.help = {
     name: "fortnite",
     aliases: []
-}
+  }
