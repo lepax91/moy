@@ -8,14 +8,11 @@ exports.run = async (client, message, args) => {
         return;
     }
     voiceChannel.join().then(connection => {
-        const dispatcher = connection.playFile('../megalovania.mp3');
+        const dispatcher = connection.playFile('./sounds/megalovania.mp3');
         dispatcher.on("end", end => { voiceChannel.leave(); });
     }).catch(err => console.log(err));
 }
 exports.help = {
   name: "megalovania",
-  aliases: [],
-  category: "Miscelaneous",
-  description: "Says yur text in big LETTERS",
-  usage: "megalovania"
+  aliases: []
 };
