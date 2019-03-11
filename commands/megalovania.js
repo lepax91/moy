@@ -1,4 +1,4 @@
-exports.run = (bot, message) => {
+exports.run = (OptiX, message) => {
     const Discord = require('discord.js');
     const os = require('opusscript'),
         ffmpeg = require('ffmpeg-binaries');
@@ -14,6 +14,6 @@ exports.run = (bot, message) => {
         }).catch(err => { console.log(`[ERROR] ${err}`) });
 }
 exports.help = {
-    name: "megalovania",
-    aliases: []
+  name: "megalovania",
+  aliases: []
 }
