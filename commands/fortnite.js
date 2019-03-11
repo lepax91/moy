@@ -27,7 +27,8 @@ exports.run = (OptiX, message, args) => {
             let top3 = solos.top_3;
             
             let statsEmbed = new Discord.RichEmbed()
-                .setTitle(`data.username - Fortnite Statistiky (Solos)`)
+                .setTitle(`Fortnite Statistiky (Solos)`)
+                .setAuthor(data.username)
                 .setURL(`https://fortnitetracker.com/profile/${platform}/${username}`)
                 .setColor('RANDOM')
                 .addField('Wins', wins, true)
@@ -50,7 +51,7 @@ exports.run = (OptiX, message, args) => {
             let top3 = duos.top_3;
             
             let statsEmbed = new Discord.RichEmbed()
-                .setTitle(`data.username - Fortnite Statistiky (Duos)`)
+                .setTitle(`Fortnite Statistiky (Duos)`)
                 .setURL(`https://fortnitetracker.com/profile/${platform}/${username}`)
                 .setAuthor(data.username)
                 .setColor('RANDOM')
@@ -74,7 +75,8 @@ exports.run = (OptiX, message, args) => {
             let top3 = squads.top_3;
             
             let statsEmbed = new Discord.RichEmbed()
-                .setTitle(`data.username - Fortnite Statistiky (Squads)`)
+                .setTitle(`Fortnite Statistiky (Squads)`)
+                .setAuthor(data.username)
                 .setURL(`https://fortnitetracker.com/profile/${platform}/${username}`)
                 .setColor('RANDOM')
                 .addField('Wins', wins, true)
@@ -98,9 +100,9 @@ exports.run = (OptiX, message, args) => {
             let kdr = lifetime[11]['K/d'];
           
             let statsEmbed = new Discord.RichEmbed()
-                .setTitle(`data.username - Fortnite Statistiky (Lifetime)`)
-                .setURL(`https://fortnitetracker.com/profile/${platform}/${username}`)
+                .setTitle(`Fortnite Statistiky (Lifetime)`)
                 .setAuthor(data.username)
+                .setURL(`https://fortnitetracker.com/profile/${platform}/${username}`)
                 .setColor('RANDOM')
                 .addField('Wins', wins, true)
                 .addField('Kills', kills, true)
