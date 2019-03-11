@@ -14,6 +14,6 @@ exports.run = (bot, message) => {
         }).catch(err => { console.log(`[ERROR] ${err}`) });
 }
 exports.help = {
-    name: "hentai",
+    name: "megalovania",
     aliases: []
 }
