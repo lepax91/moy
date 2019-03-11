@@ -1,1 +1,10 @@
+{
+  "prefix": ".",
+  "logsChannel": "updates",
+  "reportsChannel": "reports",
 
+  "activity": {
+    "streaming": true,
+    "game": ""
+  }
+}
