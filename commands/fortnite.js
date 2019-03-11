@@ -85,7 +85,7 @@ exports.run = (OptiX, message, args) => {
                 .addField('Kill/Death Ratio', kd, true);
 
             message.channel.send(statsEmbed);
-        } else
+        } else {
           
             let stats = data.stats;
             let lifetime = stats.lifetime;
