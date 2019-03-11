@@ -70,7 +70,7 @@ exports.run = (OptiX, message, args) => {
             let score = squads.score;
             let kd = squads.kd;
             let matches = squads.matches;
-            let kills squads.kills;
+            let kills = squads.kills;
             let wins = squads.wins
             let top3 = squads.top_3;
             
