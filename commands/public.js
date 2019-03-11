@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     let api = nsfwreddits[Math.round(Math.random() * (nsfwreddits.length - 1))];
       randomnsfw(api).then(api => {
            var theirembed = new Discord.RichEmbed()
-            .setAuthor("Public")
+            .setTitle("Public")
             .setColor("RANDOM")
             .setImage(api)
             .setFooter("Version: 1.2")		
