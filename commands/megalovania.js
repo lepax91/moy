@@ -1,4 +1,4 @@
-exports.run = (OptiX, message) => {
+exports.run = (bot, message) => {
     const Discord = require('discord.js');
     const os = require('opusscript'),
         ffmpeg = require('ffmpeg-binaries');
@@ -12,4 +12,8 @@ exports.run = (OptiX, message) => {
             });
             dispatcher.on('end', end => { vChannel.leave(); });
         }).catch(err => { console.log(`[ERROR] ${err}`) });
+}
+exports.help = {
+    name: "hentai",
+    aliases: []
 }
