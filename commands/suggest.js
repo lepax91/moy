@@ -1,37 +1,24 @@
 const Discord = require("discord.js");
 
-// This is the brackets in which the command goes in
-module.exports.run = async (bot, message, args) => {
-    var suggestion = message.content.split(' ').slice(1).join(" ")
-		
-    if(!suggestion) {
-       return message.channel.send("**<:tickNo:454716382869716992> | Pošlete nějaký návrh, který by se hodil!**");
-    }
-    const memberssg = message.author
-    const memberzsszzsssz = message.mentions.members.first();
-    if(!memberssg) {``
-         return message.channel.send("<:tickNo:454716382869716992> **| Tento uživatel je neplatný.**");
-   }
-    message.reply(`<:tickYes:454716382886494208> **| Váš návrh byl úspěšný.**`);
-    message.delete()
-    var suggestionembed = new Discord.RichEmbed()
-    .setColor("RANDOM") 
-    .setTitle("<:tickYes:454716382886494208> | Suggestion")
-    .addField(" **Uživatel:**", `${message.author.username}`) 
-    .addField(" **Návrh:** ", `${suggestion}`)
-    message.guild.channels.find("id", "553921599733235724").send({ embed: suggestionembed })
+exports.run = async (client, message, args) => {
+  let suggestion = args.join(" ").slice(0);
+  let user = message.author;
+  let guild = message.guild;
+  let channel = client.channels.get("553921599733235724")
+  let embed = new Discord.RichEmbed()
+    .setTitle("**_Návrh - Dot | Community & Support_**")
+    .setThumbnail("https://www.snapsuggest.com/images/app-icon-512x512.png")
+    .addField("Návrh", suggestion)
+    .addField("Uživatel", `${user.tag} (${user.id})`)
+    .addField("Kanál (Kde je poslán návrh)", `${guild.name} (${guild.id})`)
+    .setColor("#f49542")
 
-    let msg = await message.channel.send(suggestionembed)
-        .then(function (msg) {            
-            msg.react("❌");
-            msg.react("✅"); // You can only add two reacts
-            message.delete({timeout: 1000});
-            }).catch(function(error) {
-            console.log(error);
-	});			  
+  message.channel.send("✅ | **Váš návrh byl úspěšně poslán do Dot | Community & Support!**")
+  channel.send(embed).then(i => i.react("⏳"))
+
 }
 // ADD DESCRIPTION AND SUCH
-module.exports.help = {
+exports.help = {
     name: "suggest",
     aliases: []
 }
