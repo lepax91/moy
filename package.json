@@ -25,6 +25,7 @@
     "cheerio": "^1.0.0-rc.2",
     "twitter": "^1.7.1",
     "dateformat": "latest",
+    "fortnite": "4.3.2",
     "string-similarity": "^3.0.0",
     "filter": "^0.1.1",
     "node-fetch": "^2.3.0",
