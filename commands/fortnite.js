@@ -105,7 +105,7 @@ exports.run = (OptiX, message, args) => {
                 .setAuthor(data.username)
                 .setColor('RANDOM')
                 .addField('Wins', wins, true)
-                .addField('Kills:, kills, true)
+                .addField('Kills', kills, true)
                 .addField('Score', score, true)
                 .addField('Matches Played', mplayed, true)
                 .addField('Win Percentage', winper, true)
