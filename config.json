@@ -2,6 +2,7 @@
   "prefix": ".",
   "logsChannel": "updates",
   "reportsChannel": "reports",
+  "fortniteApiKey": ""
 
   "activity": {
     "streaming": true,
