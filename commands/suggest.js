@@ -6,11 +6,11 @@ exports.run = async (client, message, args) => {
   let guild = message.guild;
   let channel = client.channels.get("553921599733235724")
   let embed = new Discord.RichEmbed()
-    .setTitle("**_Návrh - Dot | Community & Support_**")
+    .setTitle("✅ | Návrh")
     .setThumbnail("https://www.snapsuggest.com/images/app-icon-512x512.png")
     .addField("Návrh", suggestion)
     .addField("Uživatel", `${user.tag} (${user.id})`)
-    .addField("Kanál (Kde byl poslán návrh)", `${guild.name} (${guild.id})`)
+    .addField("Serve", `${guild.name} (${guild.id})`)
     .setColor("#f49542")
 
   message.channel.send("✅ | **Váš návrh byl úspěšně poslán do Dot | Community & Support!**")
