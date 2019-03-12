@@ -58,13 +58,13 @@ exports.run = async (client, message, args) => {
                     }
 
                 }, {
-                    time: 50000
+
                 })
             }
-            pineapple()
+            
         }
     }, {
-        time: 500000
+        
     })
 }
 
