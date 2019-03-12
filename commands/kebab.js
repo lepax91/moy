@@ -1,8 +1,7 @@
 const Discord = require('discord.js');
-const fs = require('fs');
 const db = require('quick.db');
 
-exports.run = async (client, message, args) => {
+exports.run = async (bot, message, args) => {
     const ahkEmbed = new Discord.RichEmbed()
         .setTitle(`Dotos Kebabos`)
         .setColor(`RANDOM`)
