@@ -10,7 +10,7 @@ exports.run = async (client, message) => {
         .setImage(`http://media.oboobs.ru/${body[0].preview}`)
 
     message.author.send(embed);
-    message.channel.send("🔞 **_Příkaz sendnudes byl úspěšně poslán do Private Message!**")
+    message.channel.send("🔞 **_Příkaz sendnudes byl úspěšně poslán do Private Message!_**")
 }
 exports.help = {
     name: "sendnudes",
