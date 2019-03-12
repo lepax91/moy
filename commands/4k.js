@@ -9,8 +9,9 @@ exports.run = async (client, message) => {
         .setTitle('4k')
         .setURL(body.message)
         .setColor(0x619232)
-        .setImage(body.message)
-        .setFooter(`Version: 1.2`)
+        .setImage(body.message
+        .setFooter(`Požadováno od: ${message.author.tag} | Verze: 1.5`)
+
         .setTimestamp()
     message.channel.send(embed);
 }
