@@ -67,9 +67,6 @@ exports.run = async (client, message, args) => {
         
     })
 }
-
-exports.pizza = {}
-
 exports.help = {
     name: 'kebab',
     aliases: []
