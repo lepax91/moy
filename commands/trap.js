@@ -16,8 +16,7 @@ module.exports.run = async (bot, message, args) => {
             .setTitle("Traps")
             .setColor("RANDOM")
             .setImage(api)
-            .setFooter("Version: 1.2")
-            .setTimestamp();
+            .setFooter("Požadováno od: ${message.author.tag} | Verze: 1.5")
       message.channel.send(theirembed);
       })
 }
