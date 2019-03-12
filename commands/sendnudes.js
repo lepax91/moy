@@ -11,6 +11,7 @@ exports.run = async (client, message) => {
         .setImage(`http://media.oboobs.ru/${body[0].preview}`)
 
     message.author.send(embed);
+    message.channel.send("👌 **_Poslal jsem ti thicc nudes do PM, podívej se_**")
 }
 exports.help = {
     name: "sendnudes",
