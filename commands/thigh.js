@@ -10,7 +10,7 @@ exports.run = async (client, message) => {
         .setURL(body.message)
         .setColor("RANDOM")
         .setImage(body.message)
-        .setFooter(`Version: 1.2`)
+        .setFooter(`Požadováno od: ${message.author.tag} | Verze: 1.5`)
         .setTimestamp()
     message.channel.send(embed);
 }
