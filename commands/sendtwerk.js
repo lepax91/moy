@@ -11,7 +11,7 @@ module.exports.run = async (bot, message, args) => {
             .setColor("RANDOM")
             .setImage(api)
       message.author.send(theirembed);
-      message.channel.send("🔞 **_Příkaz sendtwerk byl úspěšně poslán do Private Message!**")
+      message.channel.send("🔞 **_Příkaz sendtwerk byl úspěšně poslán do Private Message!_**")
       })
 }
 module.exports.help = {
