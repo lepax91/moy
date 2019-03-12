@@ -6,7 +6,7 @@ exports.run = async (client, message, args) => {
     const ahkEmbed = new Discord.RichEmbed()
         .setTitle(`Pepeho Kebabárna`)
         .setColor(`RANDOM`)
-        .setDescription('Máme velmi dobré kebaby podle Gustava: `pepperoni`, `cheese`, and `pineapple`');
+        .setDescription('Máme velmi dobré kebaby podle Gustava: `kebab`, `durum`, and `vegan`');
     message.channel.send({
         embed: ahkEmbed
     })
@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
             const ahkkEmbed = new Discord.RichEmbed()
                 .setTitle(`Normalní Kebab`)
                 .setColor(`RANDOM`)
-                .addEmbed('🕒 Kebab se momentálně už dělá!', 'Za chvíli už bude hotový váš kebab!')    
+                .addField('🕒 Kebab se momentálně už dělá!', 'Za chvíli už bude hotový váš kebab!')    
                 .setDescription(`💸 Kebab tě bude momentálně stát **75 Kč!**`)
             message.channel.send({
                 embed: ahkkEmbed
@@ -28,7 +28,7 @@ exports.run = async (client, message, args) => {
             const ahkkkEmbed = new Discord.RichEmbed()
                 .setTitle(`Dürüm`)
                 .setColor(`RANDOM`)
-                .addEmbed('🕒 Dürum už je na cestě!', 'Za chvíli bude Dürüm hotov!')
+                .addField('🕒 Dürum už je na cestě!', 'Za chvíli bude Dürüm hotov!')
                 .setDescription('💸 Dürüm tě bude stát celkem **120 Kč**')
             message.channel.send({
                 embed: ahkkkEmbed
@@ -41,7 +41,7 @@ exports.run = async (client, message, args) => {
                     if (messg.content.startsWith("ano")) {
                         const ahkkkkEmbed = new Discord.RichEmbed()
                             .setTitle(`Vegan`)
-                            .addEmbed('🕒 Váš Vegan Kebab se už dělá!', 'Za chvíli bude váš Vegan Kebab hotov!')
+                            .addField('🕒 Váš Vegan Kebab se už dělá!', 'Za chvíli bude váš Vegan Kebab hotov!')
                             .setDescription('💸 Celková cena tě bude stát **90 Kč**!')
                             .setColor(`RANDOM`)
                         message.channel.send({
