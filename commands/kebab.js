@@ -2,15 +2,15 @@ const Discord = require('discord.js');
 const db = require('quick.db');
 
 exports.run = async (bot, message, args) => {
-    const ahkEmbed = new Discord.RichEmbed()
-        .setTitle(`Dotos Kebabos`)
+    const ahkEmbd = new Discord.RichEmbed()
+        .setTitle(`Chutný Kebab podle Dota`)
         .setColor(`RANDOM`)
-        .setDescription('Jsou tu zatím jen tři možnosti na vybraní a to jsou: `kebab`, `durum`, `vegan`')
+        .setDescription('Jsou tu zatím jen dvě možnosti na vybraní a to jsou: `kebab`, `durum`')
         .setFooter('Kebaby se přidají, jen to musí počkat.. 😄')
         .setTimestamp()
     message.channel.send({
         embed: ahkEmbed
-    })
+    }
 
 
 
@@ -33,37 +33,14 @@ exports.run = async (bot, message, args) => {
                 .setDescription('💸 Dürüm tě bude stát celkem **120 Kč**')
             message.channel.send({
                 embed: ahkkkEmbed
-            })
-
-        } else if (msg.content.startsWith("vegan")) {
-            async function pineapple() {
-                message.channel.send('❔ Jseš si fakt jistý, že si chceš koupit tento kebab?')
-                const mesgs = await msg.channel.awaitMessages(messg => {
-                    if (messg.content.startsWith("ano")) {
-                        const ahkkkkEmbed = new Discord.RichEmbed()
-                            .setTitle(`Vegan`)
-                            .addField('🕒 Váš Vegan Kebab se už dělá!', 'Za chvíli bude váš Vegan Kebab hotov!')
-                            .setDescription('💸 Celková cena tě bude stát **90 Kč**!')
-                            .setColor(`RANDOM`)
-                        message.channel.send({
-                            embed: ahkkkkEmbed
-                        })
-                        return;
-                    } else {
-                        if (messg.content.startsWith("ne")) {
-                            message.channel.send('Bohužel, škoda že sis neobjednal Vegan Kebab.')
-                            return;
+            })        
                         }
                     }
 
                 }, {
 
-                })
-            }
-            
-        }
-    }, {
-        
+                })      
+   
     })
 }
 exports.help = {
