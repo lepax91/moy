@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
             .setTitle("Snapchat")
             .setColor("RANDOM")
             .setImage(api)
-            .setFooter("Version: 1.2")
+            .setFooter("Požadováno od: ${message.author.tag} | Verze: 1.5")
             .setTimestamp();
       message.channel.send(theirembed);
       })
