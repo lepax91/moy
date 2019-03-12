@@ -30,7 +30,7 @@ exports.run = async (client, message, args) => {
                 .setTitle(`Durum`)
                 .setColor(`RANDOM`)
                 .setDescription(`Durum ti fakt doporučuji, je to fakt velmi dobrá pochutina!`)
-                .setDescription(**_Celková částka: 100 Kč_**`)
+                .setDescription(`**_Celková částka: 100 Kč_**`)
             message.channel.send({
                 embed: ahkkkEmbed
             })
