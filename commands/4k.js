@@ -11,8 +11,6 @@ exports.run = async (client, message) => {
         .setColor(0x619232)
         .setImage(body.message
         .setFooter(`Požadováno od: ${message.author.tag} | Verze: 1.5`)
-
-        .setTimestamp()
     message.channel.send(embed);
 }
 exports.help = {
