@@ -16,34 +16,33 @@ exports.run = async (client, message, args) => {
     const msgs = await message.channel.awaitMessages(msg => {
         if (msg.content.startsWith("kebab")) {
             const ahkkEmbed = new Discord.RichEmbed()
-                .setTitle(`Kebab (Normal`)
+                .setTitle(`Normalní Kebab`)
                 .setColor(`RANDOM`)
-                .addEmbed(`Hodně si tě vážím, že sis objednal tento skvělý kebab!`, ``)
-                .setDescription(`Kebab tě stojí velmi málo, protože si první zákazník!`)
-                .setDescription(`**_Kebab tě bude stát: 26 Kč!_**`)
+                .addEmbed('🕒 Kebab se momentálně už dělá!', 'Za chvíli už bude hotový váš kebab!')    
+                .setDescription(`💸 Kebab tě bude momentálně stát **75 Kč!**`)
             message.channel.send({
                 embed: ahkkEmbed
             })
             return;
         } else if (msg.content.startsWith("durum")) {
             const ahkkkEmbed = new Discord.RichEmbed()
-                .setTitle(`Durum`)
+                .setTitle(`Dürüm`)
                 .setColor(`RANDOM`)
-                .setDescription(`Durum ti fakt doporučuji, je to fakt velmi dobrá pochutina!`)
-                .setDescription(`**_Celková částka: 100 Kč_**`)
+                .addEmbed('🕒 Dürum už je na cestě!', 'Za chvíli bude Dürüm hotov!')
+                .setDescription('💸 Dürüm tě bude stát celkem **120 Kč**')
             message.channel.send({
                 embed: ahkkkEmbed
             })
 
         } else if (msg.content.startsWith("vegan")) {
             async function pineapple() {
-                message.channel.send('Jseš si fakt jistý, že si chceš koupit tento kebab?')
+                message.channel.send('❔ Jseš si fakt jistý, že si chceš koupit tento kebab?')
                 const mesgs = await msg.channel.awaitMessages(messg => {
                     if (messg.content.startsWith("ano")) {
                         const ahkkkkEmbed = new Discord.RichEmbed()
-                            .setTitle(`Vegan "Odporný" Kebab`)
-                            .setDescription(`To seš teda fakt odporný, že sis koupil tento kebab.`)
-                            .addEmbed(`Toto teda fakt dělat nebudu, ani nechápu proč to tu máme.`, ``)
+                            .setTitle(`Vegan`)
+                            .addEmbed('🕒 Váš Vegan Kebab se už dělá!', 'Za chvíli bude váš Vegan Kebab hotov!')
+                            .setDescription('💸 Celková cena tě bude stát **90 Kč**!')
                             .setColor(`RANDOM`)
                         message.channel.send({
                             embed: ahkkkkEmbed
@@ -51,7 +50,7 @@ exports.run = async (client, message, args) => {
                         return;
                     } else {
                         if (messg.content.startsWith("ne")) {
-                            message.channel.send('Tak to jsem velice rád, že sis to neobjednal!')
+                            message.channel.send('Bohužel, škoda že sis neobjednal Vegan Kebab.')
                             return;
                         }
                     }
