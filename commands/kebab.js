@@ -4,9 +4,11 @@ const db = require('quick.db');
 
 exports.run = async (client, message, args) => {
     const ahkEmbed = new Discord.RichEmbed()
-        .setTitle(`Pepeho Kebabárna`)
+        .setTitle(`Dotos Kebabos`)
         .setColor(`RANDOM`)
-        .setDescription('Máme velmi dobré kebaby podle Gustava: `kebab`, `durum`, and `vegan`');
+        .setDescription('Jsou tu zatím jen tři možnosti na vybraní a to jsou: `kebab`, `durum`, `vegan`')
+        .setFooter('Kebaby se přidají, jen to musí počkat.. 😄')
+        .setTimestamp()
     message.channel.send({
         embed: ahkEmbed
     })
@@ -19,7 +21,7 @@ exports.run = async (client, message, args) => {
                 .setTitle(`Normalní Kebab`)
                 .setColor(`RANDOM`)
                 .addField('🕒 Kebab se momentálně už dělá!', 'Za chvíli už bude hotový váš kebab!')    
-                .setDescription(`💸 Kebab tě bude momentálně stát **75 Kč!**`)
+                .setDescription(`💸 Kebab tě bude stát **75 Kč!**`)
             message.channel.send({
                 embed: ahkkEmbed
             })
