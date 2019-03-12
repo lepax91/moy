@@ -11,8 +11,7 @@ if (!message.channel.nsfw) return message.channel.send(":underage: **_Tento př�
         .setURL(body.message)
         .setColor("RANDOM")
         .setImage(body.message)
-        .setFooter(`Version: 1.2`)
-        .setTimestamp()
+        .setFooter(`Požadováno od: ${message.author.tag} | Verze: 1.2`)
     message.channel.send(embed);
 }
 exports.help = {
