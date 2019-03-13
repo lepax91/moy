@@ -25,6 +25,7 @@
     "cpu-stat": "^2.0.1",
     "ms": "^2.1.1",
     "cheerio": "^1.0.0-rc.2",
+    "idiotic-api": "^0.2.11",
     "twitter": "^1.7.1",
     "dateformat": "latest",
     "fortnite": "4.3.2",
