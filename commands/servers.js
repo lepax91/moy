@@ -8,9 +8,9 @@ module.exports.run = async (bot, message, args) => {
     let bt = bot.user.username;
     let botembed = new Discord.RichEmbed()
         .setColor("#000FF")
-        .addField("Servers In", string)
+        .addField("Dot je na těchto serverech!", string)
         .setTimestamp()
-        .setFooter("Command Ran By: " + message.author.username, message.author.avatarURL);
+        .setFooter("Dot jede na alpha 1.5" + message.author.username, message.author.avatarURL);
     message.channel.send(botembed);
 }
 
