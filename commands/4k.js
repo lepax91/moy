@@ -10,8 +10,6 @@ exports.run = async (client, message) => {
         .setURL(body.message)
         .setColor(0x619232)
         .setImage(body.message
-        .setFooter(`Verze: 1.5`)
-        .setTimestamp();
     message.channel.send(embed);
 }
 exports.help = {
