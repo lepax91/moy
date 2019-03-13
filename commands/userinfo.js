@@ -1,7 +1,9 @@
 const Discord = require('discord.js');
-exports.run = (bot, message, args) => {
+const client = new Discord.Client();
 
-const UserInfo = new Discord.MessageEmbed()
+exports.run = (client, message, args) => {
+
+             const UserInfo = new Discord.MessageEmbed()
             .setAuthor(message.author.username, message.author.avatarURL()) //Heading With Username & Their Avatar 
             .setTitle('UserInfo')
             .setURL('www.google.com') //Any Vaild Link
