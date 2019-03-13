@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-exports.run = (client, message, args) => {
+exports.run = (bot, message, args) => {
 
 const UserInfo = new Discord.MessageEmbed()
             .setAuthor(message.author.username, message.author.avatarURL()) //Heading With Username & Their Avatar 
