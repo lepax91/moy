@@ -39,7 +39,6 @@ const UserInfo = new Discord.MessageEmbed()
             .setTimestamp() //The timestamp of this embed
 
         message.channel.send(UserInfo);
-    }
 }
 exports.help = {
     name: "userinfo",
