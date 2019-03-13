@@ -9,7 +9,7 @@ exports.run = async (client, message) => {
         .setTitle('4k')
         .setURL(body.message)
         .setColor(0x619232)
-        .setImage(body.message
+        .setImage(body.message)
     message.channel.send(embed);
 }
 exports.help = {
