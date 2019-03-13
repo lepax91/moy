@@ -12,6 +12,6 @@ exports.run = async (client, message) => {
     message.channel.send("🔞 **_Příkaz sendhentai byl úspěšně poslán do Private Message!_**")
 }
 exports.help = {
-    name: "ass",
+    name: "sendhentai",
     aliases: []
 }
