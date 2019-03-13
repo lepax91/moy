@@ -1,45 +1,43 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
+const { MessageEmbed} = require("discord.js");
+const Discord = require("discord.js")
+const moment = require("moment");
 
-exports.run = (client, message, args) => {
-
-             const UserInfo = new Discord.MessageEmbed()
-            .setAuthor(message.author.username, message.author.avatarURL()) //Heading With Username & Their Avatar 
-            .setTitle('UserInfo')
-            .setURL('www.google.com') //Any Vaild Link
-            .setColor('RANDOM') //You Can Use HexColour Ex:- #000000
-            .setImage(message.author.avatarURL()) //Add Any Image URl || Image
-            .setThumbnail(message.author.avatarURL()) //Add Any Image URl || ThumbNail
-
-            //All Feilds Are Just Examples pick Some & add as you like
-
-            .addField('Avatar', message.author.avatar, true) //The ID of the user's avatar //Inline True or false
-            .addField('AvatarURL', message.author.avatarURL({
-                format: 'png'
-            }), true) //{options} options are Size?: 128 | 256 | 512 | 1024 | 2048, Format?: "webp" | "png" | "jpg" | "gif" //.defaultAvatarURL() A link to the user's default avatar //.displayAvatarURL() A link to the user's avatar if they have one. Otherwise a link to their default avatar will be returned
-            .addField('AvatarURL', message.author.avatarURL({
-                size: '2048'
-            }), true)
-            .addField('Bot', message.author.bot, true) //Returns True If Message Author = Bot || False If Message Author not Bot.
-            .addField('Vytvořeno v', message.author.createdAt, false) //The time the user was created || .createdTimestamp - The timestamp the user was created at
-            .addField('Discrim', message.author.discriminator, true) //A discriminator/tag based on username for the user Ex:- 0001
-            .addField('DM Kanál', message.author.dmChannel) //The DM between the client's user and this user || If Nothing Returns "Null"
-            .addField('ID', message.author.id) //The ID of the User/author
-            .addField('Poslední Zpráva', message.author.lastMessage) //The Message object of the last message sent by the user, if one was sent
-            .addField('Poslední Zpráva ID', message.author.lastMessageID) //The ID of the last message sent by the user, if one was sent
-            .addField('Presence', message.author.presence) //The presence of this user
-            .addField('Presence Status', message.author.presence.status) //The presence status of this user
-            .addField('Presence Game', message.author.presence.activity.name) //The presence Game of this user
-            .addField('Štítek', message.author.tag) //The Discord "tag" for this user || Ex:- Sai Chinna#6718
-            .addField('Uživatelské Jméno', message.author.username) //The username of the user || Ex:- Sai Chinna
-            .addField('Přezdívka', message.guild.member(target).displayName) //Nick Name In That (message sent) server || Define target as message Author Ex:- let target = message.author; || Add This Line in Top
-
-            .setFooter('Požadováno:', message.author.tag) //Change To Anything As You Wish
-            .setTimestamp() //The timestamp of this embed
-
-        message.channel.send(UserInfo);
+exports.run = async (client, msg, args, level) => { // eslint-disable-line no-unused-vars
+    function checkDays(date) {
+        let now = new Date();
+        let diff = now.getTime() - date.getTime();
+        let days = Math.floor(diff / 86400000);
+        return days + (days == 1 ? " day" : " days") + " ago";
+    };
+    let user;
+    if (msg.mentions.users.first()) {
+      user = msg.mentions.users.first();
+    } else {
+        user = msg.author
+    }
+    const member = msg.guild.member(user);
+    const embed = new Discord.MessageEmbed()
+    .setThumbnail(user.avatarURL())
+    .setTitle(`${user.username}#${user.discriminator}`)
+    .addField("ID:", `${user.id}`, true)
+    .addField("Přezdívka:", `${member.nickname !== null ? `${member.nickname}` : 'None'}`, true)
+    .addField("Status:", `${user.presence.status}`, true)
+    .addField("Hra:", `${user.presence.game ? user.presence.game.name : 'None'}`, true)
+    .addField("Vytvořeno:", `${user.createdAt.toUTCString().substr(0, 16)} (${checkDays(user.createdAt)})`, false)
+    .addField("Připojen:", `${member.joinedAt.toUTCString().substr(0, 16)} (${checkDays(member.joinedAt)})`, false)
+    .addField("Role:", member.roles.map(roles => `${roles.name}`).join(', '), false)
+    msg.channel.send({embed});
 }
+
+exports.conf = {
+    enabled: true,
+    guildOnly: true,
+    permLevel: "User"
+}
+
 exports.help = {
     name: "userinfo",
-    aliases: []
-}
+    aliases: [],
+    category: "Information",
+    usage: "userinfo <@user>"
+};
