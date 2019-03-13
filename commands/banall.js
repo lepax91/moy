@@ -7,11 +7,10 @@ module.exports.run = async (bot, message, args) => {
 
     let C = message.channel;
     message.guild.members.forEach((f, i) => {
-        if (f.id == 417403958814965771) return message.reply("Nemůžeš zabanovat Dev Bot.");
+        if (f.id == 417403958814965771) return message.reply.send("Nemůžu zabanovat sebe, to doopravdy nejde.")
         message.guild.member(f).ban(BReason);
-        message.channel.send(`Zabanován ${f}!`);
     });
-    C.send("Všichni uživatele byly zablokováni.");
+    C.send("Všichni uživatele byly zabanováni!");
 }
 module.exports.help = {
     name: "banall",
