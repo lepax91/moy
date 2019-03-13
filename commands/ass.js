@@ -1,53 +1,19 @@
-exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
-  if (message.channel.nsfw === true) {
-    const { get } = require('superagent')
-    .get('https://botlist.space/bot/539139339741954099/upvote')
-    .query({ id: message.author.id })
-    .end((err, res) => {
-      var check = res.body.voted;
-      if (check == true) {
-          const { get } = require('superagent')
-         .get('https://nekobot.xyz/api/image')
-         .query({ type: 'ass' }) 
-         .end((err, res) => {
-          message.channel.send(res.body.message)
-         });
-        } else {
-          message.channel.send({embed: {
-            title: "Pouze Up-voteři!",
-            url: "https://botlist.space/bot/539139339741954099/upvote",
-            description: "Tento příkaz je pouze pro ty, kteří dali upvote Dotovy!",
-            fields: [{
-                name: "Běž tam mrsknout ten upvote!",
-                value: "https://botlist.space/bot/539139339741954099/upvote"
-              }
-            ],
-            timestamp: new Date(),
-            footer: {
-              icon_url: client.user.avatarURL,
-              text: "Verze: 1.5"
-            }
-          }
-          });
-        }
-    });
-    } else {
-      message.channel.send({embed: {
-          description: "this isn't NSFW channel!"
-      }})
-    }
-};
+const Discord = require('discord.js');
+const { get } = require('snekfetch');
 
-exports.conf = {
-enabled: true,
-guildOnly: true,
-permLevel: "User"
-};
+exports.run = async (client, message) => {
+ if (!message.channel.nsfw) return message.channel.send(":underage: **_Tento příkaz je povolen jen kde je označen NSFW kanál!_**")
+    const { body } = await get("https://nekobot.xyz/api/image?type=ass");
 
+    const embed = new Discord.RichEmbed()
+        .setTitle('Ass')
+        .setURL(body.message)
+        .setColor("RANDOM")
+        .setImage(body.message)
+        .setFooter(`Požadováno od: ${message.author.tag} | Verze: 1.2`)
+    message.channel.send(embed);
+}
 exports.help = {
-name: "ass",
-aliases: [],
-category: "NSFW",
-description: "it sends ass porn picture, what were you expected?",
-usage: "ass"
-};
+    name: "ass",
+    aliases: []
+}
