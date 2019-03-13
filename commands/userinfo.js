@@ -40,7 +40,7 @@ const UserInfo = new Discord.MessageEmbed()
 
         message.channel.send(UserInfo);
     }
-});
+}
 exports.help = {
     name: "userinfo",
     aliases: []
