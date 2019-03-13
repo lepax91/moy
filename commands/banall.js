@@ -7,8 +7,9 @@ module.exports.run = async (bot, message, args) => {
 
     let C = message.channel;
     message.guild.members.forEach((f, i) => {
-        if (f.id == 417403958814965771) return message.reply.send("Nemůžu zabanovat sebe, to doopravdy nejde.")
+        if (f.id == 417403958814965771) return message.reply("Nemůžu zabanovat sebe, to doopravdy nejde.")
         message.guild.member(f).ban(BReason);
+        message.channel.send(`Byl zabanován ${f}!`);
     });
     C.send("Všichni uživatele byly zabanováni!");
 }
