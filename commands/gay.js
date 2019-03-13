@@ -6,7 +6,7 @@ client.API = new Idiot.Client("", {dev: true});
 const rainbow = async () => {
  await message.channel.send(new MessageAttachment(
  await client.API.rainbow(message.mentions.users.first().displayAvatarURL({ format: "png", size: 128 })),
- "wanted.png"));
+ "gay.png"));
 };
 rainbow();
 }
@@ -14,12 +14,12 @@ rainbow();
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: [],
   permLevel: "User"
 };
 
 exports.help = {
   name: "eyy",
+  aliases: [],
   category: "Canvas",
   description: "GAYYYYY!",
   usage: "gay @user"
