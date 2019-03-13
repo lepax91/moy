@@ -1,10 +1,7 @@
-const { RichEmbed } = require('discord.js');
-exports.run = (client, message, args) => {
+const Discord = require('discord.js');
+exports.run = (message, args) => {
 
 const UserInfo = new Discord.MessageEmbed()
-
-            //All Fields are Optional Pick Any some
-
             .setAuthor(message.author.username, message.author.avatarURL()) //Heading With Username & Their Avatar 
             .setTitle('UserInfo')
             .setURL('www.google.com') //Any Vaild Link
