@@ -1,28 +1,19 @@
 const Discord = require('discord.js');
 
-exports.run = async (client, message, args, tools) => {
-  
-  if (!message.member.hasPermission('MANAGE_GUILD') && message.author.id !== '417403958814965771') return message.channels.send(':x: | **_Tato akce nepůjde protože nemáš žádnou pravomoc._**').then(msg => msg.delete({timeout: 10000}));
-  if (!args.join(' ')) return message.channel.send('Použij: .poll <otázka>').then(msg => msg.delete({timeout: 10000}));
-  
-  const embed = new Discord.MessageEmbed()
-    .setTitle(args.join(' '))
-    .setFooter('Klikni na jednu reakci!')
-    .setColor('#7289DA')
-    const pollTitle = await message.channel.send({ embed });
-      await pollTitle.react(`ðŸ‘`);
-      await pollTitle.react(`ðŸ‘Ž`);
-  
-    const filter = (reaction) => reaction.emoji.name === 'ðŸ‘';
-    const collector = pollTitle.createReactionCollector(filter, { time: 15000 });
-      collector.on('collect', r => console.log(`Collected ${r.emoji.name}`));
-      collector.on('end', collected => console.log(`Collected ${collected.size} items`));
-  
-    const filter1 = (reaction) => reaction.emoji.name === 'ðŸ‘Ž';
-    const collector1 = pollTitle.createReactionCollector(filter1, { time: 15000 });
-      collector1.on('collect', r => console.log(`Collected ${r.emoji.name}`));
-      collector1.on('end', collected => console.log(`Collected ${collected.size} items`));
-};
+module.exports.run = async (client, message, args) => {
+  if (args == 0) return message.channel.send('**_Chybí mi tu nějaká otázka 🤔_**')
+
+  let embed = new Discord.RichEmbed()
+    .setTitle(`Hlasovaní vytvořil: ${message.author.username}`)
+    .setDescription(`${args}`.split(',').join(' '));
+
+  return message.channel.send(embed)
+    .then(function (message, str) {
+       message.react("👍")
+       message.react("👎")
+     }).catch(function() {
+  });
+}
 exports.help = {
     name: "poll",
     aliases: []
