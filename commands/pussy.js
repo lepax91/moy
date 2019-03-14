@@ -11,6 +11,7 @@ exports.run = async (client, message) => {
         .setColor("RANDOM")
         .setImage(body.message)
         .setFooter(`Požadováno od: ${message.author.tag} | Verze: 1.5`)
+        .setTimestamp();
     message.channel.send(embed);
 }
 exports.help = {
