@@ -47,7 +47,7 @@ const embed = new Discord.RichEmbed()
 .setThumbnail('https://i.imgur.com/8DKwbhj.png')
 .addField(`Popis`, `${version.description || 'Žadný popis.'}\n\u200B`)
 
-.addField('Naposledy Změněno, `před ${updated}`, true)
+.addField('Naposledy Změněno', `před ${updated}`, true)
 .addField('Verze', `${body['dist-tags'].latest}`, true)
 .addField('Licence', `${body.license}\n\u200B`, true)
 .addField('Správci', maintainers.join(', '), true)
