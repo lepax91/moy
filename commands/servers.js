@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("#000FF")
         .addField("Dot je na těchto serverech!", string)
         .setTimestamp()
-        .setFooter("Dot jede na alpha 1.5" + message.author.username, message.author.avatarURL);
+        .setFooter("Dot je hostován na Heroku, všechny informace ohledně bota najde v příkazu .info!")
     message.channel.send(botembed);
 }
 
