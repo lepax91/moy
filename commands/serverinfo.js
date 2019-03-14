@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
         let days = Math.floor(diff / 86400000);
         return days + (days == 1 ? " day" : " days") + " ago";
     };
-    let verifLevels = ["Žádná", "Nízky", "Střední", "(╯°□°）╯︵  ┻━┻", "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"];
+    let verifLevels = ["Žádný", "Nízky", "Střední", "(╯°□°）╯︵  ┻━┻", "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"];
     let region = {
         "brazil": ":flag_br: Brazílie",
         "eu-central": ":flag_eu: Střední Evropa",
