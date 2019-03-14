@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
   .setDescription(`${message.author} dal facku ${message.mentions.users.first()}!`)
   .setImage(body.url)
   .setColor("RANDOM")
-  .setFooter("Verze: 1.2", bot.user.displayAvatarURL)
+  .setFooter("Verze: 1.5", bot.user.displayAvatarURL)
   .setTimestamp();
   message.channel.send(hugEmbed)
 
