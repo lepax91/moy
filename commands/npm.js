@@ -33,7 +33,7 @@ deps.push(`...${len} more.`);
 }
 
 function customTemplate() {
-return this.duration.asSeconds() >= 86400 ? "t [týdnů], d [dní]" : "h [hod], m [min], s [sek]";
+return this.duration.asSeconds() >= 86400 ? "t [týdnama], d [dnama]" : "h [hodinama], m [minutama], s [sekundama]";
 }
 
 let updated = moment.duration(Date.now() - new Date(body.time[body['dist-tags'].latest]).getTime()).format(customTemplate, {
