@@ -52,7 +52,7 @@ const embed = new Discord.RichEmbed()
 .addField('Licence', `${body.license}\n\u200B`, true)
 .addField('Správci', maintainers.join(', '), true)
 
-.addField('Dependencies' `${deps && deps.length ? deps.join(', ') : '*Žádná*'}\n\u200B`, false)
+.addField('Dependencies', `${deps && deps.length ? deps.join(', ') : '*Žádná*'}\n\u200B`, false)
 .addField('\`NPMjs Package\`', `[\`https://www.npmjs.com/package/${query.toLowerCase()}\`](https://www.npmjs.com/package/${query.toLowerCase()})`)
 .addField('\`Github Repository\`', `[\`https://www.github.com/${gitshort}\`](https://www.github.com/${gitshort})`)
 
