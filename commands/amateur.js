@@ -17,6 +17,7 @@ module.exports.run = async (bot, message, args) => {
             .setColor("RANDOM")
             .setImage(api)
             .setFooter("Požadováno od: ${message.author.tag} | Verze: 1.5")	
+            .setTimestamp();
       message.channel.send(theirembed);
       })
 }
