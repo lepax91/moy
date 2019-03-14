@@ -10,14 +10,14 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     message.channel.send(catembed);
 });
 
-
+}
 exports.conf = {
     enabled: true,
     guildOnly: true,
     permLevel: "User"
-};
+}
 
 exports.help = {
     name: "panda",
     aliases: []
-};
+}
