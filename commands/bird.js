@@ -8,9 +8,9 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
         .setColor("RANDOM")
         .setImage(response.body.url)
     message.channel.send(catembed);
-      });
-}
+});
 
+}
 exports.conf = {
     enabled: true,
     guildOnly: true,
