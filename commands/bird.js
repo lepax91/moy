@@ -1,3 +1,4 @@
+const Discord = require("discord.js");
 const superagent = require("snekfetch");
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
