@@ -26,9 +26,9 @@ module.exports.run = async (bot, message, args) => {
         "southafrica": ":flag_za:  Jižní Afrika"
     };
     const embed = new Discord.RichEmbed()
-        .setAuthor(message.guild.name, message.guild.iconURL)
         .addField("Jméno", message.guild.name, true)
         .addField("ID", message.guild.id, true)
+        .setColor("RANDOM")
         .addField("Majitel", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
         .addField("Oblast", region[message.guild.region], true)
         .addField("Celkový Počet | Lidí | Boti", `${message.guild.members.size} | ${message.guild.members.filter(member => !member.user.bot).size} | ${message.guild.members.filter(member => member.user.bot).size}`, true)
