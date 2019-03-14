@@ -1,25 +1,19 @@
-const randomnsfw = require('random-puppy');
+const superagent = require("superagent");
 const Discord = require("discord.js");
 
 
 module.exports.run = async (bot, message, args) => {
  if (!message.channel.nsfw) return message.channel.send(":underage: **_Tento příkaz je povolen jen kde je označen NSFW kanál!_**") 	
-	         let nsfwreddits = [
-        'traps',
-               'traphentai',
-               'DeliciousTraps'
-   
-    ]
-    let api = nsfwreddits[Math.round(Math.random() * (nsfwreddits.length - 1))];
-      randomnsfw(api).then(api => {
+	superagent.get('https://nekos.life/api/v2/img/trap')
+            .end((err, response) => {
            var theirembed = new Discord.RichEmbed()
             .setTitle("Traps")
             .setColor("RANDOM")
-            .setImage(api)
+            .setImage(response.body.url)
             .setFooter("Požadováno od: ${message.author.tag} | Verze: 1.5")
 	    .setTimestamp();
       message.channel.send(theirembed);
-      })
+  });
 }
 module.exports.help = {
     name: "traps",
