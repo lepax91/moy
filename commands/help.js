@@ -10,7 +10,7 @@ module.exports.run = async (bot, message, args) => {
    .addField(name=":o: **User Informations** [3]", "`serverinfo`, `roleinfo`, `servers`")
    .addField(name=":closed_lock_with_key: **Developer Commands** [3]", "`quit`, `emojiids`, `banall`")
    .addField(name=":clap: **Text Commands** [3]", "`clapify`, `emojify`, `reverse`")
-   .addField(name=":printer: **Internet Commands** [4]", `wiki`, `google`, `youtube`, `spotify`, `npm`")
+   .addField(name=":printer: **Internet Commands** [4]", "`wiki`, `google`, `youtube`, `spotify`, `npm`")
    .addField(name="<:FeelsHappyHugMan:542781371157053451> **Fun** [9]", "`penis`, `howgay`, `meme`, `8ball`, `vtip`, `fakt`, `math`, `achievement`, `slots`")
    .addField(name=":crossed_swords: **Statistic Commamds** [1]", "`fortnite`")
    .addField(name=":thinking: **Mention Commands** [4]", "`hug`, `kiss`, `slap`, `tickle`")
