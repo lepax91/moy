@@ -2,7 +2,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
     if (message.member.permissions.has("MUTE_MEMBERS") == true) {
         let member = message.mentions.members.first();
     if(!member)
-      return message.reply("Please mention a valid member of this server");
+      return message.reply(":x: **_Označ prosím uživatele, který je na tomto serveru._**");
     var guild = client.guilds.find(g => g.id == message.guild.id);
     var mutedRole = message.guild.roles.find(r => r.name == "Muted");
     if (mutedRole == null)
