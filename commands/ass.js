@@ -1,10 +1,14 @@
 const Discord = require('discord.js');
 const { get } = require('snekfetch');
 
-exports.run = async (client, message) => {
-if (!message.channel.nsfw) return message.channel.send(":underage: **_Tento příkaz je povolen jen kde je označen NSFW kanál!_**")
+exports.run = async (client, message) => {  
+   if (!message.channel.nsfw) {
+    return message.channel.send(new Discord.RichEmbed()
+      .setColor("RED")
+      .setDescription(":underage: Tento příkaz je povolen jen kde je označen NSFW kanál.")
+    );
+  }
     const { body } = await get("https://nekobot.xyz/api/image?type=ass");
-
     const embed = new Discord.RichEmbed()
         .setTitle('Ass')
         .setURL(body.message)
