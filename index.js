@@ -5,6 +5,9 @@ const bot = new discord.Client({
 });
 require("./functions")(bot);
 
+bot.musicTask = require("./util/musicHandler")
+bot.musicTasks = {}
+
 bot.commands = new discord.Collection();
 bot.aliases = new discord.Collection();
 bot.afk = new Map();
