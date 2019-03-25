@@ -15,9 +15,7 @@ exports.run = (bot, message, args) => {
 
 
     bot.guilds.get(args[0]).leave();
-    var error19 = w Discord.RichEmbed()
-        .setTitle(`Právě jsem se odpojil z tohoto serveru!`)
-        .setColor("RANDOM")
+    message.channel.send(`**Dot se odpojil od serveru!** ID: [${args[0]}]`)
 	
 }
 module.exports.help = {
