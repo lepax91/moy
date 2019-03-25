@@ -1,4 +1,4 @@
-let Discord = require('discord.js');
+var Discord = require('discord.js');
 
 exports.run = (bot, message, args) => {
 	
@@ -18,6 +18,6 @@ exports.run = (bot, message, args) => {
     message.channel.send(`**Dot se odpojil od serveru!** ID: [${args[0]}]`)
 	
 }
-module.exports.help = {
+exports.help = {
 	name: "leave",
 	aliases: []
