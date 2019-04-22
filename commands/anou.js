@@ -9,7 +9,6 @@ module.exports.run = async (bot, message, args) => {
    if (message.author.id != 417403958814965771) return message.reply("Nejsi v Dot Development Project.")
 
    var embed = new Discord.RichEmbed()
-   .setAuthor("Dot | Announcements")
    .setDescription( reason1 )
    .setColor("RANDOM")
    .setTimestamp();
