@@ -11,7 +11,7 @@ exports.run = async (client, message) => {
 		   .setTitle("Important Announcement:")
 		   .setDescription(text);		
 		   message.channel.send({embed})
-{
+}
 exports.help = {
     name: "text",
     aliases: []
