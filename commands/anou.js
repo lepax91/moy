@@ -12,6 +12,7 @@ module.exports.run = async (bot, message, args) => {
    .setAuthor("Dot | Announcements")
    .setDescription( reason1 )
    .setColor("RANDOM")
+   .setTimestamp();
    let Achannel = message.guild.channels.find(`name`, "dot-updates");
    Achannel.send(embed)
 }
