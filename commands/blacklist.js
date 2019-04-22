@@ -16,5 +16,7 @@ module.exports.run = (bot, message, args, con) => {
 }
 
 module.exports.help = {
-	name: "blacklist"
+	name: "blacklist",
+	aliases: []
+	
 }
