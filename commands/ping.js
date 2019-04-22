@@ -7,7 +7,7 @@ exports.run = async (client, message, args, color) => {
         let embed = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setFooter(`Ping: ${diff}ms`)
-        message.send(embed)
+        message.channel.send(embed)
      
 
 }
