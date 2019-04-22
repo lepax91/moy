@@ -14,9 +14,7 @@ exports.run = async (client, message, args, color) => {
     });
 
 }
-
 exports.help = {
     name: 'ping',
     aliases: []
-    category: 'INFO'
 }
