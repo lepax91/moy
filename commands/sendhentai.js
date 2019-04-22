@@ -9,9 +9,10 @@ exports.run = async (client, message) => {
         .setColor("RANDOM")
         .setImage(body.message)
     message.author.send(embed);
-    return message.channel.send(new Discord.RichEmbed()
+      const embed1 = new Discord.RichEmbed()
       .setColor("RED")
       .setDescription("🔞 **_Příkaz sendhentai byl úspěšně poslán do Private Message!_**")
+      message.channel.send(embed1);                     
 }
 exports.help = {
     name: "sendhentai",
