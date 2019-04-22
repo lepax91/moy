@@ -1,17 +1,22 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
+//const ms = require("ms")
 
-exports.run = async (client, message) => {		
-		   const text = args.slice(1).join(" ");
-       if (message.author.id != 417403958814965771) return message.reply("Tento příkaz můžou používat pouze jen ty co jsou v Dot Development Project.")
-		   if (text.length < 1) return message.channel.send("kámo ty seš dobrej kokot");
-		   //const colour = args.slice(2).join("");
-		   const embed = new Discord.RichEmbed()
-		   .setColor("RANDOM")
-		   .setTitle("Dot")
-		   .setDescription(text);		
-		   message.channel.send({embed})
+module.exports.run = async (bot, message, args) => {
+   let aUser = message.author.username
+   let reason = message.content.split(' ').slice(1);
+   let reason1 = reason.join(" ");
+   if(!reason) return message.reply("Kámo, na to že si mě naprogramoval tak seš úplnej kokot  :-)")
+   if (message.author.id != 417403958814965771) return message.reply("Nejsi v Dot Development Project.")
+
+   var embed = new Discord.RichEmbed()
+   .setAuthor("Dot Development Project - Announcements", message.author.avatarURL)
+   .setDescription( reason1 )
+   .setColor("RANDOM")
+   let Achannel = message.guild.channels.find(`name`, "dot-updates");
+   Achannel.send(embed)
 }
-exports.help = {
+
+module.exports.help = {
     name: "text",
     aliases: []
 }
