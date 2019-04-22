@@ -10,9 +10,10 @@ exports.run = async (client, message) => {
         .setImage(`http://media.oboobs.ru/${body[0].preview}`)
 
     message.author.send(embed);
-    return message.channel.send(new Discord.RichEmbed()
+    const embed1 = new Discord.RichEmbed()
       .setColor("RED")
       .setDescription("🔞 **_Příkaz sendnudes byl úspěšně poslán do Private Message!_**")
+      message.channel.send(embed1);                     
 }
 exports.help = {
     name: "sendnudes",
