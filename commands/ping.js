@@ -7,8 +7,8 @@ exports.run = async (client, message, args, color) => {
     let API = (client.ping).toFixed(2)
         
         let embed = new Discord.RichEmbed()
-        .setColor(0xff2f2f)
-        .setFooter("Ping: ${diff}ms)
+        .setColor("RANDOM")
+        .setFooter(`Ping: ${diff}ms`)
         message.edit(embed);
       
     });
@@ -17,5 +17,6 @@ exports.run = async (client, message, args, color) => {
 
 exports.help = {
     name: 'ping',
+    aliases: []
     category: 'INFO'
 }
