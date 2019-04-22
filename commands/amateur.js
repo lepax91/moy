@@ -3,7 +3,12 @@ const Discord = require("discord.js");
 
 
 module.exports.run = async (bot, message, args) => {
- if (!message.channel.nsfw) return message.channel.send(":underage: **_Tento příkaz je povolen jen kde je označen NSFW kanál!_**")
+if (!message.channel.nsfw) {
+    return message.channel.send(new Discord.RichEmbed()
+      .setColor("RED")
+      .setDescription(":underage: Tento příkaz je povolen jen kde je označen NSFW kanál.")
+    );
+  }
      let nsfwreddits = [
         'RealGirls',
         'amateur',
