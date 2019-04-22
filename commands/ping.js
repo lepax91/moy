@@ -2,11 +2,12 @@ const Discord = require('discord.js')
 
 exports.run = async (client, message, args, color) => {
 
-    let diff = (Date.now()); 
+    let botping = new Date() - message.createdAt;
         
         let embed = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .setFooter(`Ping: ${diff}ms`)
+        .setTimestamp(new Date())
+        .setFooter(`Ping: ${botping}ms`)
         message.channel.send(embed)
      
 
