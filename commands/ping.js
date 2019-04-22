@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 
 exports.run = async (client, message, args, color) => {
 
-    let diff = (Date.now() - start); 
+    let diff = (Date.now()); 
         
         let embed = new Discord.RichEmbed()
         .setColor("RANDOM")
