@@ -4,7 +4,9 @@ module.exports.run = async (client, message, args) => {
   if (args == 0) return message.channel.send('**_Chybí mi tu nějaká otázka 🤔_**')
 
   let embed = new Discord.RichEmbed()    
+    .setTitle("Poll")
     .setColor("RANDOM")
+    .setTimestamp()
     .setFooter(`Vytvořil(a): ${message.author.username}`)  
     .setDescription(`${args}`.split(',').join(' '));    
 
