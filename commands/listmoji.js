@@ -5,7 +5,7 @@ exports.run = (client, message) => {
   const embed = new RichEmbed()
     .setColor("RANDOM")
     .setTimestamp()
-    .setFooter(`**${message.guild.emojis.array().length}** emotes jsou celkem na serveru.`)
+    .setFooter(`${message.guild.emojis.array().length} emotes jsou celkem na serveru`)
     .setDescription(`${emojiList}`);
   message.channel.send({embed});
 }
