@@ -8,7 +8,7 @@ module.exports.run = async (bot, message, args) => {
     let bt = bot.user.username;
     let botembed = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .setTitle("Kde je Dot?", string)
+        .setAuthor("Seznam serverů:", string)
         .setTimestamp()
         .setFooter("v1.5a")
     message.channel.send(botembed);
