@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
         .setColor("RANDOM")
         .addField("Majitel", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
         .addField("Oblast", region[message.guild.region], true)
-        .addField("Celkový Počet | Lidí | Boti", `${message.guild.members.size} | ${message.guild.members.filter(member => !member.user.bot).size} | ${message.guild.members.filter(member => member.user.bot).size}`, true)
+        .addField("Celkový Počet | Lidi | Boti", `${message.guild.members.size} | ${message.guild.members.filter(member => !member.user.bot).size} | ${message.guild.members.filter(member => member.user.bot).size}`, true)
         .addField("Úroveň Ověření", verifLevels[message.guild.verificationLevel], true)
         .addField("Kanál", message.guild.channels.size, true)
         .addField("Role", message.guild.roles.size, true)
