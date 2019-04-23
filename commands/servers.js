@@ -8,9 +8,9 @@ module.exports.run = async (bot, message, args) => {
     let bt = bot.user.username;
     let botembed = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .addField("Kde je Dot?", string)
+        .setTitle("Kde je Dot?", string)
         .setTimestamp()
-        .setFooter("Dot | v1.5a | Dot Development Project")
+        .setFooter("v1.5a")
     message.channel.send(botembed);
 }
 
