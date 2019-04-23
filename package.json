@@ -16,6 +16,7 @@
     "discord.js": "^11.3.2",
     "superagent": "^3.8.3",  
     "snekfetch": "^4.0.4",
+    "random-puppy": "^1.1.0",
     "youtube-search": "1.0.10",
     "youtube-dl": "1.12.2"
   }
