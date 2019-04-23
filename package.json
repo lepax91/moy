@@ -17,6 +17,7 @@
     "superagent": "^3.8.3",  
     "snekfetch": "^4.0.4",
     "random-puppy": "^1.1.0",
+    "memejs": "^1.0.7",
     "youtube-search": "1.0.10",
     "youtube-dl": "1.12.2"
   }
