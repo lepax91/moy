@@ -7,10 +7,10 @@ module.exports.run = async (bot, message, args) => {
     string += guild.name + '\n';})
     let bt = bot.user.username;
     let botembed = new Discord.RichEmbed()
-        .setColor("#000FF")
-        .addField("Dot je na těchto serverech!", string)
+        .setColor("RANDOM")
+        .addField("Kde je Dot?", string)
         .setTimestamp()
-        .setFooter("Dot je hostován na Heroku, všechny informace ohledně bota najde v příkazu .info!")
+        .setFooter("Dot | v1.5a | Dot Development Project")
     message.channel.send(botembed);
 }
 
