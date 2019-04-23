@@ -100,6 +100,6 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.help = {
 	name: "play1"
-  aliases: []
+        aliases: []
 }
 
