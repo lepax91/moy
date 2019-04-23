@@ -4,8 +4,8 @@ exports.run = (client, message) => {
   const emojiList = message.guild.emojis.map(e => e.toString()).join(' ');
   const embed = new RichEmbed()
     .setColor("RANDOM")
-    .setTitle('Emotes v serveru')
-    .setDescription(`Tyto emotes jsou na serveru:\n\n${emojiList}\n\n**${message.guild.emojis.array().length}** emotes jsou celkem na serveru.`);
+    .setDescription(`${emojiList}\n\n**${message.guild.emojis.array()`);
+    .setFooter(`.length}** emotes jsou celkem na serveru.`)
   message.channel.send({embed});
 }
 exports.help = {
