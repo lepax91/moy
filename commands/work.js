@@ -5,7 +5,6 @@ module.exports.run = async (client, message, args, config) => {
 
 let cooldown = 2.88e+7; //8 Hours in ms
 let workDaily = await db.fetch(`workDaily_${message.author.id}`) // Used for fetching the time on when work is available.
-let result = Math.floor((Math.random() * workplace.length))
 let timeObj = ms(cooldown - (Date.now() - workDaily))
     
     
