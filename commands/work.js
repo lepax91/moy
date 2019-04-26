@@ -1,5 +1,5 @@
-const db = require('quick.db')
-const Discord = require('discord.js')
+let db = require('quick.db')
+let Discord = require('discord.js')
 let ms = require('parse-ms');
 
 module.exports.run = async (client, message, args, config) => {
