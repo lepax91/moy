@@ -4,7 +4,7 @@ const send = require('quick.hook')
 var currencyFormatter = require('currency-formatter')
 var ms = require('parse-ms');
 
-module.exports.run= async (bot, message, args) => {
+exports.run= async (bot, message, args) => {
   
    // This Code Is Registered To RyansHDs#4461 & Zinx#9129
    // The Code Presented Is A More Modified Version Of RyansHDs
@@ -130,8 +130,7 @@ module.exports.run= async (bot, message, args) => {
     } catch(err) {console.log(`Error with work \n${err}`)}
 }
 
-module.exports.run = { // This is the config for a command. Able to add things like proper usage & etc.
+exports.help = {
     name: "work",
     aliases: []
-    
 }
