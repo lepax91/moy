@@ -131,7 +131,7 @@ module.exports.run= async (bot, message, args) => {
 }
 
 module.exports.run = { // This is the config for a command. Able to add things like proper usage & etc.
-    help: "work",
+    name: "work",
     aliases: []
     
 }
