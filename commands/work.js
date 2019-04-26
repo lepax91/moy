@@ -49,7 +49,7 @@ module.exports.run= async (bot, message, args) => {
         db.add(`currency_${message.author.id}`, amount).then(i => { // MODIFY - This updates your account to add the amount earned
             var discord = require('discord.js')
             let dailyEmbed = new discord.RichEmbed()
-            .setAuthor(`${message.author.tag} Výborně si uvařil, hostům chutnalo!`, message.author.displayAvatarURL)
+            .setAuthor(`${message.author.tag} Výborně si uvařil, hostům jídlo velmi chutnalo!`, message.author.displayAvatarURL)
             .setColor(`ORANGE`)
             .addField(`Za svojí práci jsi dostal zaplaceno`, `Manager ti dal: ${currencyFormatter.format(amount, { code: 'KČ' })}`)
             message.channel.send(dailyEmbed)
@@ -77,7 +77,7 @@ module.exports.run= async (bot, message, args) => {
             let dailyEmbed = new discord.RichEmbed()
             .setAuthor(`${message.author.tag} Byl jsi v supermarketu víc než by si měl!`, message.author.displayAvatarURL)
             .setColor(`RED`)
-            .addField(`Za práci jsi byl zaplacen!, `Manager ti dal: ${currencyFormatter.format(amount, { code: 'KČ' })}`)
+            .addField(`Za práci jsi byl zaplacen!, Manager ti dal: ${currencyFormatter.format(amount, { code: 'KČ' })}`)
             message.channel.send(dailyEmbed)
             send(worklog, workEmbed, {
                 name: "Manager"
@@ -88,7 +88,7 @@ module.exports.run= async (bot, message, args) => {
         db.add(`currency_${message.author.id}`, amount).then(i => { // MODIFY - This updates your account to add the amount earned
             var discord = require('discord.js')
             let dailyEmbed = new discord.RichEmbed()
-            .setAuthor(`${message.author.tag} Udělal jsi dobrý kebab, pro našeho zákazníka!`, message.author.displayAvatarURL)
+            .setAuthor(`${message.author.tag} Udělal si dobrý kebab!`, message.author.displayAvatarURL)
             .setColor(`RED`)
             .addField(`Za práci jsi byl zaplacen!`, `Manager ti dal: ${currencyFormatter.format(amount, { code: 'KČ' })}`)
             message.channel.send(dailyEmbed)
@@ -103,7 +103,7 @@ module.exports.run= async (bot, message, args) => {
             let dailyEmbed = new discord.RichEmbed()
             .setAuthor(`${message.author.tag} Dnes jsi naučil děti počítat do 10!`, message.author.displayAvatarURL)
             .setColor(`BLACK`)
-            .addField(`Za práci jsi byl zaplacen!,`, Manager ti dal: ${currencyFormatter.format(amount, { code: 'CZ' })}`)
+            .addField(`Za práci jsi byl zaplacen!,`, `Manager ti dal: ${currencyFormatter.format(amount, { code: 'KČ' })}`)
             message.channel.send(dailyEmbed)
             send(worklog, workEmbed, {
                 name: "Manager"
@@ -116,14 +116,14 @@ module.exports.run= async (bot, message, args) => {
             let dailyEmbed = new discord.RichEmbed()
             .setAuthor(`${message.author.tag} Dneska jsi naprogramoval jednoho bota za 5 hodin!`, message.author.displayAvatarURL)
             .setColor(`AQUA`)
-            .addField(`Za programování jsi dostal nějakou částku!`, `Na PayPal ti přišlo: ${currencyFormatter.format(amount, { code: 'CZ' })}`)
+            .addField(`Za programování jsi dostal nějakou částku!`, `Na PayPal ti přišlo: ${currencyFormatter.format(amount, { code: 'KČ' })}`)
             message.channel.send(dailyEmbed)
           send(worklog, workEmbed, {
               name: "PayPal"
           })
         })}
     else {
-        message.channel.send(`**👤 Našel se tu nějaký error, prosím kontaktujte Dot Development Project.`)
+        message.channel.send(`**👤 Našel se tu nějaký error, prosím kontaktujte Dot Development Project.**`)
         console.log(result)
     }
     })} catch(err) {console.log(err)}
