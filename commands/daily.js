@@ -21,7 +21,7 @@ exports.run = async (client, message, args, config) => {
     .setTitle(`Daily`)
     .setColor("RANDOM")
     .setDescription(`**Dostal jsi:**`)
-    .addField(``, amount) 
+    .addField(`	󠇰	󠇰`, amount) 
     .setFooter(`Dot - v2.5a`)
     .setTimestamp()
 
