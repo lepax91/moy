@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const db = require('quick.db')
 
-module.exports.run = async (bot, message, args) => {
+exports.run = async (bot, message, args) => {
 
     let bal = db.fetch(`money_${message.guild.id}_${message.author.id}`)
 
@@ -13,4 +13,8 @@ module.exports.run = async (bot, message, args) => {
     .setDescription(`Tvůj zůstatek je: `' + bal + '`)
     message.channel.send(embed)
 
+}
+exports.help = {
+    name: "balance69",
+    aliases: []
 }
