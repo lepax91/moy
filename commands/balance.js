@@ -10,7 +10,7 @@ exports.run = async (bot, message, args) => {
     let embed = new Discord.RichEmbed()
     .setTitle(`Balance`)
     .setColor("RANDOM")
-    .setDescription("Tvůj zůstatek je:", `+ bal + '`)
+    .setDescription("Tvůj zůstatek je: `+ bal +`")
     message.channel.send(embed)
 
 }
