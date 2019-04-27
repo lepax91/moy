@@ -58,8 +58,3 @@ exports.help = {
     name: "workxd",
     aliases: []
 }
-
-
-
-
-    
