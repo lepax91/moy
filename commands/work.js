@@ -2,17 +2,10 @@ const db = require('quick.db')
 const ms = require('parse-ms')
 const Discord = require('discord.js')
 
+
 exports.run = async (client, message, args, config) => {
 
-    let timeout = 36000000 //10 hours in milliseconds, change if you'd like.
-    
-    let work = await db.fetch(`work_${message.author.id}`);
-    
-    if (work !== null && timeout - (Date.now() - work) > 0) {
-        let time = ms(timeout - (Date.now() - work));
 
-        message.channel.send(`✋ Uklidni se! Musíš si počkat, Zbývají ti: **${time.hours}h ${time.minutes}m ${time.seconds}s**!`)
-    } else {
     if (args[0] == 'hráč') {
 
         let amount = Math.floor(Math.random() * 500) + 1; // 1-500 random number. whatever you'd like
