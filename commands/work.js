@@ -7,10 +7,10 @@ module.exports.run = async (client, message, args, config) => {
 
         if (args[0] === 'help') {
         let embed = new Discord.RichEmbed()
-        .setAuthor("**_👤 Dot Helper | Work 👤_**")
-        .setDescription("Nabídky: /nHráč/nKuchař/n/Programátor")
+        .setTitle("**_👤 Dot Helper | Work 👤_**")
+        .setDescription("Nabídky: Hráč, Kuchař, Programátor")
         .addField("Jak funguje tento příkaz?", ".work (kuchař, hráč, programátor)")
-        .setColor("Randon")
+        .setColor("RANDOM")
         .setFooter("</> Pracuje se na více příkazech v kategorii Economy (:")
         .setTimestamp();
         message.channel.send(embed)
