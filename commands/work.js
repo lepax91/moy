@@ -5,18 +5,8 @@ const Discord = require('discord.js')
 
 module.exports.run = async (client, message, args, config) => {
 
-        if (args[0] === 'help') {
-        let embed = new Discord.RichEmbed()
-        .setTitle("**_👤 Dot Helper | Work 👤_**")
-        .setDescription("Nabídky: Hráč, Kuchař, Programátor")
-        .addField("Jak funguje tento příkaz?", ".work (kuchař, hráč, programátor)")
-        .setColor("RANDOM")
-        .setFooter("</> Pracuje se na více příkazech v kategorii Economy (:")
-        .setTimestamp();
-        message.channel.send(embed)
-        
+      
     if (args[0] == 'hráč') {
-
         let amount = Math.floor(Math.random() * 500) + 1; // 1-500 random number. whatever you'd like
 
         let embed = new Discord.RichEmbed()
@@ -54,7 +44,6 @@ module.exports.run = async (client, message, args, config) => {
         message.channel.send(embed)
         db.add(`money_${message.author.id}`, amount)
     }
-  }
 }
 exports.help = {
     name: "workxd",
