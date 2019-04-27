@@ -7,15 +7,9 @@ exports.run = async (client, message, args, config) => {
 
 
     let cooldown = 8.64e+7,
-    
-    let lastDaily = await db.fetch(`lastDaily_${message.author.id}`)
     try {
-    db.fetch(`userBalance_${message.member.id}`).then(bucks => {
-    if(bucks == null){
-        db.set(`userBalance_${message.member.id}`, 50)}
-
-    else if (lastDaily !== null && cooldown - (Date.now() - lastDaily) > 0) {
-        let timeObj = ms(cooldown - (Date.now() - lastDaily))
+    else if (cooldown !== null && cooldown - (Date.now() - lastDaily) > 0) {
+        let timeObj = ms(cooldown - (Date.now() - cooldown))
 
         let lastDailyEmbed = new Discord.RichEmbed()
         .setAuthor(`Next Daily`)
