@@ -20,8 +20,8 @@ exports.run = async (client, message, args, config) => {
     let embed = new Discord.RichEmbed()
     .setTitle(`Daily`)
     .setColor("RANDOM")
-    .addField(`Dostal jsi celkem:`, amount)
-    .setFooter(`Dot | v2.5a`)
+    .setDescription(`**Dostal jsi:**`, amount)
+    .setFooter(`Dot - v2.5a`)
     .setTimestamp()
 
     message.channel.send(embed)
