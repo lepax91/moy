@@ -7,7 +7,6 @@ exports.run = async (client, message, args, config) => {
 
 
     let cooldown = 8.64e+7,
-    try {
     else if (cooldown !== null && cooldown - (Date.now() - lastDaily) > 0) {
         let timeObj = ms(cooldown - (Date.now() - cooldown))
 
