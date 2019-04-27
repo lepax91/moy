@@ -32,6 +32,6 @@ exports.run = async (client, message, args, config) => {
 
 }
 exports.help = { // This is the config for a command. Able to add things like proper usage & etc.
-    name: "daily",
+    name: "djjdjdjdjddjdjdjdjdjdjdjsjjejdjdksisieieie",
     aliases: []
 }
