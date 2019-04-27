@@ -21,6 +21,8 @@ exports.run = async (client, message, args, config) => {
     .setTitle(`Daily`)
     .setColor("RANDOM")
     .addField(`Dostal jsi celkem:`, amount)
+    .setFooter(`Dot | v2.5a`)
+    .setTimestamp()
 
     message.channel.send(embed)
     db.add(`money_${message.author.id}`, amount)
@@ -30,6 +32,6 @@ exports.run = async (client, message, args, config) => {
 
 }
 exports.help = {
-    name: "xdaily",
+    name: "69dejly",
     aliases: []
 }
