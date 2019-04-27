@@ -5,17 +5,14 @@ const Discord = require('discord.js')
 
 exports.run = async (client, message, args, config) => {
 
+    let timeout = 21600000 // 24 hours in milliseconds, change if you'd like.
+    
+    let daily = await db.fetch(`daily_${message.author.id}`);
+    
+    if (daily !== null && timeout - (Date.now() - daily) > 0) {
+        let time = ms(timeout - (Date.now() - daily));
 
-    let cooldown = 8.64e+7,
-    else if (cooldown !== null && cooldown - (Date.now() - lastDaily) > 0) {
-        let timeObj = ms(cooldown - (Date.now() - cooldown))
-
-        let lastDailyEmbed = new Discord.RichEmbed()
-        .setAuthor(`Next Daily`)
-        .setColor('#ffffff')
-        .setDescription(`You sucessfully collected this, you must wait to collect next dily. Time Left: **${timeObj.hours}h ${timeObj.minutes}m**!`)
-        .setFooter('Requested By ' + message.author.tag, message.author.avatarURL)
-        message.channel.send(lastDailyEmbed)
+        message.channel.send(`✋ Uklidni se, musíš čekat 6 hodin! Už ti jenom zbývá celkem: **${time.hours}h ${time.minutes}m ${time.seconds}s**`)
     } else {
     if (args[0] == 'hráč') {
 
