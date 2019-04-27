@@ -30,7 +30,7 @@ exports.run = async (client, message, args, config) => {
     db.set(`daily_${message.author.id}`, Date.now())
         
     }
-
+  }
 }
 exports.help = {
     name: "daily123",
