@@ -4,11 +4,17 @@ const Discord = require('discord.js')
 
 
 module.exports.run = async (client, message, args, config) => {
-    const timeout = 86400000;
-    const daily = client.db.get(`daily_${message.guild.id}_${message.author.id}`);
-    if (daily !== null && timeout - (Date.now() - daily) > 0) {
-        return message.channel.send(`Takhle to nejde.. Musíš si počkat ještě do ${moment(timeout - (Date.now() - daily))}`);
-    } else {    
+
+        if (args[0] === 'help') {
+        let embed = new Discord.RichEmbed()
+        .setAuthor("**_👤 Dot Helper | Work 👤_**")
+        .setDescription("Nabídky: /nHráč/nKuchař/n/Programátor")
+        .addField("Jak funguje tento příkaz?", ".work (kuchař, hráč, programátor)")
+        .setColor("Randon")
+        .setFooter("</> Pracuje se na více příkazech v kategorii Economy (:")
+        .setTimestamp();
+        message.channel.send(embed)
+        
     if (args[0] == 'hráč') {
 
         let amount = Math.floor(Math.random() * 500) + 1; // 1-500 random number. whatever you'd like
