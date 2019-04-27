@@ -18,9 +18,9 @@ exports.run = async (client, message, args, config) => {
         message.channel.send(`✋ Uklidni se, musíš čekat 6 hodin! Už ti jenom zbývá celkem: **${time.hours}h ${time.minutes}m ${time.seconds}s**`)
     } else {
     let embed = new Discord.RichEmbed()
-    .setTitle("Daily")
+    .setTitle("Daily Reward")
     .setColor("RANDOM")
-    .setDescription(`**Daily Reward**\n💸 Získal jsi celkem:`, amount)
+    .addField("💸 Získal jsi celkem:", amount)
     .setFooter("</> v2.5a")
     .setTimestamp()
 
