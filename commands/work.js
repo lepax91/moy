@@ -46,6 +46,6 @@ module.exports.run = async (client, message, args, config) => {
     }
 }
 exports.help = {
-    name: "workxd",
+    name: "XDDdDDDDDdDDDdDDdDDDDDDDDDDDdDDDD",
     aliases: []
 }
