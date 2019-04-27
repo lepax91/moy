@@ -12,7 +12,7 @@ exports.run = async (client, message, args, config) => {
 
         let embed = new Discord.RichEmbed()
         .setTitle("Hráč")
-        .setDescription(`Hrál jsi CS:GO, a vyhráli jste! | 💸 Dostáváš celkem: ${amount}$ za výhru!`)
+        .setDescription(`Hrál jsi CS:GO, a váš team vyhrál! | **💸 Dostáváš celkem: ${amount}$ za výhru!**`)
         .setColor("RANDOM")
         
     
@@ -23,7 +23,7 @@ exports.run = async (client, message, args, config) => {
 
         let embed = new Discord.RichEmbed()
         .setTitle("Kuchař")
-        .setDescription(`Uvařil jsi dobré jidlo pro hosty a chutnalo jim! Dobrá práce | 💸 Dostáváš celkem: ${amount}$ za dobré jídlo!`)
+        .setDescription(`Uvařil jsi dobré jidlo pro hosty a chutnalo jim! | **💸 _Dobrá Práce!_ Dostáváš celkem: ${amount}$ za dobré jídlo!**`)
         .setFooter("</> v2.5a")
         .setTimestamp()
         .setColor("RANDOM")
@@ -36,7 +36,7 @@ exports.run = async (client, message, args, config) => {
 
         let embed = new Discord.RichEmbed()
         .setTitle("Programátor")
-        .setDescription(`Programoval jsi celkem 8 hodin, ale stálo to za to! | 💸 Dostáváš celkem: ${amount}$ za programování 8 hodin!`)
+        .setDescription(`Programoval jsi celkem 8 hodin, ale stálo to za to! | **💸 Dostáváš celkem: ${amount}$ za programování 8 hodin!**`)
         .setFooter("</> v2.5a")
         .setTimestamp()
         .setColor("RANDOM")
