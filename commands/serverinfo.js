@@ -26,16 +26,16 @@ module.exports.run = async (bot, message, args) => {
         "southafrica": ":flag_za:  Jižní Afrika"
     };
     const embed = new Discord.RichEmbed()
-        .addField("Jméno", message.guild.name, true)
-        .addField("ID", message.guild.id, true)
+        .addField("✒️ Jméno Serveru", message.guild.name, true)
+        .addField("📝 ID", message.guild.id, true)
         .setColor("RANDOM")
-        .addField("Majitel", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
-        .addField("Oblast", region[message.guild.region], true)
-        .addField("Celkový | Lidé | Boti", `${message.guild.members.size} | ${message.guild.members.filter(member => !member.user.bot).size} | ${message.guild.members.filter(member => member.user.bot).size}`, true)
-        .addField("Úroveň Ověření", verifLevels[message.guild.verificationLevel], true)
-        .addField("Kanály", message.guild.channels.size, true)
-        .addField("Role", message.guild.roles.size, true)
-        .addField("Datum Vzniku", `${message.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(message.channel.guild.createdAt)})`, true)
+        .addField("👤 Majitel", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
+        .addField("🌎 Oblast", region[message.guild.region], true)
+        .addField("👥 Celkový | Lidé | Boti", `${message.guild.members.size} | ${message.guild.members.filter(member => !member.user.bot).size} | ${message.guild.members.filter(member => member.user.bot).size}`, true)
+        .addField("🔼 Úroveň Ověření", verifLevels[message.guild.verificationLevel], true)
+        .addField("🗺️ Kanály", message.guild.channels.size, true)
+        .addField("📜 Role", message.guild.roles.size, true)
+        .addField("📆 Datum Vzniku", `${message.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(message.channel.guild.createdAt)})`, true)
         .setThumbnail(message.guild.iconURL)
     message.channel.send({embed});
 }
