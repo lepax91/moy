@@ -1,11 +1,29 @@
 const db = require('quick.db')
-const ms = require('parse-ms')
+const ms = require('ms')
 const Discord = require('discord.js')
 
 
 exports.run = async (client, message, args, config) => {
 
 
+    let cooldown = 8.64e+7,
+    
+    let lastDaily = await db.fetch(`lastDaily_${message.author.id}`)
+    try {
+    db.fetch(`userBalance_${message.member.id}`).then(bucks => {
+    if(bucks == null){
+        db.set(`userBalance_${message.member.id}`, 50)}
+
+    else if (lastDaily !== null && cooldown - (Date.now() - lastDaily) > 0) {
+        let timeObj = ms(cooldown - (Date.now() - lastDaily))
+
+        let lastDailyEmbed = new Discord.RichEmbed()
+        .setAuthor(`Next Daily`)
+        .setColor('#ffffff')
+        .setDescription(`You sucessfully collected this, you must wait to collect next dily. Time Left: **${timeObj.hours}h ${timeObj.minutes}m**!`)
+        .setFooter('Requested By ' + message.author.tag, message.author.avatarURL)
+        message.channel.send(lastDailyEmbed)
+    } else {
     if (args[0] == 'hráč') {
 
         let amount = Math.floor(Math.random() * 500) + 1; // 1-500 random number. whatever you'd like
@@ -45,6 +63,7 @@ exports.run = async (client, message, args, config) => {
         message.channel.send(embed)
         db.add(`money_${message.author.id}`, amount)
     }
+  }
 }
 exports.help = {
     name: "workxd",
