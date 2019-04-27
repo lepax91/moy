@@ -19,9 +19,8 @@ exports.run = async (client, message, args, config) => {
     } else {
     let embed = new Discord.RichEmbed()
     .setTitle(`Daily`)
-    .setColor("GREEN")
-    .setDescription(`**Mám tu pro tebe daily, tady máš!**`)
-    .addField(`Získal jsi:`, amount)
+    .setColor("RANDOM")
+    .addField(`Dostal jsi celkem:`, amount)
 
     message.channel.send(embed)
     db.add(`money_${message.author.id}`, amount)
