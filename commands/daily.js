@@ -33,6 +33,6 @@ exports.run = async (client, message, args, config) => {
 
 }
 exports.help = {
-    name: "69dejly",
+    name: "daily123",
     aliases: []
 }
