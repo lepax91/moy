@@ -5,7 +5,7 @@ const ms = require('ms')
 exports.run = async (client, message, args) => {
 
     let cooldown = 8.64e+7,
-    amount = 250
+    amount = 100
 
     let lastDaily = await db.fetch(`lastDaily_${message.author.id}`)
     try {
@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
         let timeObj = ms(cooldown - (Date.now() - lastDaily))
 
         let lastDailyEmbed = new Discord.RichEmbed()
-        .setTitle(`You are in Cooldown!`)
+        .setTitle(`🤔 Uklidni se! 🤔`)
         .setColor('#ffffff')
         .setDescription(`✋ Musíš se uklidnit! Musí ti uplynout čas! Zbývá: **${timeObj.hours}h ${timeObj.minutes}m**!`)
         .setFooter('Požadováno od ' + message.author.tag, message.author.avatarURL)
