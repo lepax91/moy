@@ -3,9 +3,13 @@ const ms = require('ms')
 const Discord = require('discord.js')
 
 
-exports.run = async (client, message, args, config) => {
-
-    
+module.exports.run = async (client, message, args, config) => {
+    const timeout = 86400000;
+    const amount = 200;
+    const daily = client.db.get(`daily_${message.guild.id}_${message.author.id}`);
+    if (daily !== null && timeout - (Date.now() - daily) > 0) {
+        return message.channel.send(`Takhle to nejde.. Musíš si počkat ještě do ${moment(timeout - (Dtae.now() - daily))}`);
+    } else {    
     if (args[0] == 'hráč') {
 
         let amount = Math.floor(Math.random() * 500) + 1; // 1-500 random number. whatever you'd like
