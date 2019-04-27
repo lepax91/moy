@@ -21,7 +21,7 @@ exports.run = async (client, message, args, config) => {
     .setTitle("Daily")
     .setColor("RANDOM")
     .setDescription(`**Daily Reward**\n💸 Získal jsi celkem: amount`)
-    .setFooter("</> v2.5a")
+    .setFooter("v2.5a")
     .setTimestamp()
 
     message.channel.send(embed)
