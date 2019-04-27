@@ -39,7 +39,7 @@ module.exports.run = async (bot, message, args) => { // Run the command when a c
     })} catch(err) {console.log(err)}
  }
 
-module.exports.run = { // This is the config for a command. Able to add things like proper usage & etc.
+module.exports.help = { // This is the config for a command. Able to add things like proper usage & etc.
     name: "eco.daily",
     aliases: []
 }
