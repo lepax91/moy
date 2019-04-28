@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
         }
         const get_desc = db.get("description").find({ auteur: member.id}).value()
         let desc = ''
-        if (!get_desc) desc = ":negative_squared_cross_mark: Description nebyl zaznamenán."
+        if (!get_desc) desc = ":x: **Description nebyl zaznamenán**"
         else {
             let desc_msg = Object.values(get_desc)
             desc = desc_msg[1]
@@ -38,7 +38,7 @@ exports.run = (client, message, args) => {
         
         
         let profil = new Discord.RichEmbed()
-             .setTitle("📌 Profil " + member.tag + "__")
+             .setTitle("📌 Profil: " + member.tag + "📌")
              .setDescription(desc)
              .addField("📝 • Jméno (Nick)", member.tag, true)
              .addField("🎩 • Reputace", rep + " points", true)
