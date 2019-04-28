@@ -26,7 +26,7 @@ exports.run = (client, message, args) => {
         if (!get_praci) prace = "Není nastaveno"
         else {
             let prace_msg = Object.values(get_praci)
-            desc = prace_msg[1]
+            prace = prace_msg[1]
         }
         
           let profil = new Discord.RichEmbed()           
