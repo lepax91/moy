@@ -1,6 +1,16 @@
 const Discord = require('discord.js');
-
+const db = require('quick.db')
+const ms = require('parse-ms')
 exports.run = (client, message, args) => {
+        
+    let timeout = 7200000 // 24 hours in milliseconds, change if you'd like.
+    let daily = await db.fetch(`daily_${message.author.id}`);
+
+    if (daily !== null && timeout - (Date.now() - daily) > 0) {
+        let time = ms(timeout - (Date.now() - daily));
+
+          message.channel.send(`Právě sis vybral svůj Daily Reward, přijď za 2 hodiny.. Zbývá ti: **${time.hours}h ${time.minutes}m ${time.seconds}s**`)
+      } else {
         const low = require('lowdb')
         const FileSync = require('lowdb/adapters/FileSync')
         const adapter = new FileSync('./db.json')
@@ -20,9 +30,7 @@ exports.run = (client, message, args) => {
           db.get("credits").find({ auteur: author }).assign({ auteur: author, credits: credits[1] += 500 }).write()   
     }
     message.channel.send(":white_check_mark: **Právě jste získali 500 kreditů. Počkejte prosím 2 hodiny, než tuto akci provedete znovu.**")   
-
-
-
+ }
 }
 module.exports.help = {
     name: "daily",
