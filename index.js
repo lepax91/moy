@@ -1,4 +1,4 @@
-const discord = require("discord.js");
+const Discord = require("discord.js");
 const db = require('quick.db')
 const token = require("./token.json").token;
 const client = new discord.Client({
