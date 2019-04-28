@@ -14,7 +14,7 @@ exports.run = (client, message, args) => {
   };
   
   embed.setTitle("Věk byl nastaven!")
-  embed.setColor(client.color.RANDOM)
+  embed.setColor("RANDOM")
   embed.setDescription("Nastaveno: **" + args.join(" ") + "**")
   
   client.db.set(`age_${message.author.id}`, args.join(" "))
