@@ -8,7 +8,6 @@ require("./functions")(client);
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.embed = new Discord.RichEmbed()
-client.config = config;
 client.db = db;
 client.color = {
   'RED': '#ff0000',
