@@ -4,7 +4,7 @@ const Discord = require('discord.js')
 
 module.exports.run = async (client, message, args, config) => {
 
-    if (cooldown(message, 'work', 60, 'This command has a cooldown of **1 Minute**!')) { 
+    if (cooldown(message, 'work', 36000000, 'This command has a cooldown of **1 Minute**!')) { 
     if (args[0] == 'hráč') {
         let amount = Math.floor(Math.random() * 500) + 1; // 1-500 random number. whatever you'd like
 
