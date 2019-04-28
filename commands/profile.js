@@ -7,10 +7,10 @@ exports.run = (client, message, args) => {
     const db = low(adapter)
     const member = message.mentions.users.first() || message.author
 
-        }
+        
         const get_desc = db.get("description").find({ auteur: member.id}).value()
         let desc = ''
-        if (!get_desc) desc = "Není zaznamenáno"
+        if (!get_desc) desc = 'Není zaznamenáno'
         else {
             let desc_msg = Object.values(get_desc)
             desc = desc_msg[1]
@@ -32,7 +32,7 @@ exports.run = (client, message, args) => {
              .setFooter("</> v2.5a - Dot")
              .setTimestamp()
         message.channel.send(profil)
-  }
+
 }
 module.exports.help = {
     name: "more",
