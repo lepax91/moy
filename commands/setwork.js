@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
   embed.setColor("RANDOM")
   embed.setDescription("Nastaveno: **" + args.join(" ") + "**")
   
-  client.db.set(`bio_${message.author.id}`, args.join(" "))
+  client.db.set(`job_${message.author.id}`, args.join(" "))
   
   message.channel.send(embed)
 };
