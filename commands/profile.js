@@ -34,7 +34,7 @@ exports.run = (client, message, args) => {
              .addField("📝 Jméno", member.tag, true)
              .addField("🌎 Bio", desc, true)
              .addField("👮 Povolání", prace, true)
-             .addField("🎂 Věk", age + "	󠇰	", true)
+             .addField("🎂 Věk", age, true)
              .setColor("RANDOM")
              .setFooter("</> v2.5a - Dot")
              .setTimestamp()
