@@ -9,10 +9,10 @@ exports.run = (client, message, args) => {
     var prace = args.join(" ")
     var author = message.author.id;
     if (!args[0]) return message.channel.send(":x: **Prosím, uveďte správný povolání svého profilu.**")
-    if (!db.get("povolani").find({ auteur: author }).value()) {
-        db.get("povolani").push({ auteur: author, povolani: prace }).write()
+    if (!db.get("prace").find({ auteur: author }).value()) {
+        db.get("prace").push({ auteur: author, prace: prace }).write()
       } else {
-        db.get("povolani").find({ auteur: author }).assign({ auteur: author, povolani: prace }).write()   
+        db.get("prace").find({ auteur: author }).assign({ auteur: author, prace: prace }).write()   
 }
 message.channel.send(":white_check_mark: **Vaše povolání bylo úspěšně přidáno do Profilu!**")
 }
