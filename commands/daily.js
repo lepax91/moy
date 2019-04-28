@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-const db = require('quick.db')
-const ms = require('parse-ms')
+const cooldown = require('../functions/cooldown.js');
 exports.run = (client, message, args) => {
     if (cooldown(message, 'daily', 60, 'Tento příkaz má cooldown, musíš si počkat.')) {    
         const low = require('lowdb')
