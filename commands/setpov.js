@@ -6,7 +6,7 @@ const db = low(adapter)
 
 exports.run = (client, message, args) => {
     var args = message.content.split(" ").slice(1);
-    var desc = args.join(" ")
+    var prace = args.join(" ")
     var author = message.author.id;
     if (!args[0]) return message.channel.send(":x: **Prosím, uveďte správný povolání svého profilu.**")
     if (!db.get("povolani").find({ auteur: author }).value()) {
