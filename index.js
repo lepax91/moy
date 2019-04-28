@@ -8,8 +8,8 @@ require("./functions")(client);
 
 client.db = db;
 client.embed = new Discord.RichEmbed()
-client.commands = new discord.Collection();
-client.aliases = new discord.Collection();
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 client.afk = new Map();
 
 module.exports.bot = client;
