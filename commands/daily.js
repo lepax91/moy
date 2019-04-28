@@ -20,7 +20,8 @@ exports.run = async (Bot, message, args) => {
         message.channel.send({embed: {
             title: "Daily Reward",
             color: "RANDOM",
-            description: `Daily byl úspěšně vyzvednuty, dostáváš celkem: **$${amount}**. `
+            description: `Daily byl úspěšně vyzvednuty, dostáváš celkem: **$${amount}**. `,
+            footer: "</> Ty peníze k něčemu budou, ale musíš si ještě počkat.."
         }});
 
         db.set(`lastDaily_${message.author.id}`, Date.now());
