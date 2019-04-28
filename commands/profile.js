@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-exports.run = (client, message, args, Discord) => {
+exports.run = async (client, message, args) => {
 
   const member = message.mentions.users.first() || message.author;
   let money = client.db.get(`money_${member.id}-${message.guild.id}`)
@@ -15,9 +15,8 @@ exports.run = (client, message, args, Discord) => {
   .addField("Money: ", money + '$')
   .addField("Bio: ", bio)
   .setFooter("</> v2.5a")
-  
   message.channel.send(embed)
-};
+}
 exports.help = {
     name: "profile",
     aliases: []
