@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
         db.defaults({ description: [], credits: [], note: []}).write()
         var author = message.author.id;
        
-    if (!db.get("credits").find({ auteur: author }).value()) .{
+    if (!db.get("credits").find({ auteur: author }).value()) {
         db.get("credits").push({ auteur: author, credits: 500 }).write()
  
         } else {
