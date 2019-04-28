@@ -8,8 +8,7 @@ exports.run = (client, message, args, Discord) => {
   if(money === null) money = 0
   if(bio === null) bio = 'Nebylo zaznamenáno'
   if(age === null) age = 'Nebylo zaznamenáno'
-  if(verified === null) verified = ':x:'
-  
+
   const embed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTitle(`👤 Profil: ${member.tag}`)
