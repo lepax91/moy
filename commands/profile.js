@@ -42,7 +42,7 @@ exports.run = (client, message, args) => {
              .setDescription(desc)
              .addField("📝 • Jméno (Nick)", member.tag, true)
              .addField("🎩 • Reputace", rep + " points", true)
-             .addField("💸 • Peníze", credits + ", true)
+             .addField("💸 • Peníze", credits + "   $", true)
              .addField("🎂 • Věk", age + " let", true)
              .setColor("RANDOM")
         message.channel.send(profil)
