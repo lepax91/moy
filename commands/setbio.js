@@ -10,9 +10,9 @@ exports.run = (client, message, args) => {
     var author = message.author.id;
     if (!args[0]) return message.channel.send(":x: **Prosím, uveďte správný description svého profilu.**")
     if (!db.get("bio").find({ auteur: author }).value()) {
-        db.get("bio").push({ auteur: author, bio: bio }).write()
+        db.get("bio").push({ auteur: author, field: bio }).write()
       } else {
-        db.get("bio").find({ auteur: author }).assign({ auteur: author, bio: bio }).write()   
+        db.get("bio").find({ auteur: author }).assign({ auteur: author, field: bio }).write()   
 }
 message.channel.send(":white_check_mark: Váš description byl úspěšně přidán do Profilu!**")
 }
