@@ -3,6 +3,23 @@ const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 
 exports.run = (client, message, args) => {
+      
+ 
+// -----------------------------------------------------------------    
+    
+        if (args[0] === 'help') {
+        let embed = new Discord.RichEmbed()
+        .setAuthor("Profile | Economy Help")
+        .setDescription("Jak si nastavit Věk a Popisek?")
+        .addField("Věk", ".setage <věk>")
+        .addField("Description (Popisek)", ".setdesc <popisek>")
+        .setColor("RANDOM")
+        .setFooter("</> Vždycky se vám to resetuje za 24 hodin.")
+        .setTimestamp();
+        message.channel.send(embed)
+    
+// -----------------------------------------------------------------    
+    
     const adapter = new FileSync('./db.json')
     const db = low(adapter)
     const member = message.mentions.users.first() || message.author
@@ -28,7 +45,9 @@ exports.run = (client, message, args) => {
             let age_msg = Object.values(get_age)
             age = age_msg[1]
         }
-        
+
+// -----------------------------------------------------------------    
+           
         
           let profil = new Discord.RichEmbed()           
              .setTitle("📌 Profil: " + member.tag + " 📌")
