@@ -22,8 +22,7 @@ exports.run = (client, message, args) => {
             let age_msg = Object.values(get_age)
             age = age_msg[1]
         }
-        
-        
+      
           let profil = new Discord.RichEmbed()           
              .setTitle("Profil")
              .addField("📝 Jméno", member.tag, true)
@@ -33,11 +32,9 @@ exports.run = (client, message, args) => {
              .setFooter("</> v2.5a - Dot")
              .setTimestamp()
         message.channel.send(profil)
-
-
+  }
 }
 module.exports.help = {
     name: "more",
     aliases: []
 }
-
