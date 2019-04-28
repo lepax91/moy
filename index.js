@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const db = require('quick.db')
 const token = require("./token.json").token;
-const client = new discord.Client({
+const client = new Discord.Client({
   disableEveryone: true
 });
 require("./functions")(client);
