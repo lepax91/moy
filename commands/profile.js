@@ -11,7 +11,7 @@ exports.run = (client, message, args, Discord) => {
   if(verified === null) verified = ':x:'
   
   const embed = new Discord.RichEmbed()
-  .setColor(client.color.MAIN)
+  .setColor("RANDOM")
   .setTitle(`👤 Profil: ${member.tag}`)
   .addField("🌎 Bio: ", bio)
   .addField("🎂 Věk; ", age)
