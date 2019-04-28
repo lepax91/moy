@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 exports.run = (client, message, args, Discord) => {
 
   const member = message.mentions.users.first() || message.author;
