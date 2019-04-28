@@ -21,13 +21,6 @@ exports.run = (client, message, args) => {
             let desc_msg = Object.values(get_desc)
             desc = desc_msg[1]
         }
-        const get_rep = db.get("rep").find({ auteur: member.id }).value()
-        let rep = ''
-        if(!get_rep) rep = "0"
-        else {
-            let rep_msg = Object.values(get_rep)
-            rep = rep_msg[1]
-        }
         const get_age = db.get("age").find({ auteur: member.id }).value()
         let age = ''
         if(!get_age) age = '0'
@@ -41,7 +34,6 @@ exports.run = (client, message, args) => {
              .setTitle("📌 Profil: " + member.tag + " 📌")
              .setDescription(desc)
              .addField("📝 • Jméno (Nick)", member.tag, true)
-             .addField("🎩 • Reputace", rep + " points", true)
              .addField("💸 • Peníze", credits + "$", true)
              .addField("🎂 • Věk", age + " let", true)
              .setColor("RANDOM")
