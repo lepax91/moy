@@ -20,20 +20,11 @@ exports.run = (client, message, args) => {
         else {
             let age_msg = Object.values(get_age)
             age = age_msg[1]
-        }
-        const get_praci = db.get("prace").find({ auteur: member.id}).value()
-        let prace = ''
-        if (!get_praci) prace = "Není nastaveno"
-        else {
-            let prace_msg = Object.values(get_praci)
-            prace = prace_msg[1]
-        }
-        
+       }     
           let profil = new Discord.RichEmbed()           
              .setTitle("**_Profile_**")
              .addField("📝 Jméno", member.tag, true)
              .addField("🌎 Bio", desc, true)
-             .addField("👮 Povolání", prace, true)
              .addField("🎂 Věk", age, true)
              .setColor("RANDOM")
              .setFooter("</> v2.5a - Dot")
