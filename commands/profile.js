@@ -1,5 +1,3 @@
-const Discord = require('discord.js');
-
 exports.run = (client, message, args, Discord) => {
 
   const member = message.mentions.users.first() || message.author;
@@ -11,13 +9,13 @@ exports.run = (client, message, args, Discord) => {
   if(bio === null) bio = 'Nebylo zaznamenáno'
   if(age === null) age = 'Nebylo zaznamenáno'
 
-  const embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .setTitle(`👤 Profil: ${member.tag}`)
-  .addField("🌎 Bio: ", bio)
-  .addField("🎂 Věk; ", age)
-  .addField("💸 Peníze: ", money + '$')
-  .setFooter("</> v2.5a")
+  const embed = client.embed
+  embed.setColor("RANDOM")
+  embed.setTitle(`👤 Profil: ${member.tag}`)
+  embed.addField("🌎 Bio: ", bio)
+  embed.addField("🎂 Věk; ", age)
+  embed.addField("💸 Peníze: ", money + '$')
+  embed.setFooter("</> v2.5a")
   
   message.channel.send(embed)
 };
