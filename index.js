@@ -3,7 +3,6 @@ const db = require('quick.db')
 const token = require("./token.json").token;
 const client = new Discord.Client();
   disableEveryone: true
-});
 require("./functions")(client);
 
 client.commands = new Discord.Collection();
