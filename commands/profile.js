@@ -21,7 +21,7 @@ exports.run = (client, message, args) => {
             let age_msg = Object.values(get_age)
             age = age_msg[1]
         }
-        const get_praci = db.get("povolani").find({ auteur: member.id}).value()
+        const get_praci = db.get("prace").find({ auteur: member.id}).value()
         let prace = ''
         if (!get_praci) prace = "Není nastaveno"
         else {
