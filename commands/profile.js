@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 exports.run = async (client, message, args) => {
 
   const member = message.mentions.users.first() || message.author;
-  if(member.user.client) return message.reply(':x: **Omlouvám se, ale boti nemohou mít Profile.**');
 
 
   let bio = client.db.get(`bio_${member.id}`)
