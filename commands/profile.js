@@ -8,7 +8,7 @@ exports.run = (client, message, args) => {
     const member = message.mentions.users.first() || message.author
 
         
-        const get_bio = db.get("description").find({ auteur: member.id}).value()
+        const get_bio = db.get("bio").find({ auteur: member.id}).value()
         let bio = ''
         if (!get_bio) bio = 'Není zaznamenáno'
         else {
