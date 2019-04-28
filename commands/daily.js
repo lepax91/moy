@@ -14,11 +14,12 @@ exports.run = async (Bot, message, args) => {
         message.channel.send({embed: {
             title: "Ups!",
             color: 0xcc0000,
-            description: `:x: **Daily si můžeš vyzvednout každý 3 hodiny..** Zbývá ti: ${timeObj.hours}h a ${timeObj.minutes}m**`
+            description: `:x: **Daily si můžeš vyzvednout každý 3 hodiny..** Zbývá ti: **${timeObj.hours}h a ${timeObj.minutes}m**`
         }});
     } else {
         message.channel.send({embed: {
             title: "Daily Reward",
+            color: "RANDOM",
             description: `Daily byl úspěšně vyzvednuty, dostáváš celkem: **$${amount}**. `
         }});
 
