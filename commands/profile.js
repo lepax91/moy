@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
         }
         const get_desc = db.get("description").find({ auteur: member.id}).value()
         let desc = ''
-        if (!get_desc) desc = "<:false:551460099600678944> Aucune description défini pour le moment."
+        if (!get_desc) desc = ":negative_squared_cross_mark: Description nebyl zaznamenán."
         else {
             let desc_msg = Object.values(get_desc)
             desc = desc_msg[1]
@@ -42,7 +42,7 @@ exports.run = (client, message, args) => {
              .setDescription(desc)
              .addField("📝 • Jméno (Nick)", member.tag, true)
              .addField("🎩 • Reputace", rep + " points", true)
-             .addField("💸 • Peníze", credits + "   $", true)
+             .addField("💸 • Peníze", credits + "$", true)
              .addField("🎂 • Věk", age + " let", true)
              .setColor("RANDOM")
         message.channel.send(profil)
