@@ -3,17 +3,20 @@ exports.run = (client, message, args, Discord) => {
   const member = message.mentions.users.first() || message.author;
   let money = client.db.get(`money_${member.id}-${message.guild.id}`)
   let bio = client.db.get(`bio_${member.id}`)
-    
-  if(money === null) money = 0
-  if(bio === null) bio = '**Nebylo zaznamenáno**'
+  let verified = client.db.get(`verify_${member.id}`)
   
-  const embed = client.embed
-  embed.setColor("RANDOM")
-  embed.setTitle(`👤 Profil: ${member.tag}`)
-  embed.addField("🌎 Bio: ", bio)
-  embed.addField("💸 Peníze: ", money + '$')
-  embed.setFooter("</> v2.5a")
-  embed.setTimestamp()
+  if(money === null) money = 0
+  if(bio === null) bio = 'No bio set'
+  if(verified === null) verified = ':x:'
+  
+  const embed = new Discord.RichEmbed()
+  .setColor(client.color.MAIN)
+  .setTitle(`Profile of ${member.tag}`)
+  .addField("Username:", member.username)
+  .addField("Verified", verified)
+  .addField("Money: ", money + '$')
+  .addField("Bio: ", bio)
+  .setFooter("ID: " + member.id)
   
   message.channel.send(embed)
 };
