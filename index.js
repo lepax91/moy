@@ -12,7 +12,7 @@ client.commands = new discord.Collection();
 client.aliases = new discord.Collection();
 client.afk = new Map();
 
-module.exports.bot = bot;
+module.exports.bot = client;
 
 
 client.login(process.env.token);
