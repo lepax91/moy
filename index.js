@@ -4,7 +4,7 @@ const token = require("./token.json").token;
 const client = new discord.Client({
   disableEveryone: true
 });
-require("./functions")(bot);
+require("./functions")(client);
 
 client.db = db;
 client.embed = new Discord.RichEmbed()
