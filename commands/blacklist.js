@@ -1,6 +1,4 @@
-module.exports.run = (bot, message, args, con) => {
-	if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("No.");
-	
+module.exports.run = (bot, message, args, con) => {		
 	const target = message.mentions.users.first() || message.guild.members.get(args[0]);
 	if(!target) return message.channel.send("Invalid target.");
 	
