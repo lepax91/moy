@@ -7,17 +7,6 @@ exports.run = (client, message, args) => {
  
 // -----------------------------------------------------------------    
     
-        if (args[0] === 'help') {
-        let embed = new Discord.RichEmbed()
-        .setAuthor("Profile | Economy Help")
-        .setDescription("Jak si nastavit Věk a Popisek?")
-        .addField("Věk", ".setage <věk>")
-        .addField("Description (Popisek)", ".setdesc <popisek>")
-        .setColor("RANDOM")
-        .setFooter("</> Vždycky se vám to resetuje za 24 hodin.")
-        .setTimestamp();
-        message.channel.send(embed)
-    
 // -----------------------------------------------------------------    
     
     const adapter = new FileSync('./db.json')
