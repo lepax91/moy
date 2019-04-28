@@ -30,8 +30,8 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
                 .addField('📊 Level', `**${data.niv.level}**`, true)
                 // Display the xp of the member
                 .addField('🔒 XP', `**${data.niv.xp}** xp`, true)
-                .setColor("RANDOM) // Sets the color of the embed
-                .setFooter("</> v2.5a) // Sets the footer of the embed
+                .setColor("RANDOM") // Sets the color of the embed
+                .setFooter("</> v2.5a") // Sets the footer of the embed
                 .setTimestamp();
 
             message.channel.send(profile_embed); // Send the embed in the current channel
