@@ -32,7 +32,7 @@ exports.run = (client, message, args) => {
         
         
           let profil = new Discord.RichEmbed()           
-             .setTitle("**_Profile_**)
+             .setTitle("**_Profile_**")
              .setDescription(desc)
              .addField("📝 Jméno", member.tag, true)
              .addField("💸 Peníze", credits + "$", true)
