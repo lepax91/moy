@@ -47,7 +47,6 @@ exports.run = (client, message, args) => {
              .setFooter("</> v2.5a")
              .setTimestamp()
         message.channel.send(profil)
-    }
 }
 module.exports.help = {
     name: "more",
