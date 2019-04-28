@@ -38,13 +38,15 @@ exports.run = (client, message, args) => {
         
         
         let profil = new Discord.RichEmbed()
-             .setTitle("📌 Profil: " + member.tag + "📌")
+             .setTitle("📌 Profil: " + member.tag + " 📌")
              .setDescription(desc)
              .addField("📝 • Jméno (Nick)", member.tag, true)
              .addField("🎩 • Reputace", rep + " points", true)
              .addField("💸 • Peníze", credits + "$", true)
              .addField("🎂 • Věk", age + " let", true)
              .setColor("RANDOM")
+             .setFooter("</> v2.5a")
+             .setTimestamp()
         message.channel.send(profil)
 
 }
