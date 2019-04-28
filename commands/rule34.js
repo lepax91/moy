@@ -29,15 +29,7 @@ exports.run = async (client, msg, args) => {
     }
 };
 exports.help = {
-    name: 'rule34'
-    category: 'nsfw',
-    usage: false,
-    description: 'I will send some rule34',
-    detail: 'Rule34 AKA anime NSFW pictures.',
-    botPerm: ['SEND_MESSAGES'],
-    authorPerm: [],
-    example: 'Blond anime',
-    alias: [
-        'r34'
+    name: 'rule34',
+    aliases: []
     ]
 };
