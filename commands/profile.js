@@ -1,7 +1,5 @@
 const Discord = require("discord.js"), // npm install discord.js
-ms = require('ms'), // npm install ms
 quickdb = require('quick.db'), // npm install quick.db
-asciitable = require('ascii-table'); // npm install ascii-table
 
 
 exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
