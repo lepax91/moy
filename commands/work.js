@@ -44,7 +44,8 @@ module.exports.run = async (client, message, args, config) => {
     
         message.channel.send(embed)
         db.add(`money_${message.author.id}`, amount)
-    }
+      }
+   }
 }
 exports.help = {
     name: "workey",
