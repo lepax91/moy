@@ -46,7 +46,6 @@ exports.run = (client, message, args) => {
             age = age_msg[1]
         }
 
-// -----------------------------------------------------------------    
            
         
           let profil = new Discord.RichEmbed()           
@@ -61,7 +60,6 @@ exports.run = (client, message, args) => {
         message.channel.send(profil)
 
 }
-
 module.exports.help = {
     name: "more",
     aliases: []
