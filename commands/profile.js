@@ -34,7 +34,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
             message.channel.send(profile_embed); // Send the embed in the current channel
             
 }
-exports.help = {
+module.exports.help = {
   name: "profile21",
   aliases: ["p"],
 }
