@@ -17,7 +17,7 @@ exports.run = (client, message, args) => {
         }
         const get_age = db.get("age").find({ auteur: member.id }).value()
         let age = ''
-        if(!get_age) age = 'Není zaznamenáno'
+        if(!get_age) age = '0'
         else {
             let age_msg = Object.values(get_age)
             age = age_msg[1]
