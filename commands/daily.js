@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
        
     if (!db.get("credits").find({ auteur: author }).value()) {
         db.get("credits").push({ auteur: author, credits: 500 }).write()
- fa
+ 
         } else {
   
           var usercreditsdb = db.get("credits").filter({ auteur: author  }).find('credits').value()
