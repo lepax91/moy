@@ -48,7 +48,7 @@ exports.run = (client, message, args) => {
   embed.setTitle("Error occured")
   embed.setColor("RANDOM")
   embed.setDescription("Prozatím jen **.buy gay** :-)")
-  embed.setFooter("</> Celkem za měsíc, bude příkaz shop)  
+  embed.setFooter("</> Celkem za měsíc, bude příkaz shop")  
   message.channel.send(embed)
   return   
     
