@@ -2,8 +2,8 @@ var Discord = require('discord.js');
 
 exports.run = (bot, message, args) => {
 	
-	const ownerID = '417403958814965771, 273813194861051907';
-    if (message.author.id !== ownerID) return message.channel.send(":x: **Tento příkaz může používat jen Developer Dota!**");
+	const ownerIDs = ['417403958814965771, 273813194861051907']
+    if (message.author.id !== ownerIDs) return message.channel.send(":x: **Tento příkaz může používat jen Developer Dota!**");
 
     var error17 = new Discord.RichEmbed()
         .setDescription(':x: **Nebylo zadáno ID nebo bylo špatně zadaný.**')
