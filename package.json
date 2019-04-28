@@ -27,6 +27,8 @@
     "currency-formatter": "^1.5.3",
     "ms": "^2.1.1",
     "parse-ms": "^2.1.0",
+    "xml2js": "^0.4.19",
+    "table": "^5.2.3",
     "youtube-search": "1.0.10",
     "youtube-dl": "1.12.2"
   }
