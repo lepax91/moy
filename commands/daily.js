@@ -19,7 +19,7 @@ exports.run = async (Bot, message, args) => {
     } else {
         message.channel.send({embed: {
             title: "Daily Reward",
-            color: "RANDOM",
+            color: 0x00FF00,
             description: `Daily byl úspěšně vyzvednuty, dostáváš celkem: **$${amount}**. `,
             footer: "</> Ty peníze k něčemu budou, ale musíš si ještě počkat.."
         }});
