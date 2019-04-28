@@ -7,23 +7,17 @@ exports.run = (client, message, args) => {
     const db = low(adapter)
     const member = message.mentions.users.first() || message.author
 
-        const get_credits = db.get("credits").find({ auteur: member.id }).value()
-        let credits = ''
-        if (!get_credits) credits = "0"
-        else {
-            let credits_msg = Object.values(get_credits)
-            credits = credits_msg[1]
         }
         const get_desc = db.get("description").find({ auteur: member.id}).value()
         let desc = ''
-        if (!get_desc) desc = ":x: **Description nebyl zaznamenán**"
+        if (!get_desc) desc = "Není zaznamenáno"
         else {
             let desc_msg = Object.values(get_desc)
             desc = desc_msg[1]
         }
         const get_age = db.get("age").find({ auteur: member.id }).value()
         let age = ''
-        if(!get_age) age = '0'
+        if(!get_age) age = 'Není zaznamenáno'
         else {
             let age_msg = Object.values(get_age)
             age = age_msg[1]
@@ -33,9 +27,8 @@ exports.run = (client, message, args) => {
           let profil = new Discord.RichEmbed()           
              .setTitle("Profil")
              .addField("📝 Jméno", member.tag, true)
-             .addField("🌎 Bio", desc) 
-             .addField("💸 Peníze", credits + "$", true)
-             .addField("🎂 Věk", age + " let", true)
+             .addField("🌎 Bio", desc, true)
+             .addField("🎂 Věk", age, true)
              .setColor("RANDOM")
              .setFooter("</> v2.5a - Dot")
              .setTimestamp()
