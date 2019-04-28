@@ -1,12 +1,10 @@
 const db = require('quick.db')
 const cooldown = require('../functions/cooldown.js');
-const ms = require('ms')
 const Discord = require('discord.js')
-
 
 module.exports.run = async (client, message, args, config) => {
 
-    if (cooldown(msg, 'weather', 60, 'This command has a cooldown of **1 Minute**!')) { 
+    if (cooldown(message, 'work', 60, 'This command has a cooldown of **1 Minute**!')) { 
     if (args[0] == 'hráč') {
         let amount = Math.floor(Math.random() * 500) + 1; // 1-500 random number. whatever you'd like
 
