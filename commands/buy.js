@@ -6,7 +6,7 @@ exports.run = (client, message, args) => {
   
   if(args[0] === "gay"){
     
-    if(db.get(`verify_${message.author.id}`) === ":white_check_mark:"){
+    if(db.get(`gay_${message.author.id}`) === ":white_check_mark:"){
       
       embed.setColor("RANDOM")
       embed.setTitle("Error")
