@@ -1,21 +1,27 @@
-const Discord = require('discord.js');
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
-const adapter = new FileSync('./db.json')
-const db = low(adapter)
 
 exports.run = (client, message, args) => {
-    var args = message.content.split(" ").slice(1);
-    var bio = args.join(" ")
-    var author = message.author.id;
-    if (!args[0]) return message.channel.send(":x: **Prosím, uveďte správný description svého profilu.**")
-    if (!db.get("bio").find({ auteur: author }).value()) {
-        db.get("bio").push({ auteur: author, description: bio }).write()
-      } else {
-        db.get("bio").find({ auteur: author }).assign({ auteur: author, description: bio }).write()   
-}  
-message.channel.send(":white_check_mark: Váš description byl úspěšně přidán do Profilu!**")
-}
+  
+  const embed = client.embed
+  .setTimestamp()
+  
+  if(!args.join(" ")) {
+    
+    embed.setTitle("Error")
+    embed.setColor(client.color.RED)
+    embed.setDescription(":x: **Prosím, zadej nějakou informaci o sobě do Bio.**")
+    
+    message.channel.send(embed)
+    return
+  };
+  
+  embed.setTitle("Bio byl nastaven!")
+  embed.setColor(client.color.RANDOM)
+  embed.setDescription("Nastaveno: **" + args.join(" ") + "**")
+  
+  client.db.set(`bio_${message.author.id}`, args.join(" "))
+  
+  message.channel.send(embed)
+};
 exports.help = {
   name: "setbio",
   aliases: []
