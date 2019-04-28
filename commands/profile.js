@@ -6,7 +6,6 @@ exports.run = (client, message, args) => {
     const adapter = new FileSync('./db.json')
     const db = low(adapter)
     const member = message.mentions.users.first() || message.author
-    if(member.user.bot) return message.reply(':x: **Omlouvám se, nemůžu zobrazit tento profil.**');
 
         const get_credits = db.get("credits").find({ auteur: member.id }).value()
         let credits = ''
