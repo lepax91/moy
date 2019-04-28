@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
   .addField("🌎 Bio ", bio)
   .addField("🎂 Věk ", age)
   .addField("👮 Povolání ", job)
-  .setFooter("</> Ačkoliv to hostuju přes Heroku, tak se všechno zresetuje.")
+  .setFooter("</> v2.5a | Dot Development Project")
   message.channel.send(embed)
 }
 exports.help = {
