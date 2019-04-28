@@ -2,6 +2,8 @@ const db = require("quick.db");
 
 exports.run = (client, message, args) => {
   
+  const money = db.get(`money_${message.author.id}`)
+  
   const embed = client.embed
   
   if(args[0] === "gay"){
