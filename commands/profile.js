@@ -33,11 +33,10 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
                 .setColor("RANDOM") // Sets the color of the embed
                 .setFooter("</> v2.5a") // Sets the footer of the embed
                 .setTimestamp();
-
             message.channel.send(profile_embed); // Send the embed in the current channel
-            break;
-
+            
+}
 exports.help = {
   name: "profile21",
   aliases: ["p"],
-};
+}
