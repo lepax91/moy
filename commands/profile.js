@@ -31,9 +31,9 @@ exports.run = (client, message, args) => {
         
         
           let profil = new Discord.RichEmbed()           
-             .setTitle("**_Profile_**")
-             .setDescription(`🌎 Bio desc`)
+             .setTitle("Profil")
              .addField("📝 Jméno", member.tag, true)
+             .addField("🌎 Bio", desc) 
              .addField("💸 Peníze", credits + "$", true)
              .addField("🎂 Věk", age + " let", true)
              .setColor("RANDOM")
