@@ -28,12 +28,12 @@ exports.run = (client, message, args) => {
             let age_msg = Object.values(get_age)
             age = age_msg[1]
         }
-        const get_desc = db.get("povolani").find({ auteur: member.id}).value()
+        const get_praci = db.get("povolani").find({ auteur: member.id}).value()
         let prace = ''
-        if (!get_desc) desc = "Neznámo"
+        if (!get_praci) prace = "Neznámo"
         else {
-            let desc_msg = Object.values(get_desc)
-            desc = desc_msg[1]
+            let prace_msg = Object.values(get_praci)
+            desc = prace_msg[1]
         }
         
           let profil = new Discord.RichEmbed()           
