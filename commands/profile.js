@@ -1,40 +1,26 @@
-const Discord = require('discord.js');
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
+exports.run = (client, message, args, Discord) => {
 
-exports.run = (client, message, args) => {
-    const adapter = new FileSync('./db.json')
-    const db = low(adapter)
-    const member = message.mentions.users.first() || message.author
-
-        
-        const get_bio = db.get("bio").find({ auteur: member.id}).value()
-        let bio = ''
-        if (!get_bio) bio = 'Není zaznamenáno'
-        else {
-            let bio_msg = Object.values(get_bio)
-            bio = bio_msg[1]
-        }
-        const get_age = db.get("age").find({ auteur: member.id }).value()
-        let age = ''
-        if(!get_age) age = '0'
-        else {
-            let age_msg = Object.values(get_age)
-            age = age_msg[1]
-        }
-      
-          let profil = new Discord.RichEmbed()           
-             .setTitle("Profil")
-             .addField("📝 Jméno", member.tag, true)
-             .addField("🌎 Bio", bio, true)
-             .addField("🎂 Věk", age, true)
-             .setColor("RANDOM")
-             .setFooter("</> v2.5a - Dot")
-             .setTimestamp()
-        message.channel.send(profil)
-
-}
-module.exports.help = {
-    name: "more",
+  const member = message.mentions.users.first() || message.author;
+  let money = client.db.get(`money_${member.id}-${message.guild.id}`)
+  let bio = client.db.get(`bio_${member.id}`)
+  let age = client.db.get(`age_${member.id}`)
+  
+  if(money === null) money = 0
+  if(bio === null) bio = 'Nebylo zaznamenáno'
+  if(age === null) age = 'Nebylo zaznamenáno'
+  if(verified === null) verified = ':x:'
+  
+  const embed = new Discord.RichEmbed()
+  .setColor(client.color.MAIN)
+  .setTitle(`👤 Profil: ${member.tag}`)
+  .addField("🌎 Bio: ", bio)
+  .addField("🎂 Věk; ", age)
+  .addField("💸 Peníze: ", money + '$')
+  .setFooter("</> v2.5a")
+  
+  message.channel.send(embed)
+};
+exports.help = {
+    name: "profile",
     aliases: []
 }
