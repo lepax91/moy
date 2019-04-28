@@ -21,7 +21,7 @@ exports.run = async (client, message, args, level) => { // eslint-disable-line n
                 // Display the amount of credits of the member
                 .addField('💰 Credits', `**${data.credits}** credits`, true)
                 // Display the amount of reputation points of the member
-                .addField('🎩 Reputace, `**${data.rep}** reputací`, true)
+                .addField('🎩 Reputace', `**${data.rep}** point`, true)
                 // If the member is premium, display "Oui !" else display "Non..."
                 .addField('👑 Premium', ((data.premium === 'true') ? 'Ano!' : 'Ne...'), true)
                 // Display the creation date of the member
