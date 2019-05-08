@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
   
-  const embed = client
+  const embed = client.embed
   .setTimestamp()
   
   if(!args.join(" ")) {
