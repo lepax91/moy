@@ -18,7 +18,7 @@ randomPuppy(subreddit).then(async url => {
                     await message.channel.send({
                             files: [{ 
                                   attachment: url, 
-                                  name: 'feet.png
+                                  name: 'feet.png'
                           }]           
                    }).then(() => message.channel.stopTyping()); 
     }).catch(err => console.error(err)); 
