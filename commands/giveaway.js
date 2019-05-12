@@ -88,7 +88,6 @@ hours = 12;
     });
   }
 });
-}
 exports.help = {
     name: "giveaway",
     aliases: []
