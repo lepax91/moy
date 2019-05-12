@@ -135,9 +135,9 @@ module.exports.run = async (bot, message, args) => {
                        m.edit(endEmbed);
                      },duration);
                    });
-                  msgg.edit(`:tada: Giveaway setup se dokončil, právě teď se odehrává v kanálu Giveaway!`);
+                  msg.edit(`:tada: Giveaway setup se dokončil, právě teď se odehrává v kanálu Giveaway!`);
                 } catch(e) {
-                  msgg.edit(`:x: Nemůžu spusit giveaway protože nemám pravomoce!`);
+                  msg.edit(`:x: Nemůžu spusit giveaway protože nemám pravomoce!`);
                   console.log(e);
                 }
               });
