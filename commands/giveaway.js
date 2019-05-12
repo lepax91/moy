@@ -1,6 +1,8 @@
 const moment = require('moment'); //npm i moment
 const ms = require('ms') //npm i ms 
 
+exports.run = async (client, message, args) => {
+
   var time = moment().format('Do MMMM YYYY , hh:mm');
   var room;
   var title;
@@ -86,3 +88,8 @@ hours = 12;
     });
   }
 });
+}
+exports.help = {
+    name: "giveaway",
+    aliases: []
+}
