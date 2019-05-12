@@ -36,7 +36,7 @@ module.exports.run = async (bot, message, args) => {
             if(isNaN(collected.first().content)) return message.channel.send(':x: Tento čas neexistuje nebo ho zadáváte špatně.');
             duration = collected.first().content * 60000;
             collected.first().delete();
-            msgg.edit(':tada: Zadej nějaký čas do své uspořádané soutěže!).then(msg => {
+            msgg.edit(':tada: Zadej nějaký čas do své uspořádané soutěže!').then(msg => {
               message.channel.awaitMessages(filter, {
                 max: 1,
                 time: 20000,
@@ -47,7 +47,7 @@ module.exports.run = async (bot, message, args) => {
                 try {
                   let giveEmbed = new Discord.RichEmbed()
                   .setTitle(":tada: Giveaway právě teď začala! :tada:")
-                  .setDescription(`desc`,\n\n\n\nKlikni na reakci :tada: aby jsi se mohl zapojit do soutěže!)
+                  .setDescription(`desc`, '\n\n\n\nKlikni na reakci :tada: aby jsi se mohl zapojit do soutěže!')
                   .setColor("RANDOM")
                   .setFooter(message.author.username, message.author.avatarURL);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
@@ -115,7 +115,7 @@ module.exports.run = async (bot, message, args) => {
                 try {
                   let giveEmbed = new Discord.RichEmbed()          
                   .setTitle(`:tada: Giveaway začíná :tada:`)
-                  .setDescription(`desc`,\n\n\n\nKlikni na reakci :tada: aby jsi se mohl zapojit do soutěže!)
+                  .setDescription(`desc`,'\n\n\n\nKlikni na reakci :tada: aby jsi se mohl zapojit do soutěže!')
                   .setColor("RANDOM")
                   .setFooter(`Time: ${duration / 6000}`, message.author.username, message.author.avatarURL);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
