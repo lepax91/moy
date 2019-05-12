@@ -17,13 +17,13 @@ module.exports.run = async (bot, message, args) => {
  // if(message.content.startsWith(prefix + "giveaway")) {
 
     if(!message.guild.member(message.author).hasPermission('ADMINISTRATOR')) return message.channel.send(':x: Nemůžeš uspořádat soutěž protože nejsi **Administrator* nebo výšší pravomoc!');
-    message.channel.send(`:tada: **V jakém kanálu chceš uspořádat Giveaway? `).then(msgg => {
+    message.channel.send(`:tada: **V jakém kanálu chceš uspořádat Giveaway?**`).then(msgg => {
       message.channel.awaitMessages(filter, {
         max: 1,
         time: 20000,
         errors: ['time']
       }).then(collected => {
-        let room = message.guild.channels.find('channelID', collected.first().content);
+        let room = message.guild.channels.find('name', collected.first().content);
         if(!room) return message.channel.send(':x: Tento kanál neexistuje nebo ho nemůžu najít.');
         room = collected.first().content;
         collected.first().delete();
@@ -86,13 +86,13 @@ module.exports.run = async (bot, message, args) => {
  // if(message.content.startsWith(prefix + "giveaway")) {
 
     if(!message.guild.member(message.author).hasPermission('ADMINISTRATOR')) return message.channel.send('Nemůžeš uspořádat soutěž protože nejsi **Administrator* nebo výšší pravomoc!');
-    message.channel.send(`:tada: **V jakém kanálu chceš uspořádat Giveaway?`).then(msgg => {
+    message.channel.send(`:tada: **V jakém kanálu chceš uspořádat Giveaway?**`).then(msgg => {
       message.channel.awaitMessages(filter, {
         max: 1,
         time: 20000,
         errors: ['time']
       }).then(collected => {
-        let room = message.guild.channels.find('channelID', collected.first().content);
+        let room = message.guild.channels.find('name', collected.first().content);
         if(!room) return message.channel.send(':x: Nemůžu tento kanál neexistuje nebo není k dispozici');
         room = collected.first().content;
         collected.first().delete();
