@@ -16,27 +16,27 @@ module.exports.run = async (bot, message, args) => {
   var filter = m => m.author.id === message.author.id;
  // if(message.content.startsWith(prefix + "giveaway")) {
 
-    if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **you should have "MANAGE GUILD" permission**');
-    message.channel.send(`:eight_pointed_black_star:| **in wich channel you want to start the giveaway?**`).then(msgg => {
+    if(!message.guild.member(message.author).hasPermission('ADMINISTRATOR')) return message.channel.send(':x: Nemůžeš uspořádat soutěž protože nejsi **Administrator* nebo výšší pravomoc!');
+    message.channel.send(`:tada: **V jakém kanálu chceš uspořádat Giveaway? `).then(msgg => {
       message.channel.awaitMessages(filter, {
         max: 1,
         time: 20000,
         errors: ['time']
       }).then(collected => {
-        let room = message.guild.channels.find('name', collected.first().content);
-        if(!room) return message.channel.send(':heavy_multiplication_x:| **cannot find this channel**');
+        let room = message.guild.channels.find('channelID', collected.first().content);
+        if(!room) return message.channel.send(':x: Tento kanál neexistuje nebo ho nemůžu najít.');
         room = collected.first().content;
         collected.first().delete();
-        msgg.edit(':eight_pointed_black_star:| **write time of the giveaway**').then(msg => {
+        msgg.edit(':tada: Zadej nějaký čas do této soutěže!').then(msg => {
           message.channel.awaitMessages(filter, {
             max: 1,
             time: 20000,
             errors: ['time']
           }).then(collected => {
-            if(isNaN(collected.first().content)) return message.channel.send(':heavy_multiplication_x:| **you must rewrite the command``write a correct time``**');
+            if(isNaN(collected.first().content)) return message.channel.send(':x: Tento čas neexistuje! **_TIP: Když chcete udělit čas do soutěže nedávejte nikdy zkratku: (m/h/s)!_**');
             duration = collected.first().content * 60000;
             collected.first().delete();
-            msgg.edit(':eight_pointed_black_star:| **whats the prize?**').then(msg => {
+            msgg.edit(':tada: Zadej prosím nějakou odměnu kterou chceš dát do soutěže!').then(msg => {
               message.channel.awaitMessages(filter, {
                 max: 1,
                 time: 20000,
@@ -45,29 +45,31 @@ module.exports.run = async (bot, message, args) => {
                 title = collected.first().content;
                 collected.first().delete();
                 try {
-                  let giveEmbed = new Discord.RichEmbed()
-                  .setAuthor(`Tanki Online`)
-                  .setTitle(title)
-                  .setDescription(`Time : ${duration / 60000} Minute`)
-                  .setFooter(message.author.username, message.author.avatarURL);
-                  message.guild.channels.find('name', room).send(giveEmbed).then(m => {
+                  let giveEmbed = new Discord.RichEmbed()                           
+                  .setTitle(`Odměna bude`, title)
+                  .setColor("RANDOM")
+                  .setTimestamp()
+                  .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
+                  .setFooter(`Čas: ${duration / 60000}m`);
+                  message.guild.channels.find('channelID', room).send(giveEmbed).then(m => {
                      let re = m.react('🎉');
                      setTimeout(() => {
                        let users = m.reactions.get("🎉").users;
                        let list = users.array().filter(u => u.id !== m.author.id);
                        let gFilter = list[Math.floor(Math.random() * list.length) + 0];
-                         if(users.size === 1) gFilter = '**Not specified**';
+                         if(users.size === 1) gFilter = '**Není specifikováno**';
                        let endEmbed = new Discord.RichEmbed()
-                       .setAuthor(message.author.username, message.author.avatarURL)
-                       .setTitle(title)
-                       .addField('The giveaway ended !',`the winner is : ${gFilter}`)
-                       .setFooter(message.guild.name, message.guild.iconURL);
+                       .setTitle(`Odměna bude:`, title)
+                       .setColor("RANDOM")
+                       .setTimestamp()
+                       .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
+                       .setFooter(`Čas: ${duration / 60000}m`);
                        m.edit(endEmbed);
                      },duration);
                    });
-                  msgg.edit(`:heavy_check_mark:| **the giveaway has been prepared**`);
+                  msgg.edit(`:tada: Giveaway setup se dokončil, Právě teď se odehrává v kanálu Giveaway!_**`);
                 } catch(e) {
-                  msgg.edit(`:heavy_multiplication_x:| **I dont have permissions**`);
+                  msgg.edit(`:x: Nemám pravomoc na spuštění **Giveaway Setup**!`);
                   console.log(e);
                 }
               });
@@ -83,29 +85,29 @@ module.exports.run = async (bot, message, args) => {
   var filter = m => m.author.id === message.author.id;
  // if(message.content.startsWith(prefix + "giveaway")) {
 
-    if(!message.guild.member(message.author).hasPermission('MANAGE_GUILD')) return message.channel.send(':heavy_multiplication_x:| **you should have "MANAGE GUILD" permission**');
-    message.channel.send(`:eight_pointed_black_star:| **in wich channel you want to start the giveaway?**`).then(msgg => {
+    if(!message.guild.member(message.author).hasPermission('ADMINISTRATOR')) return message.channel.send('Nemůžeš uspořádat soutěž protože nejsi **Administrator* nebo výšší pravomoc!');
+    message.channel.send(`:tada: **V jakém kanálu chceš uspořádat Giveaway?`).then(msgg => {
       message.channel.awaitMessages(filter, {
         max: 1,
         time: 20000,
         errors: ['time']
       }).then(collected => {
-        let room = message.guild.channels.find('name', collected.first().content);
-        if(!room) return message.channel.send(':heavy_multiplication_x:| **cannot find this channel**');
+        let room = message.guild.channels.find('channelID', collected.first().content);
+        if(!room) return message.channel.send(':x: Nemůžu tento kanál neexistuje nebo není k dispozici');
         room = collected.first().content;
         collected.first().delete();
-        msgg.edit(':eight_pointed_black_star:| **write time of the giveaway**').then(msg => {
+        msgg.edit(':tada: Zadej nějaký čas do této soutěže!').then(msg => {
           message.channel.awaitMessages(filter, {
             max: 1,
             time: 20000,
             errors: ['time']
           }).then(collected => {
-            if(isNaN(collected.first().content)) return message.channel.send(':heavy_multiplication_x:| **you must rewrite the command``write a correct time``**');
+            if(isNaN(collected.first().content)) return message.channel.send(':x: Tento čas neexistuje! **_TIP: Když chcete udělit čas do soutěže, nikdy nedávejte zkratku: (m/h/s)!_**');
             duration = collected.first().content * 60000;
             collected.first().delete();
-            msgg.edit(':eight_pointed_black_star:| **whats the prize?**').then(msg => {
+            msgg.edit(':tada: Zadej prosím nějakou odměnu kterou chceš dát do soutěže!').then(msg => {
               message.channel.awaitMessages(filter, {
-                max: 1,
+                max:  1,
                 time: 20000,
                 errors: ['time']
               }).then(collected => {
@@ -113,28 +115,31 @@ module.exports.run = async (bot, message, args) => {
                 collected.first().delete();
                 try {
                   let giveEmbed = new Discord.RichEmbed()
-                  .setAuthor(`Tanki Online`)
-                  .setTitle(title)
-                  .setDescription(`Time : ${duration / 60000} Minute`)
-                  .setFooter(message.author.username, message.author.avatarURL);
+                  .setTitle(`Odměna bude:`, title)
+                  .setColor("RANDOM")
+                  .setTimestamp()
+                  .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
+                  .setFooter(`Čas: ${duration / 60000}m`);                  
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
                      let re = m.react('🎉');
                      setTimeout(() => {
                        let users = m.reactions.get("🎉").users;
                        let list = users.array().filter(u => u.id !== m.author.id);
                        let gFilter = list[Math.floor(Math.random() * list.length) + 0];
-                         if(users.size === 1) gFilter = '**Not specified**';
+                         if(users.size === 1) gFilter = '**Není specifikováno';
                        let endEmbed = new Discord.RichEmbed()
                        .setAuthor(message.author.username, message.author.avatarURL)
                        .setTitle(title)
-                       .addField('The giveaway ended !',`the winner is : ${gFilter}`)
-                       .setFooter(message.guild.name, message.guild.iconURL);
+                       .setColor("RANDOM")
+                       .setTimestamp()
+                       .addField(':tada: Giveaway právě teď skončila! :tada:',`Výherce této soutěže: ${gFilter}`)
+                       .setFooter(`🎉 Gratuluji výherci, doufám že se ti odměna bude líbit!`);
                        m.edit(endEmbed);
                      },duration);
                    });
-                  msgg.edit(`:heavy_check_mark:| **the giveaway has been prepared**`);
+                  msgg.edit(`:tada: Giveaway setup se dokončil, právě teď se odehrává v kanálu Giveaway!`);
                 } catch(e) {
-                  msgg.edit(`:heavy_multiplication_x:| **I dont have permissions**`);
+                  msgg.edit(`:x: Nemůžu spusit giveaway protože nemám pravomoce!`);
                   console.log(e);
                 }
               });
