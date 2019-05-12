@@ -1,63 +1,108 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js');
+exports.run = async (bot, message, args) => {
+  message.delete()
+  let channel, giveaway;
+  const time = args[0];
+  const prefix = `.giveaway ${time} `;
+  const a = message.content.slice(prefix.length).split(' ');
+  const prize = a.join(' ')
+  try{
+    if(!channel) {
+      let reaction = '🎉';
+      let giveawayMessage = await message.channel.send("", {
+          embed: new Discord.RichEmbed()
+            .setTitle("GIVEAWAY! 🎉")
+            .setDescription(`Giveaway event started by <@${message.author.id}>. React to this message with ${reaction} to get a chance to win **${prize}**.`)
+            .setColor("#0000ff")
+        .setFooter(`Event stops in ${time} seconds. You will get your reward after the event has concluded.`)
+        });
+    await giveawayMessage.react(reaction);
  
-exports.run = async (bot, message, args, tools) => {
-    if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send(':x: **Na toto vůbec nemáš pravomoc, musíš mít roli **Administrator** nebo výše!').then(() => {
-        message.react(`⛔`);
-    });
-    let channel;
-    const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max:10});
-    const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {max:10});
-    message.channel.send(`:tada: Giveaway setup právě začal! Označ nějaký kanál který budeš pořádat **Giveaway**!`);
-    collector.on(`collect`, col => {
-        if(!col.mentions.channels.first())return message.channel.send(`:tada: Prosím označ nějaký Giveaway kanál!`);
-        channel = col.mentions.channels.first();
-        message.channel.send(`**:tada: Giveaway kanál nastaven na:**\n > <#${channel.id}>`);
-        message.channel.send(`🎁 Co chceš dát do Giveawaye?`);
-        const startColStop = () => {
-            setTimeout(endCol, 2000);
+    let giveawayMessageID = giveawayMessage.id;
+    channel = message.channel.id;
+     
+    giveaway = bot.setTimeout(async () => {
+        let giveawayMessage = await message.channel.fetchMessage(giveawayMessageID);
+ 
+        let winners = [];
+        if (giveawayMessage.reactions.get(reaction)) {
+          winners = giveawayMessage.reactions.get(reaction).users.filter(user => !user.bot).map(u => u.id);
         }
-        const endCol = () => {
-            collector.stop();
+     
+        var time = parseInt(args[0])
+        setInterval (function () {
+          time = time - 5
+          giveawayMessage.edit("", {
+              embed: new Discord.RichEmbed()
+                .setTitle("GIVEAWAY! 🎉")
+                .setDescription(`Giveaway event started by <@${message.author.id}>. React to this message with ${reaction} to get a chance to win **${prize}**.`)
+                .setColor("#0000ff")
+            .setFooter(`Event stops in ${time} seconds. You will get your reward after the event has concluded.`)
+            });
+        }, 5 * 1000);
+ 
+        let winner;
+        while (!winner && winners.length) {
+          winner = winners[Math.floor(Math.random() * winners.length)];
+          winners.splice(winners.indexOf(winner), 1);
+          winner = await bot.fetchUser(winner).catch(() => {});
         }
-        col.delete();
-        startColStop()
-    }),
-    collector.on('end', () => {
-        collector2.on("collect", async col2 => {
-            collector2.stop()
-            let givingAway = col2.content
-            if(givingAway === channel)return;
  
-            message.channel.send(`**Právě jsi dal do Giveawaye:**\n > ${givingAway}`);
+        if (winner) {
  
-            let desc = `**Co můžeš vyhrát?:**\n\n${givingAway}\n\n\n\n`
-            desc += `Pokud se chceš zapojit do Giveawaye klikni na reakci :tada:`
+          giveawayMessage.edit("", {
+              embed: new Discord.RichEmbed()
+                .setTitle("Giveaway Event Ended")
+                .setDescription(`${winner} won the giveaway! You just won ${prize}!\nThank you everyone for participating. Better luck next time.`)
+                .setColor("#0000ff")
+          }).catch(err => {
+            console.log(err);
+          });
  
-            let embed = new Discord.RichEmbed()
-            .setColor("#ff0000")
-            .setTitle(`:tada: Giveaway začíná! :tada:`)
-            .setDescription(desc)
-            let em = await channel.send(embed)
-            em.react(`🎉`)
-                     
-            const filter = (reaction, user) => reaction.emoji.name === '🎉'
-            const rCol = em.createReactionCollector(filter, { time: 5000});
+            winner.send("", {
+              embed: new Discord.RichEmbed()
+                .setTitle("Congratulations")
+                .setDescription(`You won the giveaway in **${message.guild.name}** Server! And you've been awarded with **${prize}**!`)
+                .setColor("#0000ff")
+          }).catch(() => {});
+          }
+          else {
+            giveawayMessage.edit("", {
+              embed: new Discord.RichEmbed()
+                .setTitle("Giveaway Event Ended")
+                .setDescription(`Unfortunately, no one participated and apparently there\'s no winner. 😕`)
+                .setColor("#ff0000")
+          }).catch(e => {
+              bot.log.error(e);
+            });
+          }
  
-            rCol.on(`collect`, r => {
-                    const end = async function() {
-                        let users = rCol.users.map(g => `${g.id}`).slice(1);
-                        let random = Math.floor(Math.random()* users.length);
-                        let winner = users[random];
-                        channel.send(`:tada: Giveaway právě teď skončilo! Vyhrál(a): **<@${winner}>**! Vyhraváš: **${givingAway}**`);
-                }
-                setTimeout(end, 5000)
-            })
-           
-        })
-    })
+          channel = null;
+      }, time * 1000);
+    }
+    else {
+      if (args[0] === 'end') {
+        bot.clearTimeout(giveaway);
+        channel = null;
+ 
+        message.channel.send("", {
+              embed: new Discord.RichEmbed()
+                .setTitle("Giveaway Event Ended")
+                .setDescription(`The giveaway event was abruptly ended by ${message.author.tag}. Sorry, no giveaways this time!`)
+                .setColor("#ff0000")
+          }).catch(e => {
+          bot.log.error(e);
+        });
+      }
+      else {
+        return console.log('ew')
+      }
+    }
+  } catch (err) {
+    console.log(err)
+  }
 }
- 
 exports.help = {
-    name: 'giveaway',
+    name: 'test!',
     aliases: []
 }
