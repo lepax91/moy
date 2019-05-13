@@ -6,11 +6,11 @@ exports.run = async (client, message, args, config) => {
 
 
     let timeout = 21600000 // 6 hours in milliseconds, change if you'd like.
-    let amount = 500
+    let amount = 100
     // random amount: Math.floor(Math.random() * 1000) + 1;
 
 
-    let money = await db.fetch(`daily_${message.author.id}`);
+    let money = await db.fetch(`money_${message.author.id}`);
 
     if (money !== null && timeout - (Date.now() - money) > 0) {
         let time = ms(timeout - (Date.now() - money));
@@ -20,11 +20,11 @@ exports.run = async (client, message, args, config) => {
     let embed = new Discord.RichEmbed()
     .setTitle(`Daily Reward`)
     .setColor("RANDOM")
-    .addField(`Dostal jsi celkem:`, amount)
+    .setDescription('💵 100$ | 💸 Daily bylo úspěšně vyzvednuto, teď musíš čekat 6 hodin na další.')
     .setTimestamp()
 
     message.channel.send(embed)
-    db.add(`money_${message.author.id}`, money)
+    db.add(`money_${message.author.id}`)
     db.set(`daily_${message.author.id}`, Date.now())
         
     }
