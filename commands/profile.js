@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 exports.run = async (client, message, args) => {
 
   const member = message.mentions.users.first() || message.author;
-
+  let money = client.db.get(`money_${member.id}-${message.guild.id}`)
 
   let bio = client.db.get(`bio_${member.id}`)
   let age = client.db.get(`age_${member.id}`)
@@ -14,11 +14,13 @@ exports.run = async (client, message, args) => {
   if(age === null) age = 'Nebylo zaznamenáno'
   if(job === null) job = 'Nebylo zaznamenáno'
   if(sex === null) sex = 'Nebylo zaznamenáno'
+  if(money === null) money = 0
   
   const embed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTitle(`Profil: ${member.tag}`)
   .addField("🌎 Bio ", bio)
+  .addField("💵 Peníze ", money + '$')
   .addField("🎂 Věk ", age)
   .addField("♂️ Pohlaví", sex)
   .addField("👮 Povolání ", job)
