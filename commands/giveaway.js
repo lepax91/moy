@@ -46,11 +46,11 @@ module.exports.run = async (bot, message, args) => {
                 collected.first().delete();
                 try {
                   let giveEmbed = new Discord.RichEmbed()                           
-                  .setTitle("Soutěží se o" + title)
+                  .setTitle("Soutěží se o"  +   title)
                   .setColor("RANDOM")
                   .setTimestamp()
                   .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
-                  .setFooter(`Tento giveaway trvá celkem ${duration / 60000}m`);
+                  .setFooter(`🎉 Tento giveaway trvá celkem ${duration / 60000}m 🎉`);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
                      let re = m.react('🎉');
                      setTimeout(() => {
@@ -59,11 +59,11 @@ module.exports.run = async (bot, message, args) => {
                        let gFilter = list[Math.floor(Math.random() * list.length) + 0];
                          if(users.size === 1) gFilter = '**Není specifikováno**';
                        let endEmbed = new Discord.RichEmbed()
-                       .setTitle("Soutěží se o" + title)
+                       .setTitle("Soutěží se o"  +   title)
                        .setColor("RANDOM")
                        .setTimestamp()
                        .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
-                       .setFooter(`Tento giveaway trvá celkem ${duration / 60000}m`);
+                       .setFooter(`🎉 Tento giveaway trvá celkem ${duration / 60000}m 🎉`);
                        m.edit(endEmbed);
                      },duration);
                    });
@@ -115,7 +115,7 @@ module.exports.run = async (bot, message, args) => {
                 collected.first().delete();
                 try {
                   let giveEmbed = new Discord.RichEmbed()
-                  .setTitle("Soutěží se o" + title)
+                  .setTitle("Soutěží se o"  +   title)
                   .setColor("RANDOM")
                   .setTimestamp()
                   .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
