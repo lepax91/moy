@@ -29,7 +29,7 @@ const db = require('quick-db')
 
 
 
-         client.db.set(`lastDaily_${message.author.id}`, Date.now());
+         client.db.set(lastDaily_${message.author.id}, Date.now());
          client.db.add(`money_${message.author.id}`, amount);	
     }	
 };	
