@@ -46,7 +46,7 @@ module.exports.run = async (bot, message, args) => {
                 collected.first().delete();
                 try {
                   let giveEmbed = new Discord.RichEmbed()                           
-                  .setTitle("Soutěží se o"  +   title)
+                  .setTitle(title)
                   .setColor("RANDOM")
                   .setTimestamp()
                   .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
@@ -59,7 +59,7 @@ module.exports.run = async (bot, message, args) => {
                        let gFilter = list[Math.floor(Math.random() * list.length) + 0];
                          if(users.size === 1) gFilter = '**Není specifikováno**';
                        let endEmbed = new Discord.RichEmbed()
-                       .setTitle("Soutěží se o"  +   title)
+                       .setTitle(title)
                        .setColor("RANDOM")
                        .setTimestamp()
                        .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
@@ -115,7 +115,7 @@ module.exports.run = async (bot, message, args) => {
                 collected.first().delete();
                 try {
                   let giveEmbed = new Discord.RichEmbed()
-                  .setTitle("Soutěží se o"  +   title)
+                  .setTitle(title)
                   .setColor("RANDOM")
                   .setTimestamp()
                   .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
