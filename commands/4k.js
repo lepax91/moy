@@ -2,12 +2,7 @@ const Discord = require('discord.js');
 const { get } = require('snekfetch');
 
 exports.run = async (client, message) => {
-    if (!message.channel.nsfw) {
-    return message.channel.send(new Discord.RichEmbed()
-      .setColor("RED")
-      .setDescription(":underage: Tento příkaz je povolen jen kde je označen NSFW kanál.")
-
-      
+    
     if (args[0] === 'help') {
         let embed = new Discord.RichEmbed()
         .setAuthor("Chceš-li pomoc, tak seš tu správně. ")
@@ -17,6 +12,11 @@ exports.run = async (client, message) => {
         .setTimestamp();
         message.channel.send(embed)
 
+    if (!message.channel.nsfw) {
+    return message.channel.send(new Discord.RichEmbed()
+      .setColor("RED")
+      .setDescription(":underage: Tento příkaz je povolen jen kde je označen NSFW kanál.")
+    
     );
   }
     const { body } = await get("https://nekobot.xyz/api/image?type=4k");
