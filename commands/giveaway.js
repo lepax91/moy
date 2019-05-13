@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
             errors: ['time']
           }).then(collected => {
             if(isNaN(collected.first().content)) return message.channel.send(':x: Tento čas neexistuje! **_TIP: Když chcete udělit čas do soutěže nedávejte nikdy zkratku: (m/h/s)!_**');
-            duration = coll ected.first().content * 60000;
+            duration = collected.first().content * 60000;
             collected.first().delete();
             msgg.edit(':tada: Zadej prosím nějakou odměnu kterou chceš dát do soutěže!').then(msg => {
               message.channel.awaitMessages(filter, {
@@ -126,7 +126,7 @@ module.exports.run = async (bot, message, args) => {
                        let users = m.reactions.get("🎉").users;
                        let list = users.array().filter(u => u.id !== m.author.id);
                        let gFilter = list[Math.floor(Math.random() * list.length) + 0];
-                         if(users.size === 1) gFilter = '**Není specifikovánocc';
+                         if(users.size === 1) gFilter = '**Není specifikováno**';
                        let endEmbed = new Discord.RichEmbed()
                        .setColor("RANDOM")
                        .setTimestamp()
