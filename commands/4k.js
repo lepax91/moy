@@ -17,8 +17,6 @@ exports.run = async (client, message) => {
     return message.channel.send() 
       embed.setColor("RED")
       embed.setDescription(":underage: Tento příkaz je povolen jen kde je označen NSFW kanál.")
-    
-    );
   }
     const { body } = await get("https://nekobot.xyz/api/image?type=4k");
        embed.setTitle('4k')
