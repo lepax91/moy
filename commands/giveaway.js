@@ -119,14 +119,14 @@ module.exports.run = async (bot, message, args) => {
                   .setColor("RANDOM")
                   .setTimestamp()
                   .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
-                  .setFooter(`Čas: ${duration / 60000}m`);                  
+                  .setFooter(`Tento giveaway trvá celkem ${duration / 60000}m`);                  
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
                      let re = m.react('🎉');
                      setTimeout(() => {
                        let users = m.reactions.get("🎉").users;
                        let list = users.array().filter(u => u.id !== m.author.id);
                        let gFilter = list[Math.floor(Math.random() * list.length) + 0];
-                         if(users.size === 1) gFilter = '**Není specifikováno';
+                         if(users.size === 1) gFilter = '**Není specifikovánocc';
                        let endEmbed = new Discord.RichEmbed()
                        .setColor("RANDOM")
                        .setTimestamp()
@@ -148,7 +148,6 @@ module.exports.run = async (bot, message, args) => {
     });
   }
 
-//JEBE MUUU
 
 module.exports.help = {
     name: "test",
