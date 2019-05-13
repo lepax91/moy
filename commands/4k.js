@@ -4,13 +4,13 @@ const { get } = require('snekfetch');
 exports.run = async (client, message) => {
     
     if (args[0] === 'help') {
-        let embed = new Discord.RichEmbed()
+        const embed = new Discord.RichEmbed()
         .setAuthor("Chceš-li pomoc, tak seš tu správně. ")
         .setDescription("Tento příkaz funguje pouze jen v NSFW\nPříkaz funguje normálně a napíšeš pouze **.4k**")
         .setColor("RANDOM")
         .setFooter("V1.5a")
         .setTimestamp();
-        message.channel.send(embed)
+        message.channel.send(embed);
 
     if (!message.channel.nsfw) {
     return message.channel.send(new Discord.RichEmbed()
