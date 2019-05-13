@@ -34,7 +34,7 @@ module.exports.run = async (bot, message, args) => {
             errors: ['time']
           }).then(collected => {
             if(isNaN(collected.first().content)) return message.channel.send(':x: Tento čas neexistuje! **_TIP: Když chcete udělit čas do soutěže nedávejte nikdy zkratku: (m/h/s)!_**');
-            duration = collected.first().content * 60000;
+            duration = coll ected.first().content * 60000;
             collected.first().delete();
             msgg.edit(':tada: Zadej prosím nějakou odměnu kterou chceš dát do soutěže!').then(msg => {
               message.channel.awaitMessages(filter, {
@@ -46,11 +46,11 @@ module.exports.run = async (bot, message, args) => {
                 collected.first().delete();
                 try {
                   let giveEmbed = new Discord.RichEmbed()                           
-                  .setTitle("Odměna:" + title)
+                  .setTitle("Soutěží se o" + title)
                   .setColor("RANDOM")
                   .setTimestamp()
                   .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
-                  .setFooter(`Čas: ${duration / 60000}m`);
+                  .setFooter(`Tento giveaway trvá celkem ${duration / 60000}m`);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
                      let re = m.react('🎉');
                      setTimeout(() => {
@@ -59,17 +59,17 @@ module.exports.run = async (bot, message, args) => {
                        let gFilter = list[Math.floor(Math.random() * list.length) + 0];
                          if(users.size === 1) gFilter = '**Není specifikováno**';
                        let endEmbed = new Discord.RichEmbed()
-                       .setTitle("Odměna:" + title)
+                       .setTitle("Soutěží se o" + title)
                        .setColor("RANDOM")
                        .setTimestamp()
                        .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
-                       .setFooter(`Čas: ${duration / 60000}m`);
+                       .setFooter(`Tento giveaway trvá celkem ${duration / 60000}m`);
                        m.edit(endEmbed);
                      },duration);
                    });
                   msg.edit(`:tada: **_Giveaway setup se dokončil, Právě teď se odehrává v kanálu Giveaway!_**`);
                 } catch(e) {
-                  msg.edit(`:x: Bohužel na toto nemám pravomoc, nastav mi roli na Administrátor`);
+                  msg.edit(`:x: Bohužel na toto nemám pravomoc, nastav mi roli **Dot** na Administrátor`);
                   console.log(e);
                 }
               });
@@ -115,7 +115,7 @@ module.exports.run = async (bot, message, args) => {
                 collected.first().delete();
                 try {
                   let giveEmbed = new Discord.RichEmbed()
-                  .setTitle("Odměna:" + title)
+                  .setTitle("Soutěží se o" + title)
                   .setColor("RANDOM")
                   .setTimestamp()
                   .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
