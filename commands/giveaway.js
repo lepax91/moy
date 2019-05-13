@@ -50,7 +50,7 @@ module.exports.run = async (bot, message, args) => {
                   .setColor("RANDOM")
                   .setTimestamp()
                   .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
-                  .setFooter(`🎉 Tento giveaway trvá celkem ${duration / 60000}m 🎉`);
+                  .setFooter(`🎉 Čas: ${duration / 60000}m`);
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
                      let re = m.react('🎉');
                      setTimeout(() => {
@@ -63,7 +63,7 @@ module.exports.run = async (bot, message, args) => {
                        .setColor("RANDOM")
                        .setTimestamp()
                        .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
-                       .setFooter(`🎉 Tento giveaway trvá celkem ${duration / 60000}m 🎉`);
+                       .setFooter(`🎉 Čas: ${duration / 60000}m`);
                        m.edit(endEmbed);
                      },duration);
                    });
@@ -119,7 +119,7 @@ module.exports.run = async (bot, message, args) => {
                   .setColor("RANDOM")
                   .setTimestamp()
                   .setDescription(`Klikni na reakci :tada: pokud se chceš připojit do soutěže!`)
-                  .setFooter(`Tento giveaway trvá celkem ${duration / 60000}m`);                  
+                  .setFooter(`🎉 Čas: ${duration / 60000}m`);                  
                   message.guild.channels.find('name', room).send(giveEmbed).then(m => {
                      let re = m.react('🎉');
                      setTimeout(() => {
@@ -150,6 +150,6 @@ module.exports.run = async (bot, message, args) => {
 
 
 module.exports.help = {
-    name: "test",
+    name: "giveaway",
     aliases: []
 }
