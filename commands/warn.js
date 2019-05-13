@@ -23,7 +23,7 @@ exports.run = (client, message, args) => {
         .setAuthor(message.author.username, message.author.avatarURL)
         .setTitle(`Byl jsi varován v ${message.guild.name}`)
         .addField('Varoval tě:', message.author.tag)
-        .addField('Důvod, reason)
+        .addField('Důvod', reason)
         .setTimestamp();
     mentioned.send(warningEmbed);
     var warnSuccessfulEmbed = new Discord.RichEmbed()
@@ -31,4 +31,8 @@ exports.run = (client, message, args) => {
         .setTitle(':white_check_mark: **_Warn byl úspěšný, do DM byl dotyčnému posláno proč byl varován._**');
     message.channel.send(warnSuccessfulEmbed);
     message.delete();
+}
+exports.help = {
+    name: "warn",
+    aliases: []
 }
