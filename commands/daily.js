@@ -1,4 +1,5 @@
 const parse = require('parse-ms')	
+const db = require('quick-db')
 
  exports.run = async (client, message, args) => {	
     let coolDown = 10800000;	
@@ -28,7 +29,7 @@ const parse = require('parse-ms')
 
 
 
-         client.db.set(`lastDaily_${message.author.id}`, Date.now());	
+         client.db.set(`lastDaily_${message.author.id}`, Date.now());
          client.db.add(`money_${message.author.id}`, amount);	
     }	
 };	
