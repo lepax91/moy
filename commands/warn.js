@@ -19,7 +19,7 @@ exports.run = (client, message, args) => {
     if(!reason) return message.channe.send(missingArgsEmbed); 
 
     var warningEmbed = new Discord.RichEmbed()
-        .setColor(embedColor)
+        .setColor("RANDOM")
         .setAuthor(message.author.username, message.author.avatarURL)
         .setTitle(`Byl jsi varován v ${message.guild.name}`)
         .addField('Varoval tě:', message.author.tag)
