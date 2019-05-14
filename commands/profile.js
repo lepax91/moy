@@ -21,10 +21,11 @@ exports.run = async (client, message, args) => {
         } 
   const user = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setTitle(`✨ User Profile: ${member.tag}`)
+  .setTitle(`✨ User Profile`)
+  .addField("🏷 Username", `**${message.author.username}**#${message.author.discriminator}`)
   .addField("🌎 Bio ", bio)
-  .addField("🎂 Věk ", age)
-  .addField("⭐ Status", status[message.memberID.presence.status])
+  .addField("🎂 Věk", age)
+  .addField("⭐ Status", status[message + `${member.id} + presence.status])
   .setFooter("v1.5a | Dot Development Project")
   message.channel.send(user)
 }                            
