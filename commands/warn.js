@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
         .setTitle('Nesprávné použití!')
         .setDescription('Použij to takhle: `.warn [@uživatel] [důvod]`')
         .setTimestamp();
-    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(missingPermissionsEmbed
+    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(missingPermissionsEmbed)
     let mentioned = message.mentions.users.first();
     if(!mentioned) return message.channel.send(missingArgsEmbed); 
     let reason = args.slice(1).join(' ') 
