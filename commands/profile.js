@@ -23,31 +23,6 @@ exports.run = async (client, message, args) => {
   .addField("⭐ Status", status[message.member.presence.status])
   .setFooter("v1.5a | Dot Development Project")
   message.channel.send(user)
-  const embed = await message.channel.send(user)
-        if(message.member.presence.activity && message.member.presence.activity.name === 'Spotify') {
-            embed.react("🎧")
-        }
-
-        const filter = (reaction, user) => {
-            return '🎧'.includes(reaction.emoji.name) && user.id === message.author.id;
-        };
-
-        embed.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
-        .then(collected => {
-            const reaction = collected.first();
-    
-            if (reaction.emoji.name === '🎧') {
-                const spotify = new Discord.MessageEmbed()
-                    .setAuthor(message.author.username, message.author.displayAvatarURL())
-                    .setTitle("🎧 Listening to Spotify")
-                    .setColor(`#${hex}`)
-                    .setThumbnail(message.member.presence.activity.assets.largeImageURL())
-                    .addField("💿 Song Title", message.member.presence.activity.details)
-                    .addField("🎼 Song Author", `by ${message.member.presence.activity.state}`)
-                    .addField("💽 Song Album", message.member.presence.activity.assets.largeText)
-                embed.edit(spotify)
-                embed.reactions.removeAll()               
-              }
 }                            
 exports.help = {
     name: "profile",
