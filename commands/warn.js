@@ -10,9 +10,9 @@ exports.run = (client, message, args) => {
     var missingArgsEmbed = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setTitle('Nesprávné použití!')
-        .setDescription('Použij to takhle: `.warn [@uživatel] [důvod]')
+        .setDescription('Použij to takhle: `.warn [@uživatel] [důvod]`')
         .setTimestamp();
-    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(missingPermissionsEmbed);
+    if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send(missingPermissionsEmbed
     let mentioned = message.mentions.users.first();
     if(!mentioned) return message.channel.send(missingArgsEmbed); 
     let reason = args.slice(1).join(' ') 
@@ -20,15 +20,14 @@ exports.run = (client, message, args) => {
 
     var warningEmbed = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .setAuthor(message.author.username, message.author.avatarURL)
-        .setTitle(`Byl jsi varován v ${message.guild.name}`)
-        .addField('Varoval tě:', message.author.tag)
-        .addField('Důvod', reason)
+        .setTitle(`**${message.guild.name}**`)
+        .addField('👤 Moderátor:', message.author.tag)
+        .addField('🤖 Důvod:', reason)
         .setTimestamp();
     mentioned.send(warningEmbed);
     var warnSuccessfulEmbed = new Discord.RichEmbed()
         .setColor("RANDOM")
-        .setTitle(':white_check_mark: **_Warn byl úspěšný, do DM byl dotyčnému posláno proč byl varován._**');
+        .setTitle(':white_check_mark: Warn byl úspěšný, do DM bylo dotyčnému posláno proč byl varován.');
     message.channel.send(warnSuccessfulEmbed);
     message.delete();
 }
