@@ -12,10 +12,10 @@ exports.run = async (client, message) => {
             const embed = new Discord.MessageEmbed()
                 .setTitle(`⁉ Pomoc pro \`4k\``)
                 .setDescription("Dot pošle NSFW fotografii z kategorie **:underage: NSFW**")
-                .addField("📘 Syntax", "`.4k`")
-                .addField("⚠️ Dot neposílá NSFW fotografie?", "Musíte zapnout v rolích `Attach Files` a `Embed Files`)                  
+                .addField("📘 Syntax", "`4k`")
+                .addField("⚠️ Dot neposílá NSFW fotografie?", "Musíte zapnout v rolích `Attach Files` a `Embed Files`")                  
                 .setColor('#3498db')
-                .setFooter(`Požadováno od ${message.author.username}`, message.author.displayAvatarURL())
+                .setFooter(`Požadováno od ${message.author.username}`)
             return message.channel.send(embed);   
         }
     const { body } = await get("https://nekobot.xyz/api/image?type=4k");
