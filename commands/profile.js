@@ -18,14 +18,14 @@ exports.run = async (client, message, args) => {
             idle: `<:emoji_1:569849042545147914>`,
             dnd: `<:emoji_4:577846932794376214>`,
             offline: `<:emoji_5:577847052856459294>`
-        } 
+          }         
   const user = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTitle(`✨ User Profile`)
   .addField("🏷 Username", `**${message.author.username}**#${message.author.discriminator}`)
   .addField("🌎 Bio ", bio)
   .addField("🎂 Věk", age)
-  .addField("⭐ Status", status[message + `${member.id}` + presence.status]
+  .addField("⭐ Status", status(`message + ${member.id} + presence.status`)
   .setFooter("v1.5a | Dot Development Project")
   message.channel.send(user)
 }                            
