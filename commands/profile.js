@@ -46,7 +46,8 @@ exports.run = async (client, message, args) => {
                     .addField("🎼 Autor", `by ${message.member.presence.activity.state}`)
                     .addField("💽 Album", message.member.presence.activity.assets.largeText)
                 embed.edit(spotify)
-                embed.reactions.removeAll()           
+                embed.reactions.removeAll()
+              {
 }            
 exports.help = {
     name: "profile",
