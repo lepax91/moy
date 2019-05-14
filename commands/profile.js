@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
   
   if(bio === null) bio = 'Nebylo zaznamenáno'
   if(age === null) age = 'Nebylo zaznamenáno'
-  let status = {
+  const status = {
             online: `<:emoji_2:569849060580786186>`,
             idle: `<:emoji_1:569849042545147914>`,
             dnd: `<:emoji_4:577846932794376214>`,
@@ -36,7 +36,7 @@ exports.run = async (client, message, args) => {
         .then(collected => {
             const reaction = collected.first();
     
-            if (reaction.emoji.name === '🎧') 
+            if (reaction.emoji.name === '🎧') {
                 const spotify = new Discord.MessageEmbed()
                     .setAuthor(message.author.username, message.author.displayAvatarURL())
                     .setTitle("🎧 Listening to Spotify")
@@ -46,11 +46,8 @@ exports.run = async (client, message, args) => {
                     .addField("🎼 Song Author", `by ${message.member.presence.activity.state}`)
                     .addField("💽 Song Album", message.member.presence.activity.assets.largeText)
                 embed.edit(spotify)
-                embed.reactions.removeAll()
-            }
-        
-
-
+                embed.reactions.removeAll()               
+  
 }                            
 exports.help = {
     name: "profile",
