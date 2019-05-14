@@ -1,8 +1,6 @@
 const Discord = require("discord.js");
 const db = require('quick.db')
 const token = require("./token.json").token;
-let args = messageArray.slice(1);
-let messageArray = message.content.split(" ");
 const client = new Discord.Client({
   disableEveryone: true
 });
