@@ -48,7 +48,7 @@ exports.run = async (client, message, args) => {
                 embed.edit(spotify)
                 embed.reactions.removeAll()
             
-});
+};
 exports.help = {
     name: "profile",
     aliases: []
