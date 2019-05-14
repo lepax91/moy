@@ -21,7 +21,7 @@ exports.run = async (client, message, args) => {
         } 
   const user = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setAuthor(message.author.username, message.author.displayAvatarURL())
+  .setAuthor(message.author.username, message.author())
   .setTitle(`✨ User Profile`)
   .addField("🏷 Username", `**${message.author.username}**#${message.author.discriminator}`)
   .addField("🌎 Bio ", bio)
