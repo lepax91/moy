@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
   
   if(bio === null) bio = 'Nebylo zaznamenáno'
   if(age === null) age = 'Nebylo zaznamenáno'
-  const status = {
+  let status = {
             online: `<:emoji_2:569849060580786186>`,
             idle: `<:emoji_1:569849042545147914>`,
             dnd: `<:emoji_4:577846932794376214>`,
@@ -17,7 +17,8 @@ exports.run = async (client, message, args) => {
         } 
   const user = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setTitle(`✨ Váš profil vypadá takto`)
+  .setTitle(`✨ User Profile`)
+  .addField("🏷 Username", `**${message.author.username}**#${message.author.discriminator}`)
   .addField("🌎 Bio ", bio)
   .addField("🎂 Věk ", age)
   .addField("⭐ Status", status[message.member.presence.status])
