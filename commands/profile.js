@@ -25,7 +25,7 @@ exports.run = async (client, message, args) => {
   .addField("🏷 Username", `**${message.author.username}**#${message.author.discriminator}`)
   .addField("🌎 Bio ", bio)
   .addField("🎂 Věk", age)
-  .addField("⭐ Status", status[`message + ${member.id} + presence.status`])
+  .addField("⭐ Status", status[message + `${member.id}` + presence.status]
   .setFooter("v1.5a | Dot Development Project")
   message.channel.send(user)
 }                            
