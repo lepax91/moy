@@ -4,13 +4,13 @@ const { get } = require('snekfetch');
 exports.run = async (client, message) => {
     
     if (args[0] === 'help') {
-        let embed = new Discord.RichEmbed()
+        const bye = new Discord.RichEmbed()
         .setAuthor("Work help!")
         .setDescription("Work types: \nconstructor \nprogrammer \nprostitute")
         .setColor("GREEN")
         .setFooter("V0.4alpha")
         .setTimestamp();
-        message.channel.send(embed)
+        message.channel.send(bye)
         
         
     if (!message.channel.nsfw) {
