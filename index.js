@@ -12,9 +12,6 @@ client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 client.afk = new Map();
 
-const args = message.content.slice(prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();
-
 module.exports.bot = client;
 
 
