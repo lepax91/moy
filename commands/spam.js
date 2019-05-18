@@ -4,12 +4,18 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
 if (message.author.id != 417403958814965771) return message.reply(":x: **Tento příkaz může používat pouze Developer Dota!**")
   if (args.length !== 0) {
     if (message.content.indexOf("@everyone") > -1 || message.content.indexOf("@here") > -1) {
-      message.channel.send("No.");
+      message.channel.send("Promiň, ale nesmím spamovat everyone či here. :cry:");
     } else {
       message.channel.send(args.join(" ").repeat(500).substring(0, 500));
     }
   } else {
-    message.reply("you need to specify what you want to spam!");
+    var hehe = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setAuthor(message.author.username, message.author.avatarURL)
+        .setTitle('Chyba v příkazu!')
+        .setDescription('Syntax: `.spam [zpráva]`')
+        .setTimestamp();
+        message.channel.send(hehe);
   }
 };
 exports.help = {
