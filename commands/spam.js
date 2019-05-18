@@ -3,6 +3,7 @@ exports.run = async (client, message, args) => { // eslint-disable-line no-unuse
   
 
 if (message.author.id != 417403958814965771) return message.reply(":x: **Tento příkaz může používat pouze Developer Dota!**")
+if (message.author.id != 273813194861051907) return message.reply(":x: **Tento příkaz může používat pouze Developer Dota!**")
   if (args.length !== 0) {
     if (message.content.indexOf("@everyone") > -1 || message.content.indexOf("@here") > -1) {
       message.channel.send("Promiň, ale nesmím spamovat everyone či here. :cry:");
