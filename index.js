@@ -1,18 +1,14 @@
-const Discord = require("discord.js");
-const db = require('quick.db')
+const discord = require("discord.js");
 const token = require("./token.json").token;
-const client = new Discord.Client({
+const bot = new discord.Client({
   disableEveryone: true
 });
-require("./functions")(client);
+require("./functions")(bot);
 
-client.db = db;
-client.embed = new Discord.RichEmbed()
-client.commands = new Discord.Collection();
-client.aliases = new Discord.Collection();
-client.afk = new Map();
+bot.commands = new discord.Collection();
+bot.aliases = new discord.Collection();
+bot.afk = new Map();
 
-module.exports.bot = client;
+module.exports.bot = bot;
 
-
-client.login(process.env.token); 
+bot.login(token);
