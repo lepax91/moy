@@ -12,6 +12,8 @@ if (args[0] === 'help') {
         .setFooter("v1.5a")
         .setTimestamp();
         message.channel.send(embed)
+      }
+
 exports.run = async (client, message, args) => {
 
   const member = message.mentions.members.size > 0 ? message.mentions.members.first() : message.member;
