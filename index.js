@@ -6,8 +6,6 @@ const bot = new discord.Client({
 require("./functions")(bot);
 
 
-const args = message.content.slice(prefix.length).split(' ');
-
 bot.commands = new discord.Collection();
 bot.aliases = new discord.Collection();
 bot.afk = new Map();
