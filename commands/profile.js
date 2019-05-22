@@ -3,17 +3,6 @@ Vibrant = require('node-vibrant');
 quickdb = require('quick.db')
 
 
-if (args[0] === 'help') {
-        let embed = new Discord.RichEmbed()
-        .setTitle("Dot Development Helper")
-        .setDescription("Chceš-li si nějak změnit profile, tak se řď tohoto helpu!")
-        .addField("Jak si nastavíte bio a age?", ".setage (věk), .setbio (bio)")
-        .setColor("GREEN")
-        .setFooter("v1.5a")
-        .setTimestamp();
-        message.channel.send(embed)
-      }
-
 exports.run = async (client, message, args) => {
 
   const member = message.mentions.members.size > 0 ? message.mentions.members.first() : message.member;
