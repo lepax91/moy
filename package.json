@@ -6,10 +6,6 @@
   "engines": {
     "node": "10.3.0"
   }
-  }
-  "author": "lepax91",
-  "license": "ISC",
- 
   "dependencies": {
     "discord.js": "^11.3.2",
     "google": "^2.1.0",
