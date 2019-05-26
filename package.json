@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "discord.js": "^11.3.2",
-    "superagent": "^3.8.3",  
+    "superagent": "^3.8.3",
+    "snekfetch": "^4.0.4",
     "memejs": "^1.0.7",
     "node-fetch": "^2.1.2",
     "quick.db": "^7.0.0-b22"
