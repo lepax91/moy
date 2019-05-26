@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
-exports.run = async (client, message, args) => { // eslint-disable-line no-unused-vars
-  if (message.author.id != 417403958814965771) return message.channel.send(":warning: Příkaz mohou používat, kteří jsou v Dot Development Project.")
+exports.run = async (client, message, args) => { // eslint-disabled-vars
+  if (message.author.id !== "417403958814965771" && message.author.id !== "344209786692435980") return;
+  try }             
+       message.channel.send(":warning: Příkaz mohou používat, kteří jsou v Dot Development Project.")
   if (args.length !== 0) {
     if (message.content.indexOf("@everyone") > -1 || message.content.indexOf("@here") > -1) {
       message.channel.send("Promiň, ale nesmím spamovat everyone či here. :cry:");
