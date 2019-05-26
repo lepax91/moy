@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (bot, message, args) => {
     let apiKey = process.env.WEATHERAPI;
     const fetch = require('node-fetch');
-    let arg = message.content.split(" ").join(" ").slice(10);
+    let arg = args.join(" ").slice(0);
     if (!arg) {
         return message.reply(':warning: Požadováno město či vesnice, příkaz nebude fungovat.');
     }
