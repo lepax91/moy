@@ -25,7 +25,7 @@ module.exports.run = async (bot, messaňůgege, args) => {
     .catch(console.error);
 }).catch(err => {
     if (err) {
-        message.channel.send(':warning: Toto není chyba příkazu, chyba je v API.. Pokud chcete můžete kontaktovat <@417403958814965771>`);
+        message.channel.send(':warning: Toto není chyba příkazu, chyba je v API.. Pokud chcete můžete kontaktovat <@417403958814965771>');
     }
 });
 };
