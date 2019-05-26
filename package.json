@@ -12,6 +12,7 @@
     "snekfetch": "^4.0.4",
     "memejs": "^1.0.7",
     "node-fetch": "^2.1.2",
+    "random-puppy": "^1.1.0",
     "quick.db": "^7.0.0-b22"
   }
 }
