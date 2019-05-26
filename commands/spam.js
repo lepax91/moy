@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 exports.run = async (client, message, args) => { // eslint-disabled-vars
   if (message.author.id !== "417403958814965771" && message.author.id !== "344209786692435980") return;
-  try }             
+  try {       
        message.channel.send(":warning: Příkaz mohou používat, kteří jsou v Dot Development Project.")
   if (args.length !== 0) {
     if (message.content.indexOf("@everyone") > -1 || message.content.indexOf("@here") > -1) {
@@ -16,6 +16,7 @@ exports.run = async (client, message, args) => { // eslint-disabled-vars
         .setDescription('Syntax: `.spam [zpráva]`')
         .setTimestamp();
         message.channel.send(hehe);
+    }
   }
 };
 exports.help = {
