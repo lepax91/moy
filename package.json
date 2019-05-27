@@ -15,6 +15,6 @@
     "random-puppy": "^1.1.0",
     "quick.db": "^7.0.0-b22",
     "yt-search": "^0.1.4",
-    "ytdl": "^0.10.1"
+    "ytdl-core": "^0.29.0"
   }
 }
