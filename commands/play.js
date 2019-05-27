@@ -113,3 +113,7 @@ async function finish(client, ops, dispatcher) {
   }
 
 }
+exports.help = {
+    name: "play",
+    aliases: []
+}
