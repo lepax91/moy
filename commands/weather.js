@@ -29,9 +29,8 @@ exports.run = async (client, msg, args) => {
             .addField(':white_sun_small_cloud: Pokrytí Mraku', `${cloudCover}`, true)
             .addField(':sunny: UV Index', wea.body.currently.uvIndex, true)
             .addField(':parking: Tlak', wea.body.currently.pressure + ' hPa', true)
-            .setFooter('v1.5a')
+            .setFooter("v1.5a | Dot Development Project")
             .setTimestamp();
-
         message.channel.send({embed});
 }
 exports.help = {
