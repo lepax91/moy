@@ -2,7 +2,7 @@ const sf = require('snekfetch');
 const Discord = require('discord.js');
 // TODO: Use a map to log the usage of each key
 
-exports.run = async (client, msg, args) => {
+exports.run = async (client, message, args) => {
     if (!args[0]) {
         return message.channel.send('🌍 Prosím, zadejte stát/město/vesnice.');
     }
