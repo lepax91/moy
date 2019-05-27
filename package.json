@@ -14,5 +14,7 @@
     "node-fetch": "^2.1.2",
     "random-puppy": "^1.1.0",
     "quick.db": "^7.0.0-b22"
+    "yt-search": "^0.1.4",
+    "ytdl": "^0.10.1",
   }
 }
