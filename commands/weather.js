@@ -1,5 +1,5 @@
 const sf = require('snekfetch');
-const discord = require('discord.js');
+const Discord = require('discord.js');
 // TODO: Use a map to log the usage of each key
 
 exports.run = async (client, msg, args) => {
@@ -20,7 +20,7 @@ exports.run = async (client, msg, args) => {
         let wind = wea.body.currently.windSpeed;
         let cloudCover = `${wea.body.currently.cloudCover * 100}%`;
 
-        const embed = new discord.RichEmbed()
+        const embed = new Discord.RichEmbed()
             .setTitle('Weather | ' + geocodelocation)
             .setDescription(wea.body.daily.summary)
             .addField(':thermometer: Stupeň', `${Math.round(wea.body.currently.apparentTemperature)}°C)`, true)
