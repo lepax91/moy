@@ -25,7 +25,7 @@ exports.run = async (client, msg, args) => {
             .setDescription(wea.body.daily.summary)
             .addField(':thermometer: Stupeň', `${Math.round(wea.body.currently.apparentTemperature)}°C)`, true)
             .addField(':sweat_drops: Vlhkost Vzduchu', `${humidity}`, true)
-            .addField(':wind_blowing_face: Ryclost Větru, `${wind} m/s`, true)
+            .addField(':wind_blowing_face: Ryclost Větru', `${wind} m/s`, true)
             .addField(':white_sun_small_cloud: Pokrytí Mraku', `${cloudCover}`, true)
             .addField(':sunny: UV Index', wea.body.currently.uvIndex, true)
             .addField(':parking: Tlak', wea.body.currently.pressure + ' hPa', true)
