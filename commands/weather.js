@@ -1,5 +1,6 @@
 const sf = require('snekfetch');
 const Discord = require('discord.js');
+const config = require('../config/config.json');
 // TODO: Use a map to log the usage of each key
 
 exports.run = async (client, message, args) => {
