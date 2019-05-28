@@ -1,8 +1,17 @@
 const Discord = require('discord.js');
 
 
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, config) => {
 
+  if (args[0] === 'help') {
+        let embed = new Discord.RichEmbed()
+        .setTitle("🤔 Jak si nastavit profile?")
+        .setDescription("👤 Pokud nevíš jak si nastavit profile, zde je pomoc!\nPro bio nebo-li něco o sobě: `.setbio [bio]\nPro věk: `.setage [věk]`")
+        .setColor("GREEN")
+        .setFooter("⚠️ Pokud je nějaká chyba, kontaktujte Hlavního Vývojáře nebo Administraci.")
+        .setTimestamp();
+        message.channel.send(embed)
+  
   const member = message.mentions.members.size > 0 ? message.mentions.members.first() : message.member;
 
   let bio = client.db.get(`bio_${member.id}`)
