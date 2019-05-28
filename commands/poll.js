@@ -1,9 +1,8 @@
 const Discord = require('discord.js');
 
-module.exports.run = async (client, message, args, config) => {
-  
-  if (args == 0) return message.channel.send(':warning: Do tohoto hlasování musíš přidat otázku, jinak se hlasování nepodaří.')    
-    
+module.exports.run = async (client, message, args) => {
+  if (args == 0) return message.channel.send('**_Chybí mi tu nějaká otázka 🤔_**')
+
   let embed = new Discord.RichEmbed()    
     .setTitle("Poll")
     .setColor("RANDOM")
@@ -16,8 +15,7 @@ module.exports.run = async (client, message, args, config) => {
        message.react("👍")
        message.react("👎")
      }).catch(function() {
-  });    
-  }
+  });
 }
 exports.help = {
     name: "poll",
