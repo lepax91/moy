@@ -6,7 +6,7 @@ exports.run = async (client, message, args, config) => {
   if (args[0] === 'help') {
         let embed = new Discord.RichEmbed()
         .setTitle("🤔 Jak si nastavit profile?")
-        .setDescription("👤 Pokud nevíš jak si nastavit profile, zde je pomoc!\nPro bio nebo-li něco o sobě: `.setbio [bio]\nPro věk: `.setage [věk]`")
+        .setDescription("👤 Pokud nevíš jak si nastavit profile, zde je pomoc!\nPro bio nebo-li něco o sobě: `.setbio [bio]`\nPro věk: `.setage [věk]`")
         .setColor("GREEN")
         .setFooter("⚠️ Pokud je nějaká chyba, kontaktujte Hlavního Vývojáře nebo Administraci.")
         .setTimestamp();
