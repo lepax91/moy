@@ -34,7 +34,8 @@ exports.run = async (client, message, args, config) => {
   .addField("⭐ Status", status[message.member.presence.status])
   .setFooter("v1.5a | Dot Development Project")
   message.channel.send(user)
-}                            
+  } 
+}
 exports.help = {
     name: "profile",
     aliases: []
