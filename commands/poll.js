@@ -3,13 +3,13 @@ const Discord = require('discord.js');
 module.exports.run = async (client, message, args) => {
 
   if (args[0] === 'help') {
-        let embed = new Discord.RichEmbed()
+        let gay = new Discord.RichEmbed()
         .setTitle("🤔 Nevíš jak používat tento příkaz? Tento Help System ti to rád vysvětlí!")
         .setDescription("👤 Pokud chceš udělat jakýsi hlasování, tak udělej pouze toto: `.poll [Otázka, a oni budou reagovat 👍 a 👎]`")
         .setColor("GREEN")
         .setFooter("⚠️ Pokud je nějaká chyba, kontaktujte Hlavního Vývojáře nebo Administraci.")
         .setTimestamp();
-        message.channel.send(embed)
+        message.channel.send(gay)
   
   if (args == 0) return message.channel.send(':warning: Do tohoto hlasování musíš přidat otázku, jinak se hlasování nepodaří.')    
     
