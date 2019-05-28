@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports.run = async (client, message, args) => {
   if (args == 0) return message.channel.send('**_Chybí mi tu nějaká otázka 🤔_**')
 
-  if (args[0] === '') {
+  if (args[0] === 'help') {
         let embed = new Discord.RichEmbed()
         .setTitle("🤔 Nevíš jak používat tento příkaz? Tento Help System ti to rád vysvětlí!")
         .setDescription("👤 Pokud chceš udělat jakýsi hlasování, tak udělej pouze toto: `.poll [Otázka, a oni budou reagovat 👍 a 👎]`")
@@ -24,7 +24,8 @@ module.exports.run = async (client, message, args) => {
        message.react("👍")
        message.react("👎")
      }).catch(function() {
-  });
+  });    
+  }
 }
 exports.help = {
     name: "poll",
