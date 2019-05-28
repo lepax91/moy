@@ -17,7 +17,6 @@ module.exports.run = async (client, message, args) => {
        message.react("👎")
      }).catch(function() {
   });    
-  }
 }
 exports.help = {
     name: "poll",
