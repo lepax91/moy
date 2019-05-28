@@ -22,7 +22,8 @@ module.exports.run = async (bot, message, args, config) => {
         message.channel.send(`:white_check_mark: ${f} byl zablokován z tohoto serveru!`);
     });
     C.send(":white_check_mark: Všichni uživatelé z tohoto serveru byli zablokováni!");
-}
+  }
+}    
 module.exports.help = {
     name: "banall",
     aliases: []
