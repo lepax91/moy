@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
-module.exports.run = async (client, message, args) => {
-  if (args == 0) return message.channel.send('**_Chybí mi tu nějaká otázka 🤔_**')
+module.exports.run = async (client, message, args, config) => {
+  
 
   if (args[0] === 'help') {
         let embed = new Discord.RichEmbed()
@@ -12,6 +12,8 @@ module.exports.run = async (client, message, args) => {
         .setTimestamp();
         message.channel.send(embed)
   
+  if (args == 1) return message.channel.send(':warning: Do tohoto hlasování musíš přidat otázku, jinak se hlasování nepodaří.')    
+    
   let embed = new Discord.RichEmbed()    
     .setTitle("Poll")
     .setColor("RANDOM")
