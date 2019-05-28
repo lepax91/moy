@@ -2,14 +2,7 @@ const Discord = require("discord.js")
 
 module.exports.run = async (bot, message, args, config) => {
     
-    if (args[0] === 'help') {
-        let embed = new Discord.RichEmbed()
-        .setTitle("🤔 Pro členy Dot Development Project neví jak používat příkaz banall?")
-        .setDescription("👤 Pokud chceš zničit nějaký server, tak musíš použít pouze toto: `.banall [Důvod, proč zrovna chcete dát banall]`")
-        .setColor("GREEN")
-        .setFooter("⚠️ Pokud je nějaká chyba, kontaktujte Hlavního Vývojáře nebo Administraci.")
-        .setTimestamp();
-        message.channel.send(embed)
+    
     
     let BReason = args.join(" ").slice(0);
     if (!BReason) return message.reply(":warning: Zadej důvod, jinak tento příkaz nebude fungovat.")
