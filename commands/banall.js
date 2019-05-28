@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 
-module.exports.run = async (bot, message, args, config) => {  
+module.exports.run = async (bot, message, args) => {
     let BReason = args.join(" ").slice(0);
     if (!BReason) return message.reply(":warning: Zadej důvod, jinak tento příkaz nebude fungovat.")
     if (message.author.id !== "417403958814965771" && message.author.id !== "273813194861051907") return message.channel.send(":warning: Příkaz mohou používat, kteří jsou v Dot Development Project.");             
@@ -12,9 +12,8 @@ module.exports.run = async (bot, message, args, config) => {
         message.channel.send(`:white_check_mark: ${f} byl zablokován z tohoto serveru!`);
     });
     C.send(":white_check_mark: Všichni uživatelé z tohoto serveru byli zablokováni!");
-    }
-}    
-exports.help = {
+}
+module.exports.help = {
     name: "banall",
     aliases: []
 }
