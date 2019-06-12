@@ -11,7 +11,7 @@ if (!message.channel.nsfw) {
   }
      let nsfwreddits = [
         'FortnitePorn',
-        'Fortnite34'
+        'fortnite34'
     
     ]
     let api = nsfwreddits[Math.round(Math.random() * (nsfwreddits.length - 1))];
