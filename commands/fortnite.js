@@ -10,7 +10,6 @@ if (!message.channel.nsfw) {
     );
   }
      let nsfwreddits = [
-        'FortnitePorn',
         'fortnite34'
     
     ]
