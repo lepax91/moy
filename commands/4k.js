@@ -3,16 +3,6 @@ const { get } = require('snekfetch');
 
 exports.run = async (client, message) => {
 
-      if(args[0] == 'help') {
-            const embed = new Discord.MessageEmbed()
-                .setTitle(`⁉ Pomoc pro \`4k\``)
-                .setDescription("Dot pošle NSFW fotografii z kategorie **:underage: NSFW**")
-                .addField("📘 Syntax", "`.4k`")
-                .addField("⚠️ Dot neposílá NSFW fotografie?", "Musíte zapnout v rolích `Attach Files` a `Embed Files`")                  
-                .setColor('#3498db')
-                .setFooter(`Požadováno od ${message.author.username}`)
-            return message.channel.send(embed);   
-        }                               
     if (!message.channel.nsfw) {
     return message.channel.send(new Discord.RichEmbed()
       .setColor("RED")
