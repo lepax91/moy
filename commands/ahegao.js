@@ -22,7 +22,7 @@ module.exports.run = async (bot, message, args) => {
       randomnsfw(api).then(api => {
            const theirembed = new Discord.RichEmbed()
             .setAuthor("Ahegao")
-            .setColor(pink)
+            .setColor("#FF69B4")
             .setImage(api)
             .setTimestamp();
       message.channel.send(theirembed);
