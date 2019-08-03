@@ -21,7 +21,7 @@ if (!message.channel.nsfw) {
             .setTitle("Amateur")
             .setColor("RANDOM")
             .setImage(api)
-            .setFooter("Požadováno od: ${message.author.tag} | Verze: 1.5")	
+            .setFooter("Požadováno od: ${message.author.tag} | Verze: 2.5b")	
             .setTimestamp();
       message.channel.send(theirembed);
       })
