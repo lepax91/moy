@@ -24,6 +24,7 @@ module.exports.run = async (bot, message, args) => {
             .setAuthor("Ahegao")
             .setColor("#FF69B4")
             .setImage(api)
+	    .setFooter("Požadováno od: ${message.author.tag} | Verze: 2.5b")	
             .setTimestamp();
       message.channel.send(theirembed);
       })
