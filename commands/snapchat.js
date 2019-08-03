@@ -3,7 +3,12 @@ const Discord = require("discord.js");
 
 
 module.exports.run = async (bot, message, args) => {
- if (!message.channel.nsfw) return message.channel.send(":underage: **_Tento příkaz je povolen jen kde je označen NSFW kanál!_**")  	
+   	if (!message.channel.nsfw) {
+    return message.channel.send(new Discord.RichEmbed()
+      .setColor("RED")
+      .setDescription(":underage: Tento příkaz je povolen jen kde je označen NSFW kanál.")
+    );
+  }  
 	         let nsfwreddits = [
         'NSFW_Snapchat',
                'snapchatgw'
@@ -15,7 +20,7 @@ module.exports.run = async (bot, message, args) => {
             .setTitle("Snapchat")
             .setColor("RANDOM")
             .setImage(api)
-            .setFooter("Požadováno od: ${message.author.tag} | Verze: 1.5")
+            .setFooter("Požadováno od: ${message.author.tag} | Verze: 2.5b")
             .setTimestamp();
       message.channel.send(theirembed);
       })
