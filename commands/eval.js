@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports.run = (bot, message, args) => {
-  if (message.author.id !== "417403958814965771" && message.author.id !== "273813194861051907") {
+  if (message.author.id !== "417403958814965771" && message.author.id !== "273813194861051907") return message.channel.send(":warning: Nemůžu tuto akci dokončit, protože nejsi v Dot Development Project.");
     const content = message.content.split(' ').slice(1).join(' ');
   const result = new Promise((resolve, reject) => resolve(eval(content)));
 
@@ -30,11 +30,8 @@ module.exports.run = (bot, message, args) => {
   
     return message.channel.send({embed: em})
   });  
-  } else {
-    message.channel.send(":warning: Nemůžu tuto akci dokončit, protože nejsi v Dot Development Project.")
-  }
-  }
-
+    
+}
 module.exports.help = {
   name: "eval",
   aliases: []
