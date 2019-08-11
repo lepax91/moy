@@ -1,7 +1,8 @@
 {
   "prefix": ".",
   "logsChannel": "updates",
-  "reportsChannel": "reports",
+  "banreason": "",
+  "reportsChannel": "reports"
 
   "activity": {
     "streaming": true,
