@@ -11,7 +11,7 @@ module.exports.run = (bot, message, args) => {
   
   if (topic !== null) {
     channel.setTopic(topic);
-    embed.setDescription(`:white_check_mark: <#${channel.id}> byl úspěšně nastaven na větu **${topic}.**`)
+    embed.setDescription(`:white_check_mark: <#${channel.id}> byl úspěšně nastaven na větu: **${topic}.**`)
   } else {
     channel.setTopic("");
     embed.setDescription(`:white_check_mark: Téma kanálu v <#${channel.id}> bylo úspěšně vyresetováno.`)
