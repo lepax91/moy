@@ -1,7 +1,7 @@
 {
   "prefix": ".",
   "logsChannel": "updates",
-  "reportsChannel": "reports"
+  "reportsChannel": "reports",
   "banreason": "",
 
   "activity": {
