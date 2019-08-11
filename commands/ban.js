@@ -3,12 +3,12 @@ const config = require('../config.json')
 const Discord = require('discord.js');
 
 module.exports.run = (bot, message, args, discord) => {
-    if (!message.member.hasPermission(["BAN_MEMBERS"])) return message.channel.send(">>> Na zabanovaní uživatele nemáš pravomoc, musíš mít nejprve pravomoc na zabanovaní uživatele!")
+    if (!message.member.hasPermission(["BAN_MEMBERS"])) return message.channel.send(">>> Na zabanovaní uživatele nemáš zadnou pravomoc!")
     let reason = args.slice(1).join(" ");
     let member = message.mentions.members.first();
-    if (!member) message.channel.send(">>> Označ uživatele kterého chceš zabanovat, když není označen uživatel kterého chceš zabanovat tak akce nepůjde.")
+    if (!member) message.channel.send(">>> Označ uživatele kterého chceš zabanovat!")
     const theirembed = new Discord.RichEmbed()
-    .setDescription(`:wave: Uživatel jménem **${member.displayName}** byl úspěšně zabanován!`)
+    .setDescription(`:wave: Uživatel **${member.displayName}** byl úspěšně zabanován!`)
     .setFooter(`Důvod byl úspěšný! Důvod: ${reason}`)
     .setColor("RED")
     message.channel.send(theirembed)
