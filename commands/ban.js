@@ -9,6 +9,7 @@ module.exports.run = (bot, message, args, discord) => {
     member.ban(reason).catch(console.error)
     const theirembed = new Discord.RichEmbed()
     .setDescription(`:wave: Uživatel byl úspěšně zabanován ${member.displayName} :point_right:`)
+    .setFooter(`Důvod byl úspěšný! Důvod: ${reason}`)
     .setColor("RED")
     message.channel.send(theirembed)
     config.banreason = reason;
