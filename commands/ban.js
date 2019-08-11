@@ -6,8 +6,8 @@ module.exports.run = (bot, message, args, discord) => {
     if (!message.member.hasPermission(["BAN_MEMBERS"])) return message.channel.send(">>> Na zabanovaní uživatele nemáš pravomoc, musíš mít nejprve pravomoc na zabanovaní uživatele!")
     let reason = args.slice(1).join(" ");
     let member = message.mentions.members.first();
-    member.ban(reason).catch(console.error)
     if (!member) message.channel.send(">>> Označ uživatele kterého chceš zabanovat, takhle to asi nepůjde bez označeného uživatele.")
+    member.ban(reason).catch(console.error)
     const theirembed = new Discord.RichEmbed()
     .setDescription(`:wave: Uživatel jménem **${member.displayName}** byl úspěšně zabanován!`)
     .setFooter(`Důvod byl úspěšný! Důvod: ${reason}`)
