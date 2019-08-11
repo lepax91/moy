@@ -12,7 +12,7 @@ exports.run = (bot, message, args) => {
 
 
     bot.guilds.get(args[0]).leave();
-    message.channel.send(`**Dot se odpojil od serveru!** ID: [${args[0]}]`)
+    message.channel.send(`:wave: **Dot úspěšně odpojil od serveru!** ID [${args[0]}]`)
 	
 }
 exports.help = {
