@@ -1,5 +1,6 @@
 const fs = require('fs')
 const config = require('../config.json')
+const discord = require('discord.js')
 
 module.exports.run = (bot, message, args, discord) => {
     if (!message.member.hasPermission(["BAN_MEMBERS"])) return message.channel.send(">>> Na zabanovaní uživatele nemáš pravomoc, musíš mít nejprve pravomoc na zabanovaní uživatele!")
