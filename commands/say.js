@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) => {
 
   let botmessage = args.join(" ");
   const em = new Discord.RichEmbed()
-    .setTitle("Tento příkaz funguje pouze s důvodem, zadejte prosím důvod aby zabanoval všechny uživatele.")
+    .setTitle("Musíte zadat nějaké slovo či větu, bez tohoto tato akce nepůjde.")
     .setColor("RED")
     return message.channel.send(em)    
   message.channel.send(botmessage);
