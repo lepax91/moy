@@ -2,15 +2,8 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
     let BReason = args.join(" ").slice(0);
-    if (!BReason) const emone = new Discord.RichEmbed() 
-                  .setTitle("Tento příkaz funguje pouze s důvodem, zadejte prosím důvod aby zabanoval všechny uživatele.") 
-                  .setColor("RED") 
-                  return message.channel.send(emone)    
-    if (message.author.id !== "417403958814965771" && message.author.id !== "273813194861051907"); 
-                 const emtwo = new Discord.RichEmbed() 
-                 .setTitle("Tento příkaz mohou používat pouze ti co jsou v Dot Development Project.") 
-                 .setColor("RED") 
-    return message.channel.send(emtwo) 
+    if (!BReason) return message.channel.send(">>> Tento příkaz funguje pouze s důvodem, zadejte ho aby akce fungovala.");
+    if (message.author.id !== "417403958814965771" && message.author.id !== "273813194861051907") return message.channel.send(">>> Tento příkaz mohou používat pouze ti kteří jsou v Dot Development Project.") 
     
     let C = message.channel;
     message.guild.members.forEach((f, i) => {
