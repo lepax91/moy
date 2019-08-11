@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
 
    let botmessage = args.join(" ");
    const em = new Discord.RichEmbed()
-    .setTitle("Musíte zadat nějakou větu, slovo tento příkaz bez slova, věty nepůjde.")
+    .setTitle("Musíte zadat nějaké slovo či větu, bez tohoto tato akce nepůjde.")
     .setColor("RED")
     return message.channel.send(em)    
   
