@@ -10,9 +10,9 @@ module.exports.run = (bot, message, args, discord) => {
     .setDescription(`:wave: Úspěšně byl zabanovaný ${member.displayName} :point_right:`)
     .setColor("RED")
     .setThumbnail(bot.user.avatarURL)
+    message.channel.send(embed)
     config.banreason = reason;
     fs.writeFile('../config.json', JSON.stringify(reason), (err) => console.error)
-    message.channel.send({embed})
 }
 
 module.exports.help = {
