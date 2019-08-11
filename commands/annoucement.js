@@ -5,7 +5,7 @@ module.exports.run = async (bot, message, args) => {
   
 
    let botmessage = args.join(" ");
-   if (!botmessage) return message.channel.send(">>> Zadejte nějaké slovo, bez slova tato akce nepůjde.");
+   if (!botmessage) return message.channel.send(">>> Bez slova nemůžu udělat oznámení, zadejte nějaké slovo.");
   
    var embed = new Discord.RichEmbed()
    .setDescription(botmessage)
