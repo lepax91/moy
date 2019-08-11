@@ -7,8 +7,9 @@ module.exports.run = (bot, message, args, discord) => {
     let reason = args.slice(1).join(" ");
     let member = message.mentions.members.first();
     member.ban(reason).catch(console.error)
+    if (!member) message.channel.send(">>> Označ uživatele kterého chceš zabanovat, takhle to asi nepůjde bez označeného uživatele.")
     const theirembed = new Discord.RichEmbed()
-    .setDescription(`:wave: Uživatel byl úspěšně zabanován ${member.displayName} :point_right:`)
+    .setDescription(`:wave: Uživatel jménem **${member.displayName}** byl úspěšně zabanován!`)
     .setFooter(`Důvod byl úspěšný! Důvod: ${reason}`)
     .setColor("RED")
     message.channel.send(theirembed)
