@@ -10,8 +10,8 @@ var Message = require('discord.js').Message
 module.exports.run = (bot, message, args) => {
     const [bool, id] = args
 
-    if (message.author !== bot.owner) return message.channel.send("Invalid permissions!");    
-
+    if (message.author.id !== "417403958814965771" && message.author.id !== "273813194861051907") return message.channel.send(">>> Tento příkaz mohou používat pouze ti kteří jsou v Dot Development Project.") 
+    
     if (!usableBools.includes(bool)) {
         return message.channel.send("You must tell me whether I should add them or remove them from the blacklist...");
     }
