@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "discord.js": "^11.3.2",
+    "idiotic-api": "^0.2.11",  
     "superagent": "^3.8.3",
     "snekfetch": "^4.0.4",
     "memejs": "^1.0.7",
