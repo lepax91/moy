@@ -5,7 +5,7 @@ module.exports.run = (bot, message, args, discord) => {
 if (message.author.id !== "417403958814965771" && message.author.id !== "273813194861051907") return message.channel.send(":warning: Příkaz mohou používat, kteří jsou v Dot Development Project.");             
 
 let em = new Discord.RichEmbed()
-.setDescription("**:wave: Dot se restartuje, bude to chvíli trvat..**)
+.setDescription("**:wave: Dot se restartuje, bude to chvíli trvat..**")
 .setTimestamp()
 .setColor("RED")
 let embed = new Discord.RichEmbed()
