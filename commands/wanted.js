@@ -1,4 +1,4 @@
-exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
+module.exports.run = async (client, message, args, level) => { // eslint-disable-line no-unused-vars
 
 const { MessageAttachment } = require("discord.js");
 const Idiot = require("idiotic-api");
@@ -10,17 +10,7 @@ const wanted = async () => {
 };
 wanted();
 }
-
-exports.conf = {
-  enabled: true,
-  guildOnly: true,
-  aliases: [],
-  permLevel: "User"
-};
-
-exports.help = {
-  name: "wanted",
-  category: "Fun",
-  description: "Create a wanted poster!",
-  usage: ".wanted @user"
-};
+module.exports.help = {
+ name: "wanted",
+ aliases: []
+}
