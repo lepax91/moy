@@ -21,7 +21,7 @@ module.exports.run = (bot, message, args) => {
     } else {
       data.cash = data.cash + randomcoins
       data.save()
-    }
+    });
 }
 
 module.exports.help = {
