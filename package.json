@@ -11,6 +11,7 @@
     "idiotic-api": "^0.2.11",  
     "superagent": "^3.8.3",
     "snekfetch": "^4.0.4",
+    "mongoose": "latest"
     "memejs": "^1.0.7",
     "node-fetch": "^2.1.2",
     "random-puppy": "^1.1.0",
