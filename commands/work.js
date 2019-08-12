@@ -17,19 +17,10 @@ module.exports.run = (bot, message, args) => {
       .addField(`💸 Peněz jsi dostal`, `**$${randomcoins}$**`, true)
       .addField("💸 Balance:", `**$${randomcoins}$**`, true)
       .setColor("GREEN")
-      message.channel.send({embed: em})
+      message.channel.send(em)
     } else {
       data.cash = data.cash + randomcoins
-      data.save()
-      
-      let em = new (require('discord.js').RichEmbed)()
-      .setDescription(`Úspěsně jsi dokončil svojí práci a dostáváš nějakou částku! 💰`)
-      .addField(`💸 Peněz si celkem dostal`, `**$${randomcoins}$**`, true)
-      .addField("💸 Balance", `$${data.cash}$`, true)
-      .setColor("GREEN")
-      message.channel.send({embed: em})
-    }
-  })
+      data.save()   
 }
 
 module.exports.help = {
