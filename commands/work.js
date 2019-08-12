@@ -20,7 +20,8 @@ module.exports.run = (bot, message, args) => {
       message.channel.send(em)
     } else {
       data.cash = data.cash + randomcoins
-      data.save()   
+      data.save()
+    }
 }
 
 module.exports.help = {
