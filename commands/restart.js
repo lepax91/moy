@@ -5,13 +5,11 @@ module.exports.run = (bot, message, args, discord) => {
 if (message.author.id !== "417403958814965771" && message.author.id !== "273813194861051907") return message.channel.send(":warning: Příkaz mohou používat, kteří jsou v Dot Development Project.");             
 
 let em = new Discord.RichEmbed()
-.setTitle("🕒 Dot se restartuje!")
-.setDescription("**:wave: Dot se restartuje, bude to chvíli trvat...**")
+.setDescription("**:wave: Dot se restartuje, bude to chvíli trvat..**)
 .setTimestamp()
 .setColor("RED")
 let embed = new Discord.RichEmbed()
-.setTitle(":white_check_mark: Úspěšně Zresetováno!")
-.setDescription(`**:thumbsup: ${bot.user.username} byl úspěšně Restartován..**`)
+.setDescription(`**:white_check_mark: ${bot.user.username} byl úspěšně restartován!**`)
 .setTimestamp()
 .setColor("GREEN")
 
