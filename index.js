@@ -6,6 +6,9 @@ const client = new Discord.Client({
 });
 require("./functions")(client);
 
+bot.on("message", message => {
+  var mentionedmember = message.mentions.members.first()
+  
 client.db = db;
 client.embed = new Discord.RichEmbed()
 client.commands = new Discord.Collection();
@@ -21,5 +24,5 @@ module.exports.bot = client;
     .setTimestamp()
     message.channel.send({embed: em})
   }
-
+   });
 client.login(process.env.token); 
