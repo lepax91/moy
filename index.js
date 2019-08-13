@@ -21,6 +21,5 @@ module.exports.bot = client;
     .setTimestamp()
     message.channel.send({embed: em})
   }
- });
 
 client.login(process.env.token); 
