@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const { get } = require('snekfetch');
 
-exports.run = async (client, message) => {
+exports.run = async (bot, message) => {
 
     const { body } = await get("http://api.oboobs.ru/boobs/0/1/random");
 
