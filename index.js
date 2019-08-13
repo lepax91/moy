@@ -5,7 +5,7 @@ const config = require("./config.json");
 const db = require('quick.db')
 const token = require("./token.json").token;
 
-bot.on("ready", async () => {
+bot.on("ready", async ready => {
     console.log(`${bot.user.username} is ready for action!`);
     if (config.activity.streaming == true) {
         bot.user.setActivity(config.activity.game, {
