@@ -9,7 +9,7 @@ const client = new Discord.Client({
 });
 require("./functions")(client);
 
-bot.on("ready", async () => {
+client.on("ready", async () => {
     console.log(`${bot.user.username} is ready for action!`);
     if (config.activity.streaming == true) {
         bot.user.setActivity(config.activity.game, {
@@ -22,7 +22,7 @@ bot.on("ready", async () => {
     }
 });
 
-bot.on("message", message => {
+client.on("message", message => {
   var mentionedmember = message.mentions.members.first()
   
 client.db = db;
