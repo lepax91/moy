@@ -47,5 +47,6 @@ module.exports.bot = client;
     .setColor("GREEN")
     .setTimestamp()
     message.channel.send({embed: em})
+      }
   });
 bot.login(process.env.token); 
