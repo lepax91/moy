@@ -6,23 +6,13 @@ const dl = require('ytdl-core')
 
 var queue = []
 var isPlaying = false
-var tester = "503589571355738113"
-var isTester = false
 
 module.exports.run = (bot, message, args) => {
   const m = message.member
   const vc = m.voiceChannel
   const msg = args.join(" ");
-  if (!msg) return message.channel.send("You need to include a youtube link, or a song name.")
-  if (!vc) return message.channel.send("Join a voice channel first.");
-  const guild = bot.guilds.get('501799714828845082')
-  if (guild.members.get(m.user.id)) {
-    const mem = guild.members.get(m.user.id)
-    
-    if (mem.roles.get(tester)) {
-      isTester = true
-    }
-  }
+  if (!msg) return message.channel.send(">>> :warning: Zadejte do jakéhokoliv kanálu příkaz ``.play` k tomu URL nebo název hudby.")
+  if (!vc) return message.channel.send(">>> :warning: Musíš se připojit do Voice Chatu.");
   
   if (queue.length > 0 || isPlaying) {
     getID(msg, (id) => {
@@ -31,7 +21,7 @@ module.exports.run = (bot, message, args) => {
         if (err) throw new Error(err);
         const discord = require('discord.js');
         const embed = new discord.RichEmbed()
-        .addField("Added to Queue", `Added **${info.title}** to the queue...`)
+        .addField("⏭️ Přidáno do fronty", `Přidaná hudba jménem **${info.title}** do fronty!`)
         .setTimestamp()
         .setColor("GREEN")
         message.channel.send({embed: embed})
@@ -45,7 +35,7 @@ module.exports.run = (bot, message, args) => {
       ytinfo(id, (err, info) => { 
         const discord = require('discord.js')
         const embed = new discord.RichEmbed()
-        .addField("Now Playing", `Started playing **${info.title}** in **${vc.name}**.`)
+        .addField("▶️ Nyní hraje", `Začala hrát hudba jménem **${info.title}** v **${vc.name}**.`)
         .setTimestamp()
         .setColor("GREEN")
         message.channel.send({embed: embed})
@@ -56,7 +46,6 @@ module.exports.run = (bot, message, args) => {
 
 function play(id, message) {
   var voicechannel = message.member.voiceChannel;
-  if (!isTester) return message.channel.send("Sorry, only testers can use the music module.");
   voicechannel.join().then(conn => {
     stream = dl(`https://youtube.com/watch?v=${id}`, {
       filter: "audioonly"
@@ -69,7 +58,7 @@ function play(id, message) {
         } else {
           voiceChannel.leave()
           const embed = new discord.RichEmbed()
-          .addField("End of Queue", `I stopped playing music in ${voicechannel.name}.`)
+          .addField("⏭️ Konec fronty!", `Skončila fronta v ${voicechannel.name}.`)
           .setTimestamp()
           .setColor("RANDOM")
           message.channel.send({embed: embed})
