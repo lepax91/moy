@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 
-exports.run = async (client, message, args, color) => {
+exports.run = async (bot, message, args, color) => {
 
     let botping = new Date() - message.createdAt;
         
