@@ -1,6 +1,6 @@
 const {RichEmbed} = require('discord.js');
 
-exports.run = (client, message) => {
+exports.run = (bot, message) => {
   const emojiList = message.guild.emojis.map(e => e.toString()).join(' ');
   const embed = new RichEmbed()
     .setColor("RANDOM")
