@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-exports.run = async (client, message, args) => {
+exports.run = async (bot, message, args) => {
   let suggestion = args.join(" ").slice(0);
   let user = message.author;
   let guild = message.guild;
