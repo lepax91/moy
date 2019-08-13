@@ -4,12 +4,12 @@ const config = require("./config.json");
 
 const db = require('quick.db')
 const token = require("./token.json").token;
-const client = new Discord.Client({
+const bot = new Discord.Client({
   disableEveryone: true
 });
 require("./functions")(client);
 
-client.on("ready", async () => {
+bot.on("ready", async () => {
     console.log(`${bot.user.username} is ready for action!`);
     if (config.activity.streaming == true) {
         bot.user.setActivity(config.activity.game, {
@@ -22,14 +22,28 @@ client.on("ready", async () => {
     }
 });
 
-client.on("message", message => {
-  var mentionedmember = message.mentions.members.first()
+bot.on("message", async message => {
+    var mentionedmember = message.mentions.members.first() 
+    if (message.author.bot) return;
+    if (message.channel.type === "dm") return;
+
+    let prefix = config.prefix;
+    
+    let args = message.content.slice(prefix.length).trim().split(' '))
+    let cmd = args.shift().toLowerCase();
+    let command;
+    if (command) command.run(bot, message, args);
+
+    // let cmd = bot.commands.get(command.slice(prefix.length));
+    // if (cmd) cmd.run(bot, message, args);
+});
+
   
-client.db = db;
-client.embed = new Discord.RichEmbed()
-client.commands = new Discord.Collection();
-client.aliases = new Discord.Collection();
-client.afk = new Map();
+bot.db = db;
+bot.embed = new Discord.RichEmbed()
+bot.commands = new Discord.Collection();
+bot.aliases = new Discord.Collection();
+bot.afk = new Map();
 
 module.exports.bot = client;
 
@@ -41,4 +55,4 @@ module.exports.bot = client;
     message.channel.send({embed: em})
   }
    });
-client.login(process.env.token); 
+bot.login(process.env.token); 
