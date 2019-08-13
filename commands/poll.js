@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (bot, message, args) => {
   
   if (args == 0) return message.channel.send(':warning: Do tohoto hlasování musíš přidat otázku, jinak se hlasování nepodaří.')    
     
