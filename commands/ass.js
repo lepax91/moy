@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const { get } = require('snekfetch');
 
-exports.run = async (client, message) => {  
+exports.run = async (bot, message) => {  
    if (!message.channel.nsfw) {
     return message.channel.send(new Discord.RichEmbed()
       .setColor("RED")
