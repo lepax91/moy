@@ -1,10 +1,26 @@
 const Discord = require("discord.js");
+const {bot} = require('./index');
+const config = require("./config.json");
+
 const db = require('quick.db')
 const token = require("./token.json").token;
 const client = new Discord.Client({
   disableEveryone: true
 });
 require("./functions")(client);
+
+bot.on("ready", async () => {
+    console.log(`${bot.user.username} is ready for action!`);
+    if (config.activity.streaming == true) {
+        bot.user.setActivity(config.activity.game, {
+            url: 'https://twitch.tv/username'
+        });
+    } else {
+        bot.user.setActivity(config.activity.game, {
+            type: 'PLAYING'
+        }); //PLAYING, LISTENING, WATCHI
+    }
+});
 
 bot.on("message", message => {
   var mentionedmember = message.mentions.members.first()
