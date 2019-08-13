@@ -39,8 +39,6 @@ bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
 bot.afk = new Map();
 
-module.exports.bot = bot;
-
   if (message.isMentioned("539139339741954099")) {	
     const em = new discord.RichEmbed()	
     .setDescription(`Zdravím jsem Dot! Do jakýhokoliv kánalu zadej příkaz ``.help`` aby jsi mohl vidět všechny moje příkazy!`)	
