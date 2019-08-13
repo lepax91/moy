@@ -4,10 +4,6 @@ const config = require("./config.json");
 
 const db = require('quick.db')
 const token = require("./token.json").token;
-const bot = new Discord.Client({
-  disableEveryone: true
-});
-require("./functions")(client);
 
 bot.on("ready", async () => {
     console.log(`${bot.user.username} is ready for action!`);
