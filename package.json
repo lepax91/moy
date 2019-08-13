@@ -8,6 +8,10 @@
   },
   "dependencies": {
     "discord.js": "^11.3.2",
+    "get-youtube-id": "latest",
+    "youtube-info": "latest",
+    "ytdl-core": "latest",
+    "request": "^2.83.0",
     "idiotic-api": "^0.2.11",  
     "superagent": "^3.8.3",
     "snekfetch": "^4.0.4",
