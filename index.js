@@ -32,8 +32,6 @@ bot.on("message", async message => {
 
     // let cmd = bot.commands.get(command.slice(prefix.length));
     // if (cmd) cmd.run(bot, message, args);
-});
-
   
 bot.db = db;
 bot.embed = new Discord.RichEmbed()
@@ -49,6 +47,5 @@ module.exports.bot = client;
     .setColor("GREEN")
     .setTimestamp()
     message.channel.send({embed: em})
-  }
-   });
+  });
 bot.login(process.env.token); 
