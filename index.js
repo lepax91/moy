@@ -25,7 +25,7 @@ bot.on("message", async message => {
 
     let prefix = config.prefix;
     
-    let args = message.content.slice(prefix.length).trim().split(' '))
+    let args = message.content.slice(prefix.length).trim().split(' ');
     let cmd = args.shift().toLowerCase();
     let command;
     if (command) command.run(bot, message, args);
