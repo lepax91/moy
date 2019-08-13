@@ -28,10 +28,27 @@ bot.on("message", async message => {
     let args = message.content.slice(prefix.length).trim().split(' ');
     let cmd = args.shift().toLowerCase();
     let command;
-    if (command) command.run(bot, message, args);
 
     // let cmd = bot.commands.get(command.slice(prefix.length));
     // if (cmd) cmd.run(bot, message, args);
+    
+    
+    if (message.content.includes(message.mentions.users.first())) {
+        let mentioned = bot.afk.get(message.mentions.users.first().id);
+        if (mentioned) message.channel.send(`**${mentioned.usertag}** je teď AFK Důvod: ${mentioned.reason}`);
+    }
+    let afkcheck = bot.afk.get(message.author.id);
+    if (afkcheck) return [bot.afk.delete(message.author.id), message.reply(`Jsi pryč z AFK seznamu!`).then(msg => msg.delete(5000))];
+
+    if (!message.content.startsWith(prefix)) return;
+
+    if (bot.commands.has(cmd)) {
+        command = bot.commands.get(cmd);
+    } else {
+        command = bot.commands.get(bot.aliases.get(cmd));
+    }
+
+    if (command) command.run(bot, message, args);
   
 bot.db = db;
 bot.embed = new Discord.RichEmbed()
