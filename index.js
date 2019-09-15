@@ -7,10 +7,6 @@ const bot = new discord.Client({
 require("./functions")(bot);	
 
 
-client.db = db;
-client.embed = new Discord.RichEmbed()
-client.afk = new Map();
-
 
 bot.commands = new discord.Collection();	
 bot.aliases = new discord.Collection();	
